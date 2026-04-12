@@ -11,8 +11,6 @@ Como próximo passo, iniciaremos a implementação, utilizando tecnologias web e
 
 ## Controle de versão
 
-> ⚠️ **APAGUE ESTA PARTE ANTES DE ENTREGAR SEU TRABALHO**
-
 A ferramenta de controle de versão adotada no projeto foi o [Git](https://git-scm.com/), sendo que o [GitHub](https://github.com) foi utilizado para hospedagem do repositório.
 
 O projeto segue a seguinte convenção para o nome de branches:
@@ -31,12 +29,6 @@ Quanto à gerência de issues, o projeto adota a seguinte convenção para etiqu
 
 A gestão de commits será realizada de forma organizada, com mensagens claras para facilitar o entendimento das alterações no código. Os merges serão utilizados para integrar as mudanças entre as branches, principalmente da dev para testing e, após validação, para a main. As tags serão aplicadas para identificar versões importantes do sistema. Já a gestão de issues será feita no GitHub, utilizando etiquetas para organizar e acompanhar as atividades do projeto.
 
-> **Links úteis**:
-> - [Tutorial GitHub](https://guides.github.com/activities/hello-world/)
-> - [Git e GitHub](https://www.youtube.com/playlist?list=PLHz_AreHm4dm7ZULPAmadvNhH6vk9oNZA)
-> - [Comparando fluxos de trabalho](https://www.atlassian.com/br/git/tutorials/comparing-workflows)
-> - [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
-> - [The gitflow workflow - in less than 5 mins](https://www.youtube.com/watch?v=1SXpE08hvGs)
 
 ## Planejamento do projeto
 
