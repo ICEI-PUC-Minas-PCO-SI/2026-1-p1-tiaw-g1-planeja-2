@@ -4,9 +4,9 @@
 
 `DISCIPLINA: Trabalho Interdisciplinar Aplicações Web Front-End`
 
-`Xº semestre/ANO`
+`1º semestre/2026`
 
-Escreva um ou dois parágrafos resumindo o objetivo do seu projeto.
+O objetivo do projeto é desenvolver um aplicativo prático e interativo que ajude os usuários a organizar e acompanhar suas finanças, permitindo visualizar entradas e saídas de dinheiro, controlar gastos por categoria e planejar economias e investimentos. Além disso, busca incentivar a educação financeira e melhorar o gerenciamento dos recursos pessoais, especialmente para o público jovem adulto.
 
 ## Integrantes
 
