@@ -3,7 +3,11 @@
 
 <span style="color:red">Pré-requisitos: <a href="03-Product-design.md"> Product design</a></span>
 
-Descreva aqui a metodologia de trabalho do grupo para abordar o problema. Inclua definições sobre os ambientes de trabalho utilizados pela equipe para desenvolver o projeto. Isso abrange a relação dos ambientes utilizados, a estrutura para a gestão do código-fonte, além da definição do processo e das ferramentas por meio dos quais a equipe se organiza (gestão de equipes).
+Para o desenvolvimento do projeto, utilizamos a abordagem de Design Thinking, com foco em entender o problema e o usuário antes de propor soluções.
+Na fase de estratégia, realizamos brainstorming e utilizamos a Matriz CSD e o Mapa de Stakeholders para organizar ideias. Também fizemos pesquisas, criamos personas e definimos histórias de usuário para compreender melhor as necessidades do público.
+Atualmente, estamos na etapa de Product Design, estruturando a solução, criando wireframes e definindo as funcionalidades do MVP. Utilizamos ferramentas como Figma, GitHub, Google Docs e WhatsApp para desenvolvimento e organização.
+Como próximo passo, iniciaremos a implementação, utilizando tecnologias web e dividindo as tarefas entre o grupo, com testes e melhorias até chegar a uma aplicação funcional.
+
 
 ## Controle de versão
 
@@ -25,7 +29,7 @@ Quanto à gerência de issues, o projeto adota a seguinte convenção para etiqu
 - `enhancement`: uma funcionalidade precisa ser melhorada
 - `feature`: uma nova funcionalidade precisa ser introduzida
 
-Discuta como a configuração do projeto foi feita na ferramenta de versionamento escolhida. Exponha como a gestão de tags, merges, commits e branches é realizada. Discuta também como a gestão de issues foi feita.
+A gestão de commits será realizada de forma organizada, com mensagens claras para facilitar o entendimento das alterações no código. Os merges serão utilizados para integrar as mudanças entre as branches, principalmente da dev para testing e, após validação, para a main. As tags serão aplicadas para identificar versões importantes do sistema. Já a gestão de issues será feita no GitHub, utilizando etiquetas para organizar e acompanhar as atividades do projeto.
 
 > **Links úteis**:
 > - [Tutorial GitHub](https://guides.github.com/activities/hello-world/)
