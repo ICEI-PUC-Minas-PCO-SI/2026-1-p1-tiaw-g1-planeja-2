@@ -34,35 +34,26 @@ A gestão de commits será realizada de forma organizada, com mensagens claras p
 
 ###  Divisão de papéis
 
-> ⚠️ **APAGUE ESTA PARTE ANTES DE ENTREGAR SEU TRABALHO**
+- Scrum Master: Maria Eduarda Rodrigues Lacerda.
 
-> A equipe utiliza o Scrum como base para definição do processo de desenvolvimento. [Adicione informações abaixo sobre a divisão de papéis entre os membros da equipe.]
+- Product Owner: Victória Fernanda Santos Rocha.
 
-- Scrum Master: nome de um membro da equipe, principal responsável pela gestão do projeto.
-- Product Owner: nome de um membro da equipe, representante dos interesses de todos os envolvidos (stakeholders), define as funcionalidades do produto e prioriza os itens de Product Backlog.
-- Equipe de Desenvolvimento: nomes de todos os membros da equipe, pois todos os membros deverão implementar no mínimo duas telas/funcionalidades.
-- Equipe de Design: nomes dos membros da equipe que trabalharão com design.
+- Equipe de Desenvolvimento: Arthur Willer Faria de Souza, Christina Danúbia de Araújo Carreiro, Luiza Stefany Romao da Silva, Maria Eduarda Rodrigues Lacerda, Thalles Gabriel Dias Teixeira e Victória Fernanda Santos Rocha.
 
-> **Links úteis**:
-> - [11 passos essenciais para implantar Scrum no seu projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
-> - [Os papéis do Scrum e a verdade sobre cargos nessa técnica](https://www.atlassian.com/br/agile/scrum/roles)
+- Equipe de Design: Christina Danúbia de Araújo Carreiro, Luiza Stefany Romao da Silva, Maria Eduarda Rodrigues Lacerda e Victória Fernanda Santos Rocha.
 
 ### Processo
 
-> ⚠️ **APAGUE ESTA PARTE ANTES DE ENTREGAR SEU TRABALHO**
+O grupo está utilizando a abordagem de Design Thinking nas etapas iniciais do projeto, passando pelas fases de imersão, definição e ideação, com o objetivo de compreender melhor o problema e propor soluções eficientes.
 
-Coloque detalhes sobre o processo de Design Thinking e a implementação do Framework Scrum seguido pelo grupo. O grupo deverá fazer uso do recurso de gerenciamento de projeto oferecido pelo GitHub, o GitHub Projects, que permite acompanhar o andamento do projeto, a execução das tarefas e o status de desenvolvimento da solução. 
+Após essa etapa, será utilizado o framework Scrum para organizar o desenvolvimento do sistema, com divisão do trabalho em tarefas menores (sprints), facilitando o acompanhamento da evolução do projeto.
 
-Coloque uma imagem da estrutura da ferramenta de controle de tarefas (Kanban) e o link do GitHub Projects.
- 
-> **Links úteis**:
-> - [GitHub Projects - YouTube](https://www.youtube.com/playlist?list=PLiO7XHcmTsldZR93nkTFmmWbCEVF_8F5H)
-> - [Planejamento e gestão ágil de projetos](https://pucminas.instructure.com/courses/87878/pages/unidade-2-tema-2-utilizacao-de-ferramentas-para-controle-de-versoes-de-software)
-> - [Sobre quadros de projeto](https://docs.github.com/pt/issues/organizing-your-work-with-project-boards/managing-project-boards/about-project-boards)
-> - [Project management, made simple](https://github.com/features/project-management/)
-> - [Como criar backlogs no GitHub](https://www.youtube.com/watch?v=RXEy6CFu9Hk)
-> - [Tutorial slack](https://slack.com/intl/en-br/)
+Para o gerenciamento das atividades, utilizamos o GitHub Projects, com um quadro no modelo Kanban, contendo colunas como:
+
+A fazer (To Do)
+Em andamento (In Progress)
+Em teste (Testing)
+Concluído (Done)
 
 ## Ferramentas
 
@@ -74,11 +65,14 @@ Liste todas as ferramentas que foram empregadas no projeto. Inclua itens como: (
 
 ⚠️ EXEMPLO ⚠️ os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a relação dos ambientes com seu respectivo propósito é apresentada na tabela que se segue.
 
-| Ambiente                            | Plataforma                         | Link de acesso                       |
-|-------------------------------------|------------------------------------|--------------------------------------|
-| Processo de Design Thinking         | Miro                               | https://....   ⚠️ EXEMPLO ⚠️        |
-| Repositório de código fonte         | GitHub                             | https://....   ⚠️ EXEMPLO ⚠️        |
-| Documentos do projeto               | GitHub                             | http://....    ⚠️ EXEMPLO ⚠️        |
-| Gerenciamento do projeto            | GitHub Projects                    | http://....    ⚠️ EXEMPLO ⚠️        |
-| Projeto de interface                | Figma                              | http://....    ⚠️ EXEMPLO ⚠️        |
-| Hospedagem                          | Vercel                             | http://....    ⚠️ EXEMPLO ⚠️        |
+| Ambiente                            | Plataforma                         | Link de acesso                                                      |
+|-------------------------------------|------------------------------------|---------------------------------------------------------------------|
+| Processo de Design Thinking         | Miro                               | https://miro.com/welcomeonboard/eVVlcldGcXFEK2ZVNGtubm44TEpxNis0eVEwQnNkejI2RGtZWmMyekVlVEFJUHNGODhaZ0Z0Sk9Bcjh3QTl3dEhTQzVYbUdJcURscG5FeGpxRGUreWM0YlJVYUVMbFJpRThkTEdvTDdaTmdPVkpZQ1loMHRydXVWUHNhODRvSGtnbHpza3F6REdEcmNpNEFOMmJXWXBBPT0hdjE=?share_link_id=673540817315                                         | 
+| Repositório de código fonte         | GitHub                             | https://github.com/ICEI-PUC-Minas-PCO-SI/2026-1-p1-tiaw-g1-planeja-2|
+| Documentos do projeto               | GitHub                             | https://github.com/ICEI-PUC-Minas-PCO-SI/2026-1-p1-tiaw-g1-planeja-2|
+| Gerenciamento do projeto            | GitHub Projects                    |                                                                     |
+| Projeto de interface                | Figma                              | https://www.figma.com/site/8a9xOcyFQPSZoIjSJSaHD1/Projeto-Gastos-Pessoais?t=iVh8UEXDAyQSvneR-1|
+| Hospedagem                          | Vercel                             |                                                                     |
+
+
+
