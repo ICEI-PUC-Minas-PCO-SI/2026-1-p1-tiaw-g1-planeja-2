@@ -5,7 +5,7 @@
 
 ## Slides
 
-[Slide Planeja+](docs/Planeja+.pdf)
+[Slide Planeja+](files/Planeja+.pdf)
 
 
 
