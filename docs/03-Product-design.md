@@ -83,5 +83,13 @@ O projeto está restrito aos itens apresentados na tabela a seguir.
 
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
-|001| O projeto deverá ser entregue até o final do semestre ⚠️ EXEMPLO ⚠️ |
-|002| Não é permitido o desenvolvimento de um módulo de back-end  ⚠️ EXEMPLO ⚠️  |
+|001| Não haverá integração com bancos ou instituições financeiras|
+|002| Não haverá integração automática com contas bancárias |
+|003| Os dados dependerão exclusivamente do preenchimento manual do usuário | 
+|004| O sistema será desenvolvido inicialmente apenas para ambiente web | 
+|005| O sistema não poderá ter uma interface difícil | 
+|006| O sistema dependerá exclusivamente das informações fornecidas pelo usuário | 
+|007| O sistema não terá suporte a múltiplos idiomas inicialmente |
+|008| O sistema será desenvolvido com tecnologias web (HTML, CSS e JavaScript) |
+
+
