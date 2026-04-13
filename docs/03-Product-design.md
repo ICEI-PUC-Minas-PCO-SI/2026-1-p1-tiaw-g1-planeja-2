@@ -77,8 +77,6 @@ Ana Giulia | Um app simples de controle financeiro | Entender melhor meus gastos
 
 ## Restrições
 
-Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
-
 O projeto está restrito aos itens apresentados na tabela a seguir.
 
 |ID| Restrição                                             |
