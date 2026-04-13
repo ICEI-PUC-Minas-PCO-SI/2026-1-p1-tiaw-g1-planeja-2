@@ -57,14 +57,6 @@ Concluído (Done)
 
 ## Ferramentas
 
-> ⚠️ **APAGUE ESTA PARTE ANTES DE ENTREGAR SEU TRABALHO**
-
-Os artefatos do projeto são desenvolvidos a partir de diversas plataformas. A relação dos ambientes com seus respectivos propósitos deverá ser apresentada em uma tabela que especifique e detalhe Ambiente, Plataforma e Link de Acesso. Sempre que possível, inclua também frameworks, bibliotecas e demais tecnologias utilizadas, indicando seu uso em contextos específicos, como aplicações móveis, web ou outros.
-
-Liste todas as ferramentas que foram empregadas no projeto. Inclua itens como: (1) editor de código, (2) ferramentas de comunicação, (3) ferramentas de diagramação, (4) plataformas de hospedagem, entre outras.
-
-⚠️ EXEMPLO ⚠️ os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a relação dos ambientes com seu respectivo propósito é apresentada na tabela que se segue.
-
 | Ambiente                            | Plataforma                         | Link de acesso                                                      |
 |-------------------------------------|------------------------------------|---------------------------------------------------------------------|
 | Processo de Design Thinking         | Miro                               | https://miro.com/welcomeonboard/eVVlcldGcXFEK2ZVNGtubm44TEpxNis0eVEwQnNkejI2RGtZWmMyekVlVEFJUHNGODhaZ0Z0Sk9Bcjh3QTl3dEhTQzVYbUdJcURscG5FeGpxRGUreWM0YlJVYUVMbFJpRThkTEdvTDdaTmdPVkpZQ1loMHRydXVWUHNhODRvSGtnbHpza3F6REdEcmNpNEFOMmJXWXBBPT0hdjE=?share_link_id=673540817315                                         | 
