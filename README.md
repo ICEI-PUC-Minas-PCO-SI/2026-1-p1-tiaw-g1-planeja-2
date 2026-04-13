@@ -10,16 +10,16 @@ O objetivo do projeto é desenvolver um aplicativo prático e interativo que aju
 
 ## Integrantes
 
-* Victória Fernanda Santos Rocha
+* Arthur Willer Faria de Souza
+* Christina Danúbia de Araújo Carreiro
 * Luiza Stefany Romão Da Silva
 * Maria Eduarda Rodrigues Lacerda
 * Thalles Gabriel Dias Teixeira
-* Christina Danúbia de Araújo Carreiro
-* Arthur Willer
+* Victória Fernanda Santos Rocha
 
 ## Professor
 
-* Luciana Diniz
+* Luciana Mara Freitas Diniz
 
 ## Instruções de utilização
 
