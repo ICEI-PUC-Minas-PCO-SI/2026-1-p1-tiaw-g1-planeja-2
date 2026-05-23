@@ -1,0 +1,22 @@
+{
+  "transacoes": [
+    {
+      "id": 1,
+      "data": "2026-04-29",
+      "descricao": "Salário",
+      "categoria": "Salário",
+      "tipo": "entrada",
+      "formaPagamento": "Conta bancária",
+      "valor": 3000.00
+    },
+    {
+      "id": 2,
+      "data": "2026-04-29",
+      "descricao": "Cinema",
+      "categoria": "Lazer",
+      "tipo": "saida",
+      "formaPagamento": "Cartão de crédito",
+      "valor": 40.00
+    }
+  ]
+}
