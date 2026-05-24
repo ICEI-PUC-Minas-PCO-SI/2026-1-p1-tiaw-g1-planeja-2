@@ -54,7 +54,7 @@ h4 {
 
 main {
     padding: 20px;
-}*/ 
+}*/
 
 /* CSS Menu Lateral */
 
@@ -161,3 +161,155 @@ body {
     margin-top: 2px;
 }
 
+/* CSS Categorias */
+.form-categoria {
+    background-color: white;
+    padding: 25px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.campo label {
+    font-weight: bold;
+    color: #374151;
+}
+
+.lista-icones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.icone-item {
+    width: 60px;
+    height: 60px;
+
+    border: 2px solid #d1d5db;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    font-size: 22px;
+
+    color: #374151;
+}
+
+.icone-item:hover {
+    border-color: #2563eb;
+    color: #2563eb;
+}
+
+.icone-item.ativo {
+    background-color: #2563eb;
+    border-color: #2563eb;
+    color: white;
+}
+/* LISTA CATEGORIAS */
+
+.lista-categorias {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* CARD */
+
+.card-categoria {
+    background-color: white;
+
+    border-radius: 14px;
+
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* INFO */
+
+.info-categoria {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* ÍCONE CARD */
+
+.icone-categoria {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 12px;
+
+    background-color: #e0e7ff;
+    color: #2563eb;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 20px;
+}
+
+/* NOME */
+
+.nome-categoria {
+    font-size: 18px;
+    font-weight: bold;
+    color: #111827;
+}
+
+/* AÇÕES */
+
+.acoes {
+    display: flex;
+    gap: 10px;
+}
+
+/* BOTÃO EDITAR */
+
+.btn-editar {
+    padding: 10px 16px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #facc15;
+    color: #111827;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+/* BOTÃO EXCLUIR */
+
+.btn-excluir {
+    padding: 10px 16px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #ef4444;
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
