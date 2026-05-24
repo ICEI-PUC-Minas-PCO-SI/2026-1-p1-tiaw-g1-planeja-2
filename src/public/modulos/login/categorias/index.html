@@ -87,7 +87,7 @@
 
                     <input type="text" id="nomeCategoria" placeholder="Ex: Alimentação">
 
-                    <button class="btn" id="btnSalvar">Salvar</button>
+                    <button class="btn-salvar" onclick="salvarCategoria()">Salvar</button>
 
                 </div>
 
@@ -159,9 +159,8 @@
 
                     <div class="acoes">
 
-                        <button class="btn-editar">Editar</button>
-
-                        <button class="btn-excluir">Excluir</button>
+                        <button class="btn-editar" onclick="editarCategoria(this)">Editar</button>
+                        <button class="btn-excluir" onclick="excluirCategoria(this)">Excluir</button>
 
                     </div>
 
@@ -173,7 +172,7 @@
 
     </div>
 
-    <script src="index.js"></script>
+    <script src="../../../../index.js"></script>
 
 </body>
 
