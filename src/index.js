@@ -31,8 +31,6 @@ let iconeSelecionado = "fa-utensils";
 
 const icones = document.querySelectorAll(".icone-item");
 
-/* SELECIONAR ÍCONE */
-
 icones.forEach(item => {
 
   item.addEventListener("click", () => {
@@ -46,8 +44,6 @@ icones.forEach(item => {
   });
 
 });
-
-/* SALVAR */
 
 function salvarCategoria() {
 
@@ -109,15 +105,11 @@ function salvarCategoria() {
 
 }
 
-/* EXCLUIR */
-
 function excluirCategoria(botao) {
 
   botao.closest(".card-categoria").remove();
 
 }
-
-/* EDITAR */
 
 function editarCategoria(botao) {
 
@@ -126,8 +118,6 @@ function editarCategoria(botao) {
   const nomeCategoria = card.querySelector(".nome-categoria");
 
   const iconeCategoria = card.querySelector(".icone-categoria i");
-
-  /* EDITAR NOME */
 
   const novoNome = prompt(
     "Editar nome da categoria:",
@@ -148,20 +138,57 @@ function editarCategoria(botao) {
 
   nomeCategoria.textContent = novoNome;
 
-  /* EDITAR ÍCONE */
-
   const opcoes = [
 
-    "fa-utensils",
-    "fa-car",
-    "fa-house",
-    "fa-heart",
-    "fa-cart-shopping",
-    "fa-gamepad",
-    "fa-plane",
-    "fa-book",
-    "fa-bolt",
-    "fa-shirt"
+    {
+      nome: "Talheres",
+      classe: "fa-utensils"
+    },
+
+    {
+      nome: "Carro",
+      classe: "fa-car"
+    },
+
+    {
+      nome: "Casa",
+      classe: "fa-house"
+    },
+
+    {
+      nome: "Coração",
+      classe: "fa-heart"
+    },
+
+    {
+      nome: "Carrinho de compras",
+      classe: "fa-cart-shopping"
+    },
+
+    {
+      nome: "Game",
+      classe: "fa-gamepad"
+    },
+
+    {
+      nome: "Avião",
+      classe: "fa-plane"
+    },
+
+    {
+      nome: "Livro",
+      classe: "fa-book"
+    },
+
+    {
+      nome: "Energia",
+      classe: "fa-bolt"
+    },
+
+    {
+      nome: "Camisa",
+      classe: "fa-shirt"
+    }
 
   ];
 
@@ -169,7 +196,7 @@ function editarCategoria(botao) {
 
   opcoes.forEach((icone, index) => {
 
-    mensagem += `${index + 1} - ${icone}\n`;
+    mensagem += `${index + 1} - ${icone.nome}\n`;
 
   });
 
@@ -183,7 +210,7 @@ function editarCategoria(botao) {
 
   if (indice >= 0 && indice < opcoes.length) {
 
-    iconeCategoria.className = `fa-solid ${opcoes[indice]}`;
+    iconeCategoria.className = `fa-solid ${opcoes[indice].classe}`;
 
   } else {
 
