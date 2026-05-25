@@ -1,3 +1,14 @@
+let categorias = [];
+
+function salvarNoLocalStorage() {
+
+  localStorage.setItem(
+    "categorias",
+    JSON.stringify(categorias)
+  );
+
+}
+
 let iconeSelecionado = "fa-utensils";
 
 const icones = document.querySelectorAll(".icone-item");
@@ -30,55 +41,87 @@ function salvarCategoria() {
 
   }
 
+  const categoria = {
+
+    id: Date.now(),
+
+    nome: nome,
+
+    icone: iconeSelecionado
+
+  };
+
+  categorias.push(categoria);
+
+  salvarNoLocalStorage();
+
+  criarCard(categoria);
+
+  nomeInput.value = "";
+
+}
+
+function criarCard(categoria) {
+
   const lista = document.getElementById("listaCategorias");
 
   const card = document.createElement("div");
 
   card.classList.add("card-categoria");
 
+  card.setAttribute("data-id", categoria.id);
+
   card.innerHTML = `
 
-        <div class="info-categoria">
+    <div class="info-categoria">
 
-            <div class="icone-categoria">
-                <i class="fa-solid ${iconeSelecionado}"></i>
-            </div>
+      <div class="icone-categoria">
+        <i class="fa-solid ${categoria.icone}"></i>
+      </div>
 
-            <div class="nome-categoria">
-                ${nome}
-            </div>
+      <div class="nome-categoria">
+        ${categoria.nome}
+      </div>
 
-        </div>
+    </div>
 
-        <div class="acoes">
+    <div class="acoes">
 
-            <button
-                class="btn-editar"
-                onclick="editarCategoria(this)"
-            >
-                Editar
-            </button>
+      <button
+        class="btn-editar"
+        onclick="editarCategoria(this)"
+      >
+        Editar
+      </button>
 
-            <button
-                class="btn-excluir"
-                onclick="excluirCategoria(this)"
-            >
-                Excluir
-            </button>
+      <button
+        class="btn-excluir"
+        onclick="excluirCategoria(this)"
+      >
+        Excluir
+      </button>
 
-        </div>
+    </div>
 
-    `;
+  `;
 
   lista.appendChild(card);
-
-  nomeInput.value = "";
 
 }
 
 function excluirCategoria(botao) {
 
-  botao.closest(".card-categoria").remove();
+  const card = botao.closest(".card-categoria");
+
+  const id = Number(card.dataset.id);
+
+  categorias = categorias.filter(
+    categoria => categoria.id !== id
+  );
+
+  salvarNoLocalStorage();
+
+  card.remove();
 
 }
 
@@ -108,6 +151,14 @@ function editarCategoria(botao) {
   }
 
   nomeCategoria.textContent = novoNome;
+
+  const id = Number(card.dataset.id);
+
+  const categoria = categorias.find(
+    categoria => categoria.id === id
+  );
+
+  categoria.nome = novoNome;
 
   const opcoes = [
 
@@ -174,14 +225,21 @@ function editarCategoria(botao) {
   const escolha = prompt(mensagem);
 
   if (escolha === null) {
+
+    salvarNoLocalStorage();
+
     return;
+
   }
 
   const indice = parseInt(escolha) - 1;
 
   if (indice >= 0 && indice < opcoes.length) {
 
-    iconeCategoria.className = `fa-solid ${opcoes[indice].classe}`;
+    iconeCategoria.className =
+      `fa-solid ${opcoes[indice].classe}`;
+
+    categoria.icone = opcoes[indice].classe;
 
   } else {
 
@@ -189,4 +247,24 @@ function editarCategoria(botao) {
 
   }
 
+  salvarNoLocalStorage();
+
 }
+
+window.onload = function () {
+
+  const dados = localStorage.getItem("categorias");
+
+  if (dados) {
+
+    categorias = JSON.parse(dados);
+
+    categorias.forEach(categoria => {
+
+      criarCard(categoria);
+
+    });
+
+  }
+
+};
