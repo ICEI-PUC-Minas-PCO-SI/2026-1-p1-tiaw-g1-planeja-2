@@ -76,34 +76,53 @@
 
         <main class="container">
 
-            <header class="cabecalho">
+            <div class="form-contaFixa">
 
-                <h1>Contas Fixas</h1>
+                <div class="campo">
 
-                <button id="btnNovaConta">Nova conta fixa</button>
+                    <label for="nomeContaFixa">
+                        Data
+                    </label>
 
-            </header>
+                    <input type="text" id="nomeContaFixa" placeholder="Ex: Alimentação">
 
-            <section class="tabela">
+                    <label for="nomeContaFixa">
+                        Descrição
+                    </label>
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Data</th>
-                            <th>Descrição</th>
-                            <th>Categoria</th>
-                            <th>Tipo</th>
-                            <th>Forma de pagamento</th>
-                            <th>Valor</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
+                    <input type="text" id="nomeContaFixa" placeholder="Ex: Alimentação">
 
-                    <tbody id="tabelaContas">
-                    </tbody>
+                    <label for="nomeContaFixa">
+                        Categoria
+                    </label>
 
-                </table>
-            </section>
+                    <input type="text" id="nomeContaFixa" placeholder="Ex: Alimentação">
+
+                    <label for="nomeContaFixa">
+                        Valor
+                    </label>
+
+                    <input type="text" id="nomeContaFixa" placeholder="Ex: Alimentação">
+
+                    <label for="nomeContaFixa">
+                        Forma de pagamento
+                    </label>
+
+                    <input type="text" id="nomeContaFixa" placeholder="Ex: Alimentação">
+
+                    <label for="nomeContaFixa">
+                        Tipo de transação
+                    </label>
+
+                    <input type="text" id="nomeContaFixa" placeholder="Ex: Alimentação">
+
+                    <button class="btn-salvar" onclick="salvarCategoria()">Salvar</button>
+
+                </div>
+
+            </div>
+
+            <div class="lista-categorias" id="listaCategorias"></div>
 
         </main>
     </div>
