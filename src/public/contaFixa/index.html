@@ -78,51 +78,85 @@
 
             <div class="form-contaFixa">
 
-                <div class="campo">
+                <div class="form-contaFixa">
 
-                    <label for="nomeContaFixa">
-                        Data
-                    </label>
+    <h2>Adicionar Conta Fixa</h2>
 
-                    <input type="text" id="nomeContaFixa" placeholder="Ex: Alimentação">
+    <div class="form">
 
-                    <label for="nomeContaFixa">
-                        Descrição
-                    </label>
+        <div class="linha-form">
 
-                    <input type="text" id="nomeContaFixa" placeholder="Ex: Alimentação">
-
-                    <label for="nomeContaFixa">
-                        Categoria
-                    </label>
-
-                    <input type="text" id="nomeContaFixa" placeholder="Ex: Alimentação">
-
-                    <label for="nomeContaFixa">
-                        Valor
-                    </label>
-
-                    <input type="text" id="nomeContaFixa" placeholder="Ex: Alimentação">
-
-                    <label for="nomeContaFixa">
-                        Forma de pagamento
-                    </label>
-
-                    <input type="text" id="nomeContaFixa" placeholder="Ex: Alimentação">
-
-                    <label for="nomeContaFixa">
-                        Tipo de transação
-                    </label>
-
-                    <input type="text" id="nomeContaFixa" placeholder="Ex: Alimentação">
-
-                    <button class="btn-salvar" onclick="salvarCategoria()">Salvar</button>
-
-                </div>
-
+            <div class="campo-form">
+                <label for="nomeContaFixa">Nome</label>
+                <input type="text" id="nomeContaFixa" placeholder="Ex: Alimentação">
             </div>
 
-            <div class="lista-categorias" id="listaCategorias"></div>
+            <div class="campo-form">
+                <label for="dataContaFixa">Data</label>
+                <input type="text" id="dataContaFixa" placeholder="Ex: 10/06/2026">
+            </div>
+
+        </div>
+
+        <div class="linha-form">
+
+            <div class="campo-form">
+                <label for="categoriaContaFixa">Categoria</label>
+                <select id="categoriaContaFixa">
+                    <option>Selecione a categoria</option>
+                </select>
+            </div>
+
+            <div class="campo-form">
+                <label for="valorContaFixa">Valor</label>
+                <input type="text" id="valorContaFixa" placeholder="R$ 0,00">
+            </div>
+
+        </div>
+
+        <div class="linha-form">
+
+            <div class="campo-form">
+                <label for="pagamentoContaFixa">Forma de pagamento</label>
+                <select id="pagamentoContaFixa">
+                    <option>Selecione a forma</option>
+                </select>
+            </div>
+
+            <div class="campo-form">
+                <label for="transacaoContaFixa">Tipo de transação</label>
+                <select id="transacaoContaFixa">
+                    <option>Selecione o tipo</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="campo-form descricao">
+            <label for="descricaoContaFixa">Descrição</label>
+            <input
+                type="text"
+                id="descricaoContaFixa"
+                placeholder="Informe a descrição da conta que deseja cadastrar">
+        </div>
+
+        <div class="botoes-form">
+
+             <button class="btn-salvar" onclick="salvarContaFixa()">
+                Salvar
+            </button>
+
+            <button class="btn-cancelar" onclick="cancelarContaFixa()">
+                Cancelar
+            </button>
+            
+        </div>
+
+    </div>
+
+</div>
+
+            </div>
 
         </main>
     </div>

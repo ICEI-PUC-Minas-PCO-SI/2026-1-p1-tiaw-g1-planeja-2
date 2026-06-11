@@ -26,6 +26,9 @@ body {
     display: flex;
     flex-direction: column;
     padding: 10px 20px 20px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .logo {
@@ -103,187 +106,114 @@ body {
     margin-top: 2px;
 }
 
-/* CSS Adicionar conta fixa*/ 
-/* CSS Categorias */
+/* CSS Adicionar conta fixa*/
 .container {
     flex: 1;
-    background: #f9fafb;
+    margin-left: 260px;
+    margin-top: -10px;
     padding: 40px;
+    background: #f3f4f6;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-.form-categoria {
-    width: 100%;
-    max-width: 1100px;
-    background: white;
+.form-contaFixa {
+    padding: 20px;
+    background-color: white;
     border-radius: 20px;
-    padding: 30px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin-bottom: 35px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
-.campo {
+.form-contaFixa h2 {
+    margin-bottom: 15px;
+    color: black;
+    font-size: 20px;
+}
+
+form {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 25px;
 }
 
-.campo label {
-    font-size: 16px;
+.linha-form {
+    display: flex;
+    gap: 30px;
+}
+
+.campo-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.campo-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.campo-form label {
+    margin-bottom: 10px;
+    margin-top: 15px;
+    font-size: 15px;
     font-weight: 600;
-    color: #06122b;
+    color: black;
 }
 
-.campo input {
-    height: 50px;
-    border: 1px solid #d1d5db;
-    border-radius: 12px;
-    padding: 0 16px;
+.campo-form input,
+.campo-form select {
+    width: 100%;
+    height: 45px;
+    padding: 0 20px;
+    border: 1.5px solid #06122b;
+    border-radius: 20px;
     font-size: 15px;
     outline: none;
+    background-color: white;
     transition: 0.2s;
 }
 
-.campo input:focus {
+.grupo-form input:focus,
+.grupo-form select:focus {
     border-color: #06122b;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.botoes {
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+}
+
+.btn-cancelar,
+.btn-salvar {
+    width: 120px;
+    height: 42px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.2s;
+    margin-top: 25px;
+}
+
+.btn-cancelar {
+    background: #d1d5db;
+}
+
+.btn-cancelar:hover {
+    background: #bfc4cb;
 }
 
 .btn-salvar {
-    width: 160px;
-    height: 48px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 12px;
     background: #06122b;
     color: white;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.2s;
 }
 
-.btn:hover {
-    background: #3baef6;
+.btn-salvar:hover {
+    background: #0284c7;
 }
 
-.lista-icones {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 14px;
-}
-
-.icone-item {
-    width: 100%;
-    height: 60px;
-    border: 2px solid #e5e7eb;
-    border-radius: 14px;
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    color: #06122b;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.icone-item:hover {
-    border-color: #06122b;
-    color: #06122b;
-    transform: scale(1.05);
-}
-
-.icone-item.ativo {
-    background: #06122b;
-    border-color: #3baef6;
-    color: white;
-}
-
-.lista-categorias {
-    width: 100%;
-    max-width: 1100px;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
-
-.card-categoria {
-    background: white;
-    border-radius: 18px;
-    padding: 20px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-    transition: 0.2s;
-}
-
-.card-categoria:hover {
-    transform: translateY(-2px);
-}
-
-.info-categoria {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-}
-
-.icone-categoria {
-    width: 58px;
-    height: 58px;
-    border-radius: 16px;
-    background: #eff6ff;
-    color: #06122b;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 22px;
-}
-
-.nome-categoria {
-    font-size: 18px;
-    font-weight: 600;
-    color: #000000;
-}
-
-.acoes {
-    display: flex;
-    gap: 12px;
-}
-
-.btn-editar {
-    border: none;
-    padding: 11px 18px;
-    border-radius: 10px;
-    background: #f3f4f6;
-    color: #06122b;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.btn-editar:hover {
-    background: #e5e7eb;
-}
-
-.btn-excluir {
-    border: none;
-    padding: 11px 18px;
-    border-radius: 10px;
-    background: #fee2e2;
-    color: #dc2626;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.btn-excluir:hover {
-    background: #fecaca;
+@media (max-width: 900px) {
+    .linha-form {
+        flex-direction: column;
+    }
 }
