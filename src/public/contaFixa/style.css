@@ -212,6 +212,89 @@ form {
     background: #0284c7;
 }
 
+.lista-contas-fixas {
+    margin-top: 50px;
+}
+
+.lista-contas-fixas h2 {
+    margin-bottom: 20px;
+}
+
+.lista-contas-fixas table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 15px;
+}
+
+.lista-contas-fixas th,
+.lista-contas-fixas td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.lista-contas-fixas th {
+    background-color: #06122b;
+    color: white;
+}
+
+.btn-editar,
+.btn-excluir {
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.btn-editar {
+    background-color: #009dff;
+    color: white;
+}
+
+.btn-excluir {
+    background-color: #dc3545;
+    color: white;
+}
+
+.acoes {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-editar,
+.btn-excluir {
+    border: none;
+    border-radius: 15px;
+    padding: 8px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-editar {
+    background-color: #009dff;
+    color: white;
+}
+
+.btn-editar:hover {
+    background-color: #007fd1;
+}
+
+.btn-excluir {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-excluir:hover {
+    background-color: #b82b39;
+}
+
 @media (max-width: 900px) {
     .linha-form {
         flex-direction: column;

@@ -80,85 +80,116 @@
 
                 <div class="form-contaFixa">
 
-    <h2>Adicionar Conta Fixa</h2>
+                    <h2>Adicionar Conta Fixa</h2>
 
-    <div class="form">
+                    <div class="form">
 
-        <div class="linha-form">
+                        <div class="linha-form">
 
-            <div class="campo-form">
-                <label for="nomeContaFixa">Nome</label>
-                <input type="text" id="nomeContaFixa" placeholder="Ex: Alimentação">
-            </div>
+                            <div class="campo-form">
+                                <label for="nomeContaFixa">Nome</label>
+                                <input type="text" id="nomeContaFixa" placeholder="Ex: Alimentação">
+                            </div>
 
-            <div class="campo-form">
-                <label for="dataContaFixa">Data</label>
-                <input type="text" id="dataContaFixa" placeholder="Ex: 10/06/2026">
-            </div>
+                            <div class="campo-form">
+                                <label for="vencimentoContaFixa">Dia do vencimento</label>
+                                <input type="text" id="vencimentoContaFixa" placeholder="Ex: 10">
+                            </div>
 
-        </div>
+                        </div>
 
-        <div class="linha-form">
+                        <div class="linha-form">
 
-            <div class="campo-form">
-                <label for="categoriaContaFixa">Categoria</label>
-                <select id="categoriaContaFixa">
-                    <option>Selecione a categoria</option>
-                </select>
-            </div>
+                            <div class="campo-form">
+                                <label for="categoriaContaFixa">Categoria</label>
+                                <select id="categoriaContaFixa">
+                                </select>
+                            </div>
 
-            <div class="campo-form">
-                <label for="valorContaFixa">Valor</label>
-                <input type="text" id="valorContaFixa" placeholder="R$ 0,00">
-            </div>
+                            <div class="campo-form">
+                                <label for="valorContaFixa">Valor</label>
+                                <input type="text" id="valorContaFixa" placeholder="R$ 0,00">
+                            </div>
 
-        </div>
+                        </div>
 
-        <div class="linha-form">
+                        <div class="linha-form">
 
-            <div class="campo-form">
-                <label for="pagamentoContaFixa">Forma de pagamento</label>
-                <select id="pagamentoContaFixa">
-                    <option>Selecione a forma</option>
-                </select>
-            </div>
+                            <div class="campo-form">
+                                <label for="pagamentoContaFixa">Forma de pagamento</label>
+                                <select id="pagamentoContaFixa">
+                                    <option>Dinheiro</option>
+                                    <option>Cartão de crédito</option>
+                                    <option>Cartão de débito</option>
+                                    <option>PIX</option>
+                                    <option>Transferência bancária</option>
+                                    <option>Boleto</option>
+                                </select>
+                            </div>
 
-            <div class="campo-form">
-                <label for="transacaoContaFixa">Tipo de transação</label>
-                <select id="transacaoContaFixa">
-                    <option>Selecione o tipo</option>
-                </select>
-            </div>
+                            <div class="campo-form">
+                                <label for="transacaoContaFixa">Tipo de transação</label>
+                                <select id="transacaoContaFixa">
+                                    <option>Receita</option>
+                                    <option>Despesa</option>
+                                </select>
+                            </div>
 
-        </div>
+                        </div>
 
-        <div class="campo-form descricao">
-            <label for="descricaoContaFixa">Descrição</label>
-            <input
-                type="text"
-                id="descricaoContaFixa"
-                placeholder="Informe a descrição da conta que deseja cadastrar">
-        </div>
+                        <div class="botoes-form">
 
-        <div class="botoes-form">
+                            <button class="btn-salvar" onclick="salvarContaFixa()">
+                                Salvar
+                            </button>
 
-             <button class="btn-salvar" onclick="salvarContaFixa()">
-                Salvar
-            </button>
+                            <button class="btn-cancelar" onclick="cancelarContaFixa()">
+                                Cancelar
+                            </button>
 
-            <button class="btn-cancelar" onclick="cancelarContaFixa()">
-                Cancelar
-            </button>
-            
-        </div>
+                        </div>
 
-    </div>
+                    </div>
 
-</div>
+                    <div class="lista-contas-fixas">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Vencimento</th>
+                                    <th>Categoria</th>
+                                    <th>Valor</th>
+                                    <th>Pagamento</th>
+                                    <th>Transação</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="listaContasFixas">
+                                <td class="acoes">
+
+                                    <button class="btn-editar">
+                                        Editar
+                                    </button>
+
+                                    <button class="btn-excluir">
+                                        Excluir
+                                    </button>
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
 
             </div>
 
         </main>
+
+
     </div>
 
     <script src="script.js"></script>
