@@ -1,35 +1,73 @@
-let contasFixas = JSON.parse(localStorage.getItem("contasFixas")) || [];
+let contasFixas =
+    JSON.parse(localStorage.getItem("contasFixas")) || [];
 
-let indiceEdicao = -1; function salvarNoLocalStorage() {
+let indiceEdicao = -1;
+
+function salvarNoLocalStorage() {
+
     localStorage.setItem(
         "contasFixas",
         JSON.stringify(contasFixas)
     );
+
 }
 
 function salvarContaFixa() {
 
-    let nome = document.getElementById("nomeContaFixa").value;
-    let vencimento = document.getElementById("vencimentoContaFixa").value;
-    let categoria = document.getElementById("categoriaContaFixa").value;
-    let valor = document.getElementById("valorContaFixa").value;
-    let pagamento = document.getElementById("pagamentoContaFixa").value;
-    let transacao = document.getElementById("transacaoContaFixa").value;
+    let nome =
+        document.getElementById("nomeContaFixa").value;
+
+    let vencimento =
+        document.getElementById("vencimentoContaFixa").value;
+
+    let categoria =
+        document.getElementById("categoriaContaFixa").value;
+
+    let valor =
+        document.getElementById("valorContaFixa").value;
+
+    let pagamento =
+        document.getElementById("pagamentoContaFixa").value;
+
+    let transacao =
+        document.getElementById("transacaoContaFixa").value;
+
+    if (
+        nome.trim() == "" ||
+        vencimento.trim() == "" ||
+        categoria.trim() == "" ||
+        valor.trim() == "" ||
+        pagamento.trim() == "" ||
+        transacao.trim() == ""
+    ) {
+
+        alert("Preencha todos os campos.");
+
+        return;
+
+    }
 
     let conta = {
+
         nome,
         vencimento,
         categoria,
         valor,
         pagamento,
         transacao
+
     };
 
     if (indiceEdicao == -1) {
+
         contasFixas.push(conta);
+
     } else {
+
         contasFixas[indiceEdicao] = conta;
+
         indiceEdicao = -1;
+
     }
 
     salvarNoLocalStorage();
@@ -37,6 +75,7 @@ function salvarContaFixa() {
     limparFormulario();
 
     listarContasFixas();
+
 }
 
 function limparFormulario() {
@@ -137,7 +176,6 @@ function carregarCategorias() {
     let select =
         document.getElementById("categoriaContaFixa");
 
-    // Limpa as opções atuais
     select.innerHTML =
         '<option value="">Selecione a categoria</option>';
 
@@ -153,8 +191,11 @@ function carregarCategorias() {
 
 }
 
-carregarCategorias();
-listarContasFixas();
+window.onload = function () {
 
+    carregarCategorias();
+    listarContasFixas();
+
+}
 
 

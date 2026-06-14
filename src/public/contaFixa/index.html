@@ -78,117 +78,159 @@
 
             <div class="form-contaFixa">
 
-                <div class="form-contaFixa">
+                <h2>Adicionar Conta Fixa</h2>
 
-                    <h2>Adicionar Conta Fixa</h2>
+                <div class="form">
 
-                    <div class="form">
+                    <div class="linha-form">
 
-                        <div class="linha-form">
+                        <div class="campo-form">
+                            <label for="nomeContaFixa">
+                                Nome
+                            </label>
 
-                            <div class="campo-form">
-                                <label for="nomeContaFixa">Nome</label>
-                                <input type="text" id="nomeContaFixa" placeholder="Ex: Alimentação">
-                            </div>
-
-                            <div class="campo-form">
-                                <label for="vencimentoContaFixa">Dia do vencimento</label>
-                                <input type="text" id="vencimentoContaFixa" placeholder="Ex: 10">
-                            </div>
-
+                            <input type="text" id="nomeContaFixa" placeholder="Ex: Alimentação">
                         </div>
 
-                        <div class="linha-form">
+                        <div class="campo-form">
+                            <label for="vencimentoContaFixa">
+                                Dia do vencimento
+                            </label>
 
-                            <div class="campo-form">
-                                <label for="categoriaContaFixa">Categoria</label>
-                                <select id="categoriaContaFixa">
-                                </select>
-                            </div>
-
-                            <div class="campo-form">
-                                <label for="valorContaFixa">Valor</label>
-                                <input type="text" id="valorContaFixa" placeholder="R$ 0,00">
-                            </div>
-
+                            <input type="number" id="vencimentoContaFixa" placeholder="Ex: 10" min="1" max="31">
                         </div>
 
-                        <div class="linha-form">
+                    </div>
 
-                            <div class="campo-form">
-                                <label for="pagamentoContaFixa">Forma de pagamento</label>
-                                <select id="pagamentoContaFixa">
-                                    <option>Dinheiro</option>
-                                    <option>Cartão de crédito</option>
-                                    <option>Cartão de débito</option>
-                                    <option>PIX</option>
-                                    <option>Transferência bancária</option>
-                                    <option>Boleto</option>
-                                </select>
-                            </div>
+                    <div class="linha-form">
 
-                            <div class="campo-form">
-                                <label for="transacaoContaFixa">Tipo de transação</label>
-                                <select id="transacaoContaFixa">
-                                    <option>Receita</option>
-                                    <option>Despesa</option>
-                                </select>
-                            </div>
+                        <div class="campo-form">
+                            <label for="categoriaContaFixa">
+                                Categoria
+                            </label>
 
+                            <select id="categoriaContaFixa">
+
+                            </select>
                         </div>
 
-                        <div class="botoes-form">
+                        <div class="campo-form">
+                            <label for="valorContaFixa">
+                                Valor
+                            </label>
 
-                            <button class="btn-salvar" onclick="salvarContaFixa()">
-                                Salvar
-                            </button>
+                            <input type="text" id="valorContaFixa" placeholder="R$ 0,00">
+                        </div>
 
-                            <button class="btn-cancelar" onclick="cancelarContaFixa()">
-                                Cancelar
-                            </button>
+                    </div>
+
+                    <div class="linha-form">
+
+                        <div class="campo-form">
+                            <label for="pagamentoContaFixa">
+                                Forma de pagamento
+                            </label>
+
+                            <select id="pagamentoContaFixa">
+
+                                <option value="Dinheiro">
+                                    Dinheiro
+                                </option>
+
+                                <option value="Cartão de crédito">
+                                    Cartão de crédito
+                                </option>
+
+                                <option value="Cartão de débito">
+                                    Cartão de débito
+                                </option>
+
+                                <option value="PIX">
+                                    PIX
+                                </option>
+
+                                <option value="Transferência bancária">
+                                    Transferência bancária
+                                </option>
+
+                                <option value="Boleto">
+                                    Boleto
+                                </option>
+
+                            </select>
+                        </div>
+
+                        <div class="campo-form">
+
+                            <label for="transacaoContaFixa">
+                                Tipo de transação
+                            </label>
+
+                            <select id="transacaoContaFixa">
+
+                                <option value="Receita">
+                                    Receita
+                                </option>
+
+                                <option value="Despesa">
+                                    Despesa
+                                </option>
+
+                            </select>
 
                         </div>
 
                     </div>
 
-                    <div class="lista-contas-fixas">
+                    <div class="botoes-form">
 
-                        <table>
+                        <button type="button" class="btn-salvar" onclick="salvarContaFixa()">
 
-                            <thead>
-                                <tr>
-                                    <th>Nome</th>
-                                    <th>Vencimento</th>
-                                    <th>Categoria</th>
-                                    <th>Valor</th>
-                                    <th>Pagamento</th>
-                                    <th>Transação</th>
-                                    <th>Ações</th>
-                                </tr>
-                            </thead>
+                            Salvar
 
-                            <tbody id="listaContasFixas">
-                                <td class="acoes">
+                        </button>
 
-                                    <button class="btn-editar">
-                                        Editar
-                                    </button>
+                        <button type="button" class="btn-cancelar" onclick="cancelarContaFixa()">
 
-                                    <button class="btn-excluir">
-                                        Excluir
-                                    </button>
-                            </tbody>
+                            Cancelar
 
-                        </table>
+                        </button>
 
                     </div>
+
+                </div>
+
+                <div class="lista-contas-fixas">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Nome</th>
+                                <th>Vencimento</th>
+                                <th>Categoria</th>
+                                <th>Valor</th>
+                                <th>Pagamento</th>
+                                <th>Transação</th>
+                                <th>Ações</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="listaContasFixas">
+
+                        </tbody>
+
+                    </table>
 
                 </div>
 
             </div>
 
         </main>
-
 
     </div>
 
