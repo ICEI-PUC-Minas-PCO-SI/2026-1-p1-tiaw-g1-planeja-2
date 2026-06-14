@@ -109,6 +109,7 @@ for (let i = 0; i < botoesMes.length; i++) {
 }
 
 
+
 //Grafico 
 function criarGrafico() {
 
@@ -201,8 +202,9 @@ function criarGrafico() {
             }
         }
     });
-
 }
+
+
 
 async function carregarDados() {
 
