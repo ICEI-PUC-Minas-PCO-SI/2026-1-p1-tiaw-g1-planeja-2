@@ -109,4 +109,112 @@ for (let i = 0; i < botoesMes.length; i++) {
 }
 
 
-atualizarDashboard(); //iniciar dashboard
+//Grafico 
+function criarGrafico() {
+
+    const entradasMes = Array(12).fill(0);
+    const saidasMes = Array(12).fill(0);
+
+    for (let i = 0; i < dadosFinanceiros.transacoes.length; i++) {
+
+        const transacao = dadosFinanceiros.transacoes[i];
+
+        const data = new Date(transacao.data);
+
+        const mes = data.getMonth();
+
+        if (transacao.tipo === "entrada") {
+
+            entradasMes[mes] += transacao.valor;
+
+        } else {
+
+            saidasMes[mes] += transacao.valor;
+
+        }
+
+    }
+
+    const ctx = document.getElementById("myChart");
+
+    new Chart(ctx, {
+
+        type: "bar",
+
+        data: {
+
+            labels: [
+                "JAN",
+                "FEV",
+                "MAR",
+                "ABR",
+                "MAI",
+                "JUN",
+                "JUL",
+                "AGO",
+                "SET",
+                "OUT",
+                "NOV",
+                "DEZ"
+            ],
+
+            datasets: [
+
+                {
+                    label: "Entradas",
+                    data: entradasMes,
+                    backgroundColor: "#22C55E",
+                    borderRadius: 6
+                },
+
+                {
+                    label: "Saídas",
+                    data: saidasMes,
+                    backgroundColor: "#EF4444",
+                    borderRadius: 6
+                }
+            ]
+        },
+
+        options: {
+
+            responsive: true,
+
+            plugins: {
+
+                legend: {
+                    position: "top"
+                }
+            },
+
+            scales: {
+                y: {
+
+                    beginAtZero: true,
+
+                    grid: {
+
+                        color: "#E5E7EB"
+
+                    }
+                }
+            }
+        }
+    });
+
+}
+
+async function carregarDados() {
+
+    const resposta = await fetch("transacoes.json");
+
+    dadosFinanceiros = await resposta.json();
+
+    atualizarDashboard();
+
+    criarGrafico();
+
+}
+
+
+carregarDados();
