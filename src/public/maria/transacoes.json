@@ -1,0 +1,70 @@
+{
+  "transacoes": [
+    {
+      "id": 1,
+      "data": "2026-01-10",
+      "tipo": "entrada",
+      "valor": 50
+    },
+    {
+      "id": 2,
+      "data": "2026-01-15",
+      "tipo": "saida",
+      "valor": 90
+    },
+    {
+      "id": 3,
+      "data": "2026-01-20",
+      "tipo": "saida",
+      "valor": 60
+    },
+    {
+      "id": 4,
+      "data": "2026-02-10",
+      "tipo": "entrada",
+      "valor": 100
+    },
+    {
+      "id": 5,
+      "data": "2026-03-15",
+      "tipo": "saida",
+      "valor": 15
+    },
+    {
+      "id": 6,
+      "data": "2026-03-20",
+      "tipo": "saida",
+      "valor": 20
+    },
+    {
+      "id": 7,
+      "data": "2026-03-20",
+      "tipo": "saida",
+      "valor": 50
+    },
+    {
+      "id": 8,
+      "data": "2026-03-20",
+      "tipo": "entrada",
+      "valor": 20
+    },
+    {
+      "id": 9,
+      "data": "2026-03-20",
+      "tipo": "entrada",
+      "valor": 20
+    },
+    {
+      "id": 10,
+      "data": "2026-04-20",
+      "tipo": "entrada",
+      "valor": 70
+    },
+    {
+      "id": 10,
+      "data": "2026-04-20",
+      "tipo": "saida",
+      "valor": 120
+    }
+  ]
+}
