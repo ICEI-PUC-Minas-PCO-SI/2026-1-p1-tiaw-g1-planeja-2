@@ -108,19 +108,17 @@ body {
 
 
 
+
 /* fim menu lateral */
 
 
 /* reste */
-
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-
 
 
 body {
@@ -130,8 +128,6 @@ body {
 }
 
 
-
-
 .layout {
     width: 100%;
     min-height: 100vh;
@@ -139,15 +135,10 @@ body {
 }
 
 
-
-
 .conteudo {
-    width: 100%;
+    margin-left: 260px;
     padding: 32px;
 }
-
-
-
 
 
 
@@ -156,11 +147,9 @@ body {
     max-width: 1200px;
 }
 
-
 .dashboard-topo {
     margin-bottom: 24px;
 }
-
 
 .dashboard-topo h1 {
     font-size: 32px;
@@ -171,88 +160,65 @@ body {
 
 
 
-
-
-
 .calendario-meses {
     width: 100%;
     display: flex;
     align-items: center;
     gap: 8px;
 
-
     padding: 8px;
-
 
     background-color: #FFFFFF;
 
-
     border: 1px solid #E5E7EB;
-
 
     border-radius: 16px;
 
-
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.04);
 
-
     margin-bottom: 24px;
-
 
     overflow-x: auto;
 }
 
-
 .calendario-meses::-webkit-scrollbar {
     height: 4px;
 }
-
 
 .calendario-meses::-webkit-scrollbar-thumb {
     background-color: #CBD5E1;
     border-radius: 999px;
 }
 
-
 /* botao p mes */
-
 
 .mes-btn {
     min-width: 72px;
     height: 44px;
 
-
     border: none;
     border-radius: 10px;
 
-
     background-color: transparent;
 
-
     color: #6B7280;
-
 
     font-size: 14px;
     font-weight: 600;
 
-
     cursor: pointer;
-
 
     transition: 0.2s ease;
 }
-
 
 .mes-btn:hover {
     background-color: #EFF6FF;
     color: #2563EB;
 }
 
-
 .mes-btn:active {
     background-color: #DBEAFE;
 }
-
 
 .mes-btn.ativo {
     background-color: #2563EB;
@@ -260,41 +226,31 @@ body {
 }
 
 
-
-
 /* card*/
 .cards-financeiros {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-   
+    
     gap: 24px;
 }
-
 
 .card-financeiro {
     background-color: #FFFFFF;
 
-
     border: 1px solid #E5E7EB;
-
 
     border-radius: 16px;
 
-
     padding: 24px;
 
-
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.04);
-
 
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-
 /* titulo card */
-
 
 .card-titulo {
     font-size: 14px;
@@ -302,9 +258,7 @@ body {
     color: #6B7280;
 }
 
-
 /* valor card*/
-
 
 .card-financeiro h2 {
     font-size: 28px;
@@ -312,20 +266,45 @@ body {
     line-height: 120%;
 }
 
-
 /* cor*/
-
 
 #saldoAtual {
     color: #2563EB;
 }
 
-
 #entradaValor {
     color: #22C55E;
 }
 
-
 #saidaValor {
     color: #EF4444;
+}
+
+
+/* Grafico  */
+.grafico-financeiro {
+    margin-top: 24px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #E5E7EB;
+
+    border-radius: 16px;
+
+    padding: 24px;
+
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.grafico-financeiro h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+
+    margin-bottom: 20px;
+}
+
+.grafico-financeiro canvas {
+    width: 100% !important;
+    height: 420px !important;
 }
