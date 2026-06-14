@@ -168,32 +168,8 @@ function cancelarContaFixa() {
 
 }
 
-function carregarCategorias() {
-
-    let categorias =
-        JSON.parse(localStorage.getItem("categorias")) || [];
-
-    let select =
-        document.getElementById("categoriaContaFixa");
-
-    select.innerHTML =
-        '<option value="">Selecione a categoria</option>';
-
-    categorias.forEach(categoria => {
-
-        select.innerHTML += `
-            <option value="${categoria.nome}">
-                ${categoria.nome}
-            </option>
-        `;
-
-    });
-
-}
-
 window.onload = function () {
 
-    carregarCategorias();
     listarContasFixas();
 
 }
