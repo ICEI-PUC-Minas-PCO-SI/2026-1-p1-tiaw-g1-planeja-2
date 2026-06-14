@@ -24,55 +24,7 @@ const meses = {
 };
 
 // dados financeiros
-const dadosFinanceiros = {
-
-    transacoes: [
-
-        {
-            id: 1,
-            data: "2026-01-10",
-            tipo: "entrada",
-            valor: 1000
-        },
-
-        {
-            id: 2,
-            data: "2026-01-15",
-            tipo: "entrada",
-            valor: 50
-        },
-
-        {
-            id: 3,
-            data: "2026-01-20",
-            tipo: "saida",
-            valor: 20
-        },
-
-        {
-            id: 4,
-            data: "2026-02-10",
-            tipo: "entrada",
-            valor: 20500
-        },
-
-        {
-            id: 5,
-            data: "2026-03-15",
-            tipo: "saida",
-            valor: 70
-        },
-
-        {
-            id: 6,
-            data: "2026-03-20",
-            tipo: "saida",
-            valor: 20
-        }
-
-    ]
-
-};
+let dadosFinanceiros;
 
 
 // Converção modeda
