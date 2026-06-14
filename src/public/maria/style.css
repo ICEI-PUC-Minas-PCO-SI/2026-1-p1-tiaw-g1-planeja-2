@@ -1,6 +1,5 @@
 /* CSS Menu Lateral */
 
-
 * {
     margin: 0;
     padding: 0;
@@ -8,13 +7,11 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
 body {
     background-color: #f3f4f6;
     min-height: 100vh;
     overflow-x: hidden;
 }
-
 
 .layout {
     display: flex;
@@ -22,10 +19,8 @@ body {
     min-height: 100vh;
 }
 
-
 .navegacao {
     width: 260px;
-
 
     height: 100vh;
     background-color: #06122b;
@@ -34,10 +29,7 @@ body {
     padding: 10px 20px 20px 20px;
 
 
-
-
 }
-
 
 .logo {
     width: 100%;
@@ -47,7 +39,6 @@ body {
     margin-bottom: -70px;
 }
 
-
 .logo img {
     width: 400px;
     object-fit: contain;
@@ -55,13 +46,11 @@ body {
     margin-bottom: -15px;
 }
 
-
 .menu {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
-
 
 .menu-item {
     text-decoration: none;
@@ -76,16 +65,13 @@ body {
     font-weight: 500;
 }
 
-
 .menu-item:hover {
     background-color: #1f2937;
 }
 
-
 .menu-item i {
     font-size: 18px;
 }
-
 
 .perfil-usuario {
     margin-top: auto;
@@ -97,7 +83,6 @@ body {
     cursor: pointer;
 }
 
-
 .foto-usuario {
     width: 48px;
     height: 48px;
@@ -105,25 +90,21 @@ body {
     object-fit: cover;
 }
 
-
 .info-usuario {
     display: flex;
     flex-direction: column;
 }
-
 
 .info-usuario h4 {
     font-size: 14px;
     color: white;
 }
 
-
 .info-usuario span {
     font-size: 12px;
     color: white;
     margin-top: 2px;
 }
-
 
 /* fim menu lateral */
 
