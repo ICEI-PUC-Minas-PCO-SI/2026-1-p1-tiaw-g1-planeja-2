@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educação Financeira</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <aside class="navegacao">
+
+            <div class="logo">
+                <img src="images/logo.png"
+                    alt="Logo PlanejaMais">
+            </div>
+
+            <nav class="menu">
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-layer-group"></i>
+                    Transações
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-wallet"></i>
+                    Contas
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    Planejamento
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-tags"></i>
+                    Categorias
+                </a>
+
+                <a href="#" class="menu-item ativo">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    Educação Financeira
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-gear"></i>
+                    Configurações
+                </a>
+
+            </nav>
+
+            <div class="perfil-usuario">
+
+                <img src="images/user.jpeg"
+                    alt="Usuário"
+                    class="foto-usuario">
+
+                <div class="info-usuario">
+                    <h4>Mariana Silva</h4>
+                    <span>Ver perfil</span>
+                </div>
+
+            </div>
+
+        </aside>
+
+        <main class="conteudo">
+
+            <div class="container">
+
+                <h1>Educação Financeira</h1>
+
+                <p class="descricao">
+                    Aprenda sobre finanças, investimentos e planejamento financeiro através de cursos recomendados.
+                </p>
+
+                <div class="filtros">
+
+                    <div class="campo">
+
+                        <label>Pesquisar Curso</label>
+
+                        <input
+                            type="text"
+                            id="pesquisa"
+                            placeholder="Digite o nome do curso">
+
+                    </div>
+
+                    <div class="campo">
+
+                        <label>Categoria</label>
+
+                        <select id="categoria">
+
+                            <option value="Todos">Todos</option>
+                            <option value="Finanças">Finanças</option>
+                            <option value="Investimentos">Investimentos</option>
+                            <option value="Planejamento">Planejamento</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="resumo">
+
+                    <div class="box">
+                        <h3 id="totalCursos">0</h3>
+                        <p>Cursos</p>
+                    </div>
+
+                    <div class="box">
+                        <h3 id="maisCurtido">-</h3>
+                        <p>Mais Curtido</p>
+                    </div>
+
+                </div>
+
+                <button
+                    class="btn-limpar"
+                    onclick="limparAvaliacoes()">
+                    Limpar Avaliações
+                </button>
+
+                <h2>Cursos Disponíveis</h2>
+
+                <div id="listaCursos"></div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
