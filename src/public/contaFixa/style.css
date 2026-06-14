@@ -165,7 +165,7 @@ form {
     height: 45px;
     padding: 0 20px;
     border: 1.5px solid #06122b;
-    border-radius: 20px;
+    border-radius: 10px;
     font-size: 15px;
     outline: none;
     background-color: white;
@@ -188,7 +188,7 @@ form {
     width: 120px;
     height: 42px;
     border: none;
-    border-radius: 25px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 15px;
     transition: 0.2s;
@@ -241,62 +241,39 @@ form {
     color: white;
 }
 
-.btn-editar,
-.btn-excluir {
-    border: none;
-    padding: 8px 15px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 0 5px;
-}
-
-.btn-editar {
-    background-color: #009dff;
-    color: white;
-}
-
-.btn-excluir {
-    background-color: #dc3545;
-    color: white;
-}
-
 .acoes {
     display: flex;
+    gap: 18px;
     justify-content: center;
-    gap: 10px;
+    align-items: center;
 }
 
 .btn-editar,
 .btn-excluir {
+    width: 80px;
+    height: 40px;
     border: none;
-    border-radius: 15px;
-    padding: 8px 18px;
-    font-size: 14px;
-    font-weight: 600;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
 }
 
 .btn-editar {
-    background-color: #009dff;
-    color: white;
+    background-color: #ececec;
+    color: #00184d;
 }
 
 .btn-editar:hover {
-    background-color: #007fd1;
+    background-color: #dcdcdc;
 }
 
 .btn-excluir {
-    background-color: #dc3545;
-    color: white;
+    background-color: #f8dede;
+    color: #e52424;
 }
 
 .btn-excluir:hover {
-    background-color: #b82b39;
-}
-
-@media (max-width: 900px) {
-    .linha-form {
-        flex-direction: column;
-    }
+    background-color: #f3caca;
 }
