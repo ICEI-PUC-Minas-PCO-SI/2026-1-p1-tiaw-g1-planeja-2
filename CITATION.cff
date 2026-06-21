@@ -1,21 +1,19 @@
 cff-version: 1.2.0
 message: "Please cite this software using these metadata."
-title: Coloque aqui o título do seu trabalho
+title: Planeja++
 authors:
-  - family-names: Sobrenome do aluno 1
-    given-names: Nome do aluno 1
-  - family-names: Sobrenome do aluno 2
-    given-names: Nome do aluno 2
-  - family-names: Sobrenome do aluno 3
-    given-names: Nome do aluno 3
-  - family-names: Sobrenome do aluno 4
-    given-names: Nome do aluno 4
-  - family-names: Sobrenome do aluno 5
-    given-names: Nome do aluno 5
-  - family-names: Sobrenome do aluno 6
-    given-names: Nome do aluno 6
-  - family-names: Sobrenome do(a) professor(a)
-    given-names: Nome do(a) professor(a)
+  - family-names: Souza
+    given-names: Arthur
+  - family-names: Carreiro
+    given-names: Christina
+  - family-names: Silva
+    given-names: Luiza
+  - family-names: Lacerda
+    given-names: Maria
+  - family-names: Rocha
+    given-names: Victória
+  - family-names: Diniz
+    given-names: Luciana
     name-suffix: "Professor(a)"
     affiliation: PUC Minas
 keywords:
