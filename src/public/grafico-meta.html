@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planeja++</title>
+    <link rel="stylesheet" href="grafico-meta.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+
+</head>
+    <body>
+        <aside class="navegacao">
+
+            <div class="logo">
+                <img src="../assets/images/logo.png" alt="Logo PlanejaMais" class="logo-img">
+            </div>
+
+            <nav class="menu">
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-layer-group"></i>
+                    Transações
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-wallet"></i>
+                    Contas
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    Planejamento
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-tags"></i>
+                    Categorias
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    Educação Financeira
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-gear"></i>
+                    Configurações
+                </a>
+
+            </nav>
+
+            <div class="perfil-usuario">
+
+                <img src="../assets/images/foto-perfil.png" alt="Usuário" class="foto-usuario">
+
+                <div class="info-usuario">
+                    <h4>Mariana Silva</h4>
+                    <span>Ver perfil</span>
+                </div>
+
+            </div>
+
+        </aside>
+
+        <div class="card">
+
+            <h2>Meta: Viagem</h2>
+
+            <p>R$ 4.500,00 de R$ 5.000,00</p>
+
+            <div class="barra" id="barraMeta">
+                <div id="progresso"></div>
+            </div>
+
+            <p id="percentual"></p> 
+
+        </div>
+
+        <div class="card">
+
+            <h2>Evolução da Meta</h2>
+
+            <canvas id="graficoMeta"></canvas>
+
+        </div>
+
+        
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="grafico-meta.js"></script>
+        
+    </body>
+</html>
