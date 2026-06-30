@@ -2,16 +2,16 @@ cff-version: 1.2.0
 message: "Please cite this software using these metadata."
 title: Planeja++
 authors:
-  - family-names: Souza
-    given-names: Arthur
-  - family-names: Carreiro
-    given-names: Christina
-  - family-names: Silva
-    given-names: Luiza
-  - family-names: Lacerda
-    given-names: Maria
-  - family-names: Rocha
-    given-names: Victória
+  - family-names: Faria de Souza
+    given-names: Arthur Willer
+  - family-names: de Araújo Carreiro
+    given-names: Christina Danúbia
+  - family-names: Romão da Silva
+    given-names: Luiza Stefany
+  - family-names: Rodrigues Lacerda
+    given-names: Maria Eduarda
+  - family-names: Santos Rocha
+    given-names: Victória Fernanda
   - family-names: Freitas Diniz
     given-names: Luciana Mara
     name-suffix: "Professor(a)"
