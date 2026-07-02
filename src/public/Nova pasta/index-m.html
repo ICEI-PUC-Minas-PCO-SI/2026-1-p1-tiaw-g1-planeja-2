@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlanejaMais</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <aside class="navegacao">
+
+            <div class="logo">
+                <img src="../assets/images/logo.png" alt="Logo PlanejaMais" class="logo-img">
+            </div>
+
+            <nav class="menu">
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-layer-group"></i>
+                    Transações
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-wallet"></i>
+                    Contas
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    Planejamento
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-tags"></i>
+                    Categorias
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    Educação Financeira
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-gear"></i>
+                    Configurações
+                </a>
+
+            </nav>
+
+            <div class="perfil-usuario">
+
+                <img src="../assets/images/foto-perfil.png" alt="Usuário" class="foto-usuario">
+
+                <div class="info-usuario">
+                    <h4>Mariana Silva</h4>
+                    <span>Ver perfil</span>
+                </div>
+
+            </div>
+
+  </aside>
+
+  <main class="conteudo-principal">
+
+    <div class="container">
+
+      <section class="card table-card">
+
+        <div class="card-header">
+          <div class="header">
+            <h1>Planejamento</h1>
+          </div>
+
+          <form id="formMeta">
+
+            <div class="campo">
+              <label>Nome da Meta(*)</label>
+              <input 
+                type="text" 
+                id="nomeMeta" 
+                placeholder="Informe o nome da meta"
+                required
+              >
+            </div>
+
+            <div class="linha">
+
+              <div class="campo">
+                <label>Valor Objetivo da Meta</label>
+
+                <input 
+                  type="number" 
+                  id="valorObjetivo" 
+                  placeholder="Digite apenas números"
+                >
+              </div>
+
+              <div class="campo">
+                <label>Prazo de Conclusão</label>
+
+                <input 
+                  type="date" 
+                  id="prazo"
+                  min=""
+                >
+              </div>
+
+            </div>
+
+            <div class="botoes-form">
+
+              <button type="submit" class="btn-primary">
+                Salvar
+              </button>
+
+              <button type="button" class="btn-secondary" onclick="limparFormulario()">
+                Limpar
+              </button>
+
+            </div>
+
+          </form>
+
+          <div class="titulo-metas">
+            <h2>Suas Metas Atuais</h2>
+          </div>
+
+          <div id="listaMetas"></div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="footer">
+
+      <div class="footer-conteudo">
+
+          <div class="footer-logo">
+              <h3>PlanejaMais</h3>
+
+              <p>
+                  Organize suas metas financeiras, acompanhe sua evolução
+                  e alcance seus objetivos com mais planejamento.
+              </p>
+          </div>
+
+          <div class="footer-versao">
+            <p>Versão 1.0</p>
+            <p>Projeto Acadêmico</p>
+          </div>
+
+      </div>
+
+      <div class="footer-copy">
+        © 2026 PlanejaMais. Projeto desenvolvido para fins acadêmicos.
+      </div>
+
+    </footer>
+
+  </main>
+
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
