@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Planeja++</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <aside class="navegacao">
+
+            <div class="logo">
+                <img src="../assets/images/logo.png" alt="Logo PlanejaMais" class="logo-img">
+            </div>
+
+            <nav class="menu">
+
+                <a href="../dashboard/dashboard.html" class="menu-item">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-layer-group"></i>
+                    Transações
+                </a>
+
+                <a href="contas.html" class="menu-item">
+                    <i class="fa-solid fa-wallet"></i>
+                    Contas
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    Planejamento
+                </a>
+
+                <a href="../categorias/categorias.html" class="menu-item">
+                    <i class="fa-solid fa-tags"></i>
+                    Categorias
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    Educação Financeira
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-gear"></i>
+                    Configurações
+                </a>
+
+            </nav>
+
+            <div class="perfil-usuario">
+
+                <img src="../assets/images/user.png" alt="Usuário" class="foto-usuario">
+
+                <div class="info-usuario">
+                    <h4>Mariana Silva</h4>
+                    <span>Ver perfil</span>
+                </div>
+
+            </div>
+
+        </aside>
+
+        <main class="container">
+
+            <div class="form-contaFixa">
+
+                <h2>Adicionar Conta Fixa</h2>
+
+                <div class="form">
+
+                    <div class="linha-form">
+
+                        <div class="campo-form">
+                            <label for="nomeContaFixa">
+                                Nome
+                            </label>
+
+                            <input type="text" id="nomeContaFixa" placeholder="Ex: Alimentação">
+                        </div>
+
+                        <div class="campo-form">
+                            <label for="vencimentoContaFixa">
+                                Dia do vencimento
+                            </label>
+
+                            <input type="number" id="vencimentoContaFixa" placeholder="Ex: 10" min="1" max="31">
+                        </div>
+
+                    </div>
+
+                    <div class="linha-form">
+
+                        <div class="campo-form">
+                            <label for="categoriaContaFixa">
+                                Categoria
+                            </label>
+
+                            <select id="categoriaContaFixa">
+
+                                <option value="Alimentação">
+                                    Alimentação
+                                </option>
+
+                                <option value="Lazer">
+                                    Lazer
+                                </option>
+
+                                <option value="Saúde">
+                                    Saúde
+                                </option>
+
+                                <option value="Viagem">
+                                    Viagem
+                                </option>
+
+                                <option value="Educação">
+                                    Educação
+                                </option>
+
+                            </select>
+                        </div>
+
+                        <div class="campo-form">
+                            <label for="valorContaFixa">
+                                Valor
+                            </label>
+
+                            <input type="text" id="valorContaFixa" placeholder="R$ 0,00">
+                        </div>
+
+                    </div>
+
+                    <div class="linha-form">
+
+                        <div class="campo-form">
+                            <label for="pagamentoContaFixa">
+                                Forma de pagamento
+                            </label>
+
+                            <select id="pagamentoContaFixa">
+
+                                <option value="Dinheiro">
+                                    Dinheiro
+                                </option>
+
+                                <option value="Cartão de crédito">
+                                    Cartão de crédito
+                                </option>
+
+                                <option value="Cartão de débito">
+                                    Cartão de débito
+                                </option>
+
+                                <option value="PIX">
+                                    PIX
+                                </option>
+
+                                <option value="Transferência bancária">
+                                    Transferência bancária
+                                </option>
+
+                                <option value="Boleto">
+                                    Boleto
+                                </option>
+
+                            </select>
+                        </div>
+
+                        <div class="campo-form">
+
+                            <label for="transacaoContaFixa">
+                                Tipo de transação
+                            </label>
+
+                            <select id="transacaoContaFixa">
+
+                                <option value="Receita">
+                                    Receita
+                                </option>
+
+                                <option value="Despesa">
+                                    Despesa
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                    <div class="botoes-form">
+
+                        <button type="button" class="btn-salvar" onclick="salvarContaFixa()">
+
+                            Salvar
+
+                        </button>
+
+                        <button type="button" class="btn-cancelar" onclick="cancelarContaFixa()">
+
+                            Cancelar
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="lista-contas-fixas">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Nome</th>
+                                <th>Vencimento</th>
+                                <th>Categoria</th>
+                                <th>Valor</th>
+                                <th>Pagamento</th>
+                                <th>Transação</th>
+                                <th>Ações</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="listaContasFixas">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
