@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Planeja++</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <aside class="navegacao">
+
+            <div class="logo">
+                <img src="../assets/images/logo.png" alt="Logo PlanejaMais" class="logo-img">
+            </div>
+
+            <nav class="menu">
+
+                <a href="../dashboard/dashboard.html" class="menu-item">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-layer-group"></i>
+                    Transações
+                </a>
+
+                <a href="../contaFixa/contas.html" class="menu-item">
+                    <i class="fa-solid fa-wallet"></i>
+                    Contas
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    Planejamento
+                </a>
+
+                <a href="categorias.html" class="menu-item">
+                    <i class="fa-solid fa-tags"></i>
+                    Categorias
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    Educação Financeira
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-gear"></i>
+                    Configurações
+                </a>
+
+            </nav>
+
+            <div class="perfil-usuario">
+
+                <img src="../assets/images/user.png" alt="Usuário" class="foto-usuario">
+
+                <div class="info-usuario">
+                    <h4>Mariana Silva</h4>
+                    <span>Ver perfil</span>
+                </div>
+
+            </div>
+
+        </aside>
+
+        <main class="container">
+
+            <div class="form-categoria">
+
+                <div class="campo">
+
+                    <label for="nomeCategoria">
+                        Nome da Categoria
+                    </label>
+
+                    <input type="text" id="nomeCategoria" placeholder="Ex: Alimentação">
+
+                    <button class="btn-salvar" onclick="salvarCategoria()">Salvar</button>
+
+                </div>
+
+                <div class="campo">
+
+                    <label>Selecione o ícone</label>
+
+                    <div class="lista-icones">
+
+                        <div class="icone-item ativo" data-icon="fa-utensils">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+
+                        <div class="icone-item" data-icon="fa-car">
+                            <i class="fa-solid fa-car"></i>
+                        </div>
+
+                        <div class="icone-item" data-icon="fa-house">
+                            <i class="fa-solid fa-house"></i>
+                        </div>
+
+                        <div class="icone-item" data-icon="fa-heart">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+
+                        <div class="icone-item" data-icon="fa-cart-shopping">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+
+                        <div class="icone-item" data-icon="fa-gamepad">
+                            <i class="fa-solid fa-gamepad"></i>
+                        </div>
+
+                        <div class="icone-item" data-icon="fa-plane">
+                            <i class="fa-solid fa-plane"></i>
+                        </div>
+
+                        <div class="icone-item" data-icon="fa-book">
+                            <i class="fa-solid fa-book"></i>
+                        </div>
+
+                        <div class="icone-item" data-icon="fa-bolt">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+
+                        <div class="icone-item" data-icon="fa-shirt">
+                            <i class="fa-solid fa-shirt"></i>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="lista-categorias" id="listaCategorias"></div>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
