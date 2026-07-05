@@ -65,9 +65,30 @@ function atualizarDashboard() {
         }
     });
 
+    const saldoAtual = totalEntradas - totalSaidas;
+
     document.getElementById("entradaValor").innerText = formatarMoeda(totalEntradas);
     document.getElementById("saidaValor").innerText = formatarMoeda(totalSaidas);
-    document.getElementById("saldoAtual").innerText = formatarMoeda(totalEntradas - totalSaidas);
+    document.getElementById("saldoAtual").innerText = formatarMoeda(saldoAtual);
+
+    const alerta = document.getElementById("alertaFinanceiro");
+    const mensagem = document.getElementById("mensagemAlerta");
+
+    if (!alerta || !mensagem) return;
+
+    if (totalSaidas > totalEntradas) {
+        const diferenca = totalSaidas - totalEntradas;
+
+        alerta.classList.remove("oculto");
+
+        mensagem.innerHTML = `
+            Você está gastando 
+            <strong>${formatarMoeda(diferenca)}</strong> 
+            a mais do que recebe neste mês.
+        `;
+    } else {
+        alerta.classList.add("oculto");
+    }
 }
 
 function criarGrafico() {

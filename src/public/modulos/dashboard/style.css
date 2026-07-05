@@ -270,3 +270,37 @@ body {
     height: 420px !important;
 }
 
+.alerta-financeiro{
+
+    margin-top:25px;
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding:18px 25px;
+    border-radius:18px;
+    background:#FFF8E1;
+    border-left:6px solid #F59E0B;
+    box-shadow:0 6px 15px rgba(0,0,0,.06);
+
+}
+
+.alerta-financeiro i{
+    font-size:40px;
+    color:#F59E0B;
+
+}
+
+.alerta-financeiro h3{
+    color:#B45309;
+    margin-bottom:6px;
+}
+
+.alerta-financeiro p{
+    color:#92400E;
+    font-size:15px;
+}
+
+.oculto{
+    display:none;
+}
+

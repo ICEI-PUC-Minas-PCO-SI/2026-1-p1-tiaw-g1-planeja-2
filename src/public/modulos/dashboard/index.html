@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
+
 <body>
     <div class="layout">
         <aside class="navegacao">
@@ -72,7 +74,6 @@
         <main class="conteudo">
 
             <section class="dashboard-financeiro">
-
 
                 <div class="dashboard-topo">
                     <h1>Dashboard Financeiro</h1>
@@ -154,16 +155,28 @@
                         </h2>
                     </div>
 
-
                     <div class="card-financeiro">
                         <span class="card-titulo">
                             Saída
                         </span>
 
-
                         <h2 id="saidaValor">
                             R$ 0,00
                         </h2>
+                    </div>
+
+                    <div id="alertaFinanceiro" class="alerta-financeiro oculto">
+
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+
+                        <div>
+
+                            <h3>Atenção!</h3>
+
+                            <p id="mensagemAlerta"></p>
+
+                        </div>
+
                     </div>
                 </div>
 
