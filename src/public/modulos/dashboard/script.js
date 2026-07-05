@@ -71,23 +71,58 @@ function atualizarDashboard() {
     document.getElementById("saidaValor").innerText = formatarMoeda(totalSaidas);
     document.getElementById("saldoAtual").innerText = formatarMoeda(saldoAtual);
 
-    const alerta = document.getElementById("alertaFinanceiro");
-    const mensagem = document.getElementById("mensagemAlerta");
+    const icone =
+        document.getElementById("iconeAlerta");
 
-    if (!alerta || !mensagem) return;
+    const titulo =
+        document.getElementById("tituloAlerta");
 
-    if (totalSaidas > totalEntradas) {
+    const mensagem =
+        document.getElementById("mensagemAlerta");
+
+    if (totalEntradas === 0 && totalSaidas === 0) {
+
+        icone.innerHTML = `<i class="fa-solid fa-circle-info"></i>`;
+        icone.style.background = "#E5E7EB";
+
+        titulo.innerText = "Sem movimentação";
+
+        mensagem.innerText =
+            "Ainda não há entradas ou saídas neste mês.";
+
+    } else if (totalSaidas > totalEntradas) {
+
         const diferenca = totalSaidas - totalEntradas;
 
-        alerta.classList.remove("oculto");
+        icone.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i>`;
+        icone.style.background = "#FEF3C7";
+
+        titulo.innerText = "Atenção";
 
         mensagem.innerHTML = `
-            Você está gastando 
-            <strong>${formatarMoeda(diferenca)}</strong> 
-            a mais do que recebe neste mês.
-        `;
+        Você está gastando
+        <strong>${formatarMoeda(diferenca)}</strong>
+        acima da sua renda.
+    `;
+
+    } else if (totalEntradas > 0 && totalSaidas >= totalEntradas * 0.8) {
+
+        icone.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i>`;
+        icone.style.background = "#fedbdb";
+
+        titulo.innerText = "Cuidado";
+
+        mensagem.innerText = "Você já utilizou mais de 80% da sua renda este mês.";
+
     } else {
-        alerta.classList.add("oculto");
+
+        icone.innerHTML = `<i class="fa-solid fa-circle-check"></i>`;
+        icone.style.background = "#DCFCE7";
+
+        titulo.innerText = "Tudo certo";
+
+        mensagem.innerText = "Suas despesas estão dentro do planejado.";
+
     }
 }
 
