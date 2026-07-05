@@ -17,6 +17,9 @@ function salvarContaFixa() {
     let nome =
         document.getElementById("nomeContaFixa").value;
 
+    let mesInicio =
+        document.getElementById("mesInicioContaFixa").value;
+
     let vencimento =
         document.getElementById("vencimentoContaFixa").value;
 
@@ -48,14 +51,13 @@ function salvarContaFixa() {
     }
 
     let conta = {
-
         nome,
+        mesInicio,
         vencimento,
         categoria,
         valor,
         pagamento,
-        transacao
-
+        transacao,
     };
 
     if (indiceEdicao == -1) {
