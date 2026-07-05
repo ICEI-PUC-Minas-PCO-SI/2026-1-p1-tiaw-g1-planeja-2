@@ -21,9 +21,9 @@ body {
     border-radius: 24px;
     padding: 40px;
     border: 1px solid #E5E7EB;
-
     box-shadow:
         0 10px 30px rgba(0, 0, 0, 0.05);
+    margin-left: 260px;
 }
 
 .header {
