@@ -61,7 +61,8 @@ function salvarContaFixa() {
         categoria,
         valor,
         pagamento,
-        transacao
+        transacao,
+        pago: false
     };
 
     if (indiceEdicao == -1) {
@@ -98,6 +99,14 @@ function editarContaFixa(indice) {
     document.getElementById("transacaoContaFixa").value = conta.transacao;
 
     indiceEdicao = indice;
+
+    if (indiceEdicao == -1) {
+        contasFixas.push(conta);
+    } else {
+        conta.pago = contasFixas[indiceEdicao].pago || false;
+        contasFixas[indiceEdicao] = conta;
+        indiceEdicao = -1;
+    }
 }
 
 function excluirContaFixa(indice) {
@@ -109,20 +118,30 @@ function excluirContaFixa(indice) {
 }
 
 function listarContasFixas() {
+
     let lista = document.getElementById("listaContasFixas");
 
     lista.innerHTML = "";
 
     contasFixas.forEach((conta, indice) => {
+
         lista.innerHTML += `
             <tr>
                 <td>${conta.nome}</td>
-                <td>${conta.mesInicio}</td>
+                <td>${nomeMes(conta.mesInicio)}</td>
                 <td>${conta.vencimento}</td>
                 <td>${conta.categoria}</td>
                 <td>${conta.valor}</td>
                 <td>${conta.pagamento}</td>
                 <td>${conta.transacao}</td>
+
+                <td>
+                    <input 
+                        type="checkbox" 
+                        ${conta.pago ? "checked" : ""}
+                        onchange="alterarPago(${indice})"
+                    >
+                </td>
 
                 <td class="acoes">
                     <button class="btn-editar" onclick="editarContaFixa(${indice})">
@@ -135,7 +154,27 @@ function listarContasFixas() {
                 </td>
             </tr>
         `;
+
     });
+
+}
+
+function nomeMes(numeroMes) {
+    const meses = [
+        "Janeiro", "Fevereiro", "Março", "Abril",
+        "Maio", "Junho", "Julho", "Agosto",
+        "Setembro", "Outubro", "Novembro", "Dezembro"
+    ];
+
+    return meses[Number(numeroMes)] || "Não informado";
+}
+
+function alterarPago(indice) {
+    contasFixas[indice].pago = !contasFixas[indice].pago;
+
+    salvarNoLocalStorage();
+
+    listarContasFixas();
 }
 
 function cancelarContaFixa() {
