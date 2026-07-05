@@ -10,6 +10,26 @@ function salvarLocalStorage() {
     localStorage.setItem('transacoes', JSON.stringify(transacoes));
 }
 
+function carregarCategoriasNoSelect() {
+    const select = document.getElementById("categoria");
+
+    if (!select) return;
+
+    const categorias =
+        JSON.parse(localStorage.getItem("categorias")) || [];
+
+    select.innerHTML = `
+        <option value="">Selecione</option>
+    `;
+
+    categorias.forEach((categoria) => {
+        select.innerHTML += `
+            <option value="${categoria.nome}">
+                ${categoria.nome}
+            </option>
+        `;
+    });
+}
 
 function formatarValor(valor, tipo) {
     const numero = Number(valor);
@@ -63,6 +83,7 @@ function renderizarTabela() {
 }
 
 if (form) {
+    carregarCategoriasNoSelect();
     if (editandoId) {
         const transacao = transacoes.find((item) => item.id == editandoId);
         if (transacao) {
@@ -155,4 +176,5 @@ function editarTransacao(id) {
     window.location.href = 'nova-transacao.html';
 }
 
+carregarCategoriasNoSelect();
 renderizarTabela();

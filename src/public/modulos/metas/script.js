@@ -1,5 +1,5 @@
 document.getElementById("prazo").min =
-new Date().toISOString().split("T")[0];
+    new Date().toISOString().split("T")[0];
 
 const form = document.getElementById("formMeta");
 const listaMetas = document.getElementById("listaMetas");
@@ -58,7 +58,7 @@ function mostrarMetas() {
 
                 <div class="status">
 
-                ${meta.valorAtual >= meta.valorObjetivo 
+                ${meta.valorAtual >= meta.valorObjetivo
                 && meta.valorObjetivo > 0
 
                 ? "Meta concluída"
@@ -86,9 +86,9 @@ function mostrarMetas() {
 
                     ${meta.valorObjetivo > 0
 
-                    ? `R$ ${meta.valorObjetivo.toFixed(2)}`
+                ? `R$ ${meta.valorObjetivo.toFixed(2)}`
 
-                    : "Não definido"}
+                : "Não definido"}
 
                     </h4>
 
@@ -101,7 +101,7 @@ function mostrarMetas() {
 
                     ${meta.valorObjetivo > 0
 
-                    ? `R$ ${falta.toFixed(2)}`
+                ? `R$ ${falta.toFixed(2)}`
 
                 : "Não definido"}
 
@@ -165,16 +165,16 @@ form.addEventListener("submit", function (e) {
     e.preventDefault();
 
     const nomeMeta =
-    document.getElementById("nomeMeta")
-    .value
-    .trim();
+        document.getElementById("nomeMeta")
+            .value
+            .trim();
 
     const valorObjetivo = Number(
         document.getElementById("valorObjetivo").value
     ) || 0;
 
     const prazo =
-    document.getElementById("prazo").value;
+        document.getElementById("prazo").value;
 
     if (nomeMeta === "") {
 
@@ -199,7 +199,7 @@ form.addEventListener("submit", function (e) {
     if (editando !== null) {
 
         meta.valorAtual =
-        metas[editando].valorAtual;
+            metas[editando].valorAtual;
 
         metas[editando] = meta;
 
@@ -222,20 +222,18 @@ form.addEventListener("submit", function (e) {
 function adicionarValor(index) {
 
     const inputValor =
-    document.getElementById(`valor-${index}`);
+        document.getElementById(`valor-${index}`);
 
     const valor = Number(inputValor.value);
 
-    if (valor === 0) {
+    if (valor === 0 || isNaN(valor)) {
 
-        alert(
-            "Digite um valor diferente de zero."
-        );
+        alert("Digite um valor diferente de zero.");
 
         return;
     }
 
-    if(metas[index].valorAtual + valor < 0){
+    if (metas[index].valorAtual + valor < 0) {
 
         alert("O valor atual não pode ficar negativo.");
 
@@ -245,6 +243,27 @@ function adicionarValor(index) {
     metas[index].valorAtual += valor;
 
     salvarLocalStorage();
+
+    // cria uma transação automática no Dashboard
+    let transacoes =
+        JSON.parse(localStorage.getItem("transacoes")) || [];
+
+    const transacaoMeta = {
+        id: Date.now(),
+        data: new Date().toISOString().split("T")[0],
+        descricao: "Valor guardado para meta: " + metas[index].nome,
+        categoria: "Metas",
+        valor: Math.abs(valor),
+        formaPagamento: "Reserva",
+        tipo: valor > 0 ? "saida" : "entrada"
+    };
+
+    transacoes.push(transacaoMeta);
+
+    localStorage.setItem(
+        "transacoes",
+        JSON.stringify(transacoes)
+    );
 
     mostrarMetas();
 
@@ -273,13 +292,13 @@ function editarMeta(index) {
     const meta = metas[index];
 
     document.getElementById("nomeMeta").value =
-    meta.nome;
+        meta.nome;
 
     document.getElementById("valorObjetivo").value =
-    meta.valorObjetivo;
+        meta.valorObjetivo;
 
     document.getElementById("prazo").value =
-    meta.prazo;
+        meta.prazo;
 
     editando = index;
 
