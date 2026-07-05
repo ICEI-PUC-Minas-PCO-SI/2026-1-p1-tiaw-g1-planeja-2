@@ -1,10 +1,6 @@
 /* =====================================================
    1. RESET / CONFIGURAÇÕES GLOBAIS
 ===================================================== */
-html, body {
-    overflow-x: hidden;
-    max-width: 100%;
-}
 * {
     margin: 0;
     padding: 0;
@@ -20,31 +16,21 @@ body {
 }
 
 
-/* =====================================================
-   2. LAYOUT PRINCIPAL (DESKTOP)
-===================================================== */
 .layout {
     display: flex;
     width: 100%;
     min-height: 100vh;
 }
 
-
-/* =====================================================
-   3. MENU LATERAL (SIDEBAR DESKTOP)
-===================================================== */
 .navegacao {
     width: 260px;
     height: 100vh;
-    background-color: #111827;
-    position: fixed;
-    top: 0;
-    left: 0;
+    background-color: #06122b;
     display: flex;
     flex-direction: column;
-    padding: 10px 20px;
+    padding: 10px 20px 20px 20px;
+    position: fixed;
 }
-
 
 .logo {
     width: 100%;
@@ -64,7 +50,7 @@ body {
 .menu {
     display: flex;
     flex-direction: column;
-    gap: 5px; 
+    gap: 5px;
 }
 
 .menu-item {
@@ -73,7 +59,7 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 14px;
+    padding: 12px;
     border-radius: 10px;
     transition: 0.2s;
     font-size: 15px;
@@ -120,7 +106,6 @@ body {
     color: white;
     margin-top: 2px;
 }
-
 
 /* =====================================================
    4. CONTEÚDO PRINCIPAL

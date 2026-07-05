@@ -2,8 +2,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+    background-color: #F5F7FB;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    color: #111827;
+}
 :root {
     /* BRAND COLORS */
     --primary-blue: #06122b;
@@ -55,21 +63,6 @@
 }
 
 /* CSS Menu Lateral */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-body {
-    background-color: #f3f4f6;
-    min-height: 100vh;
-    overflow-x: hidden;
-    display: flex;
-}
-
 .layout {
     display: flex;
     width: 100%;
@@ -113,7 +106,7 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 14px;
+    padding: 12px;
     border-radius: 10px;
     transition: 0.2s;
     font-size: 15px;
@@ -161,14 +154,6 @@ body {
     margin-top: 2px;
 }
 
-
-body {
-    font-family: 'Inter', sans-serif;
-    background: var(--background);
-    color: var(--text-primary);
-    display: flex;
-    min-height: 100vh;
-}
 
 .container {
     margin-left: 350px;

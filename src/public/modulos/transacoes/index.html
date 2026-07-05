@@ -12,114 +12,116 @@
 
 <body>
 
-    <aside class="navegacao">
+    <div class="layout">
 
-        <div class="logo">
-            <img src="../../assets/images/logo.png" alt="Logo PlanejaMais" class="logo-img">
-        </div>
+        <aside class="navegacao">
 
-        <nav class="menu">
-
-            <a href="../dashboard/index.html" class="menu-item">
-                <i class="fa-solid fa-house"></i>
-                Dashboard
-            </a>
-
-            <a href="index.html" class="menu-item">
-                <i class="fa-solid fa-layer-group"></i>
-                Transações
-            </a>
-
-            <a href="../contaFixa/index.html" class="menu-item">
-                <i class="fa-solid fa-wallet"></i>
-                Contas
-            </a>
-
-            <a href="../metas/index.html" class="menu-item">
-                <i class="fa-solid fa-chart-pie"></i>
-                Planejamento
-            </a>
-
-            <a href="../categorias/index.html" class="menu-item">
-                <i class="fa-solid fa-tags"></i>
-                Categorias
-            </a>
-
-            <a href="../educacaoFinanceira/index.html" class="menu-item">
-                <i class="fa-solid fa-graduation-cap"></i>
-                Educação Financeira
-            </a>
-
-            <a href="#" class="menu-item">
-                <i class="fa-solid fa-gear"></i>
-                Configurações
-            </a>
-
-        </nav>
-
-        <div class="perfil-usuario">
-
-            <img src="../../assets/images/user.png" alt="Usuário" class="foto-usuario">
-
-            <div class="info-usuario">
-                <h4>Mariana Silva</h4>
-                <span>Ver perfil</span>
+            <div class="logo">
+                <img src="../../assets/images/logo.png" alt="Logo PlanejaMais" class="logo-img">
             </div>
 
-        </div>
+            <nav class="menu">
 
-    </aside>
+                <a href="../dashboard/index.html" class="menu-item">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </a>
 
-    <main class="container">
+                <a href="index.html" class="menu-item">
+                    <i class="fa-solid fa-layer-group"></i>
+                    Transações
+                </a>
 
-        <section class="card table-card">
+                <a href="../contaFixa/index.html" class="menu-item">
+                    <i class="fa-solid fa-wallet"></i>
+                    Contas
+                </a>
 
-            <div class="card-header table-header">
+                <a href="../metas/index.html" class="menu-item">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    Planejamento
+                </a>
 
-                <div>
-                    <h2>Transações</h2>
-                    <p>
-                        Gerencie suas movimentações financeiras
-                    </p>
+                <a href="../categorias/index.html" class="menu-item">
+                    <i class="fa-solid fa-tags"></i>
+                    Categorias
+                </a>
+
+                <a href="../educacaoFinanceira/index.html" class="menu-item">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    Educação Financeira
+                </a>
+
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-gear"></i>
+                    Configurações
+                </a>
+
+            </nav>
+
+            <div class="perfil-usuario">
+
+                <img src="../../assets/images/user.png" alt="Usuário" class="foto-usuario">
+
+                <div class="info-usuario">
+                    <h4>Mariana Silva</h4>
+                    <span>Ver perfil</span>
                 </div>
 
-                <button class="btn-primary" onclick="window.location.href='novaTransacao.html'">
-                    Nova transação
-                </button>
-
             </div>
 
-            <div class="table-wrapper">
+        </aside>
 
-                <table>
+        <main class="container">
 
-                    <thead>
+            <section class="card table-card">
 
-                        <tr>
-                            <th>Data</th>
-                            <th>Descrição</th>
-                            <th>Categoria</th>
-                            <th>Tipo</th>
-                            <th>Forma de pagamento</th>
-                            <th>Valor</th>
-                            <th>Ações</th>
-                        </tr>
+                <div class="card-header table-header">
 
-                    </thead>
+                    <div>
+                        <h2>Transações</h2>
+                        <p>
+                            Gerencie suas movimentações financeiras
+                        </p>
+                    </div>
 
-                    <tbody id="transactionTable">
+                    <button class="btn-primary" onclick="window.location.href='novaTransacao.html'">
+                        Nova transação
+                    </button>
 
-                    </tbody>
+                </div>
 
-                </table>
+                <div class="table-wrapper">
 
-            </div>
+                    <table>
 
-        </section>
+                        <thead>
 
-    </main>
+                            <tr>
+                                <th>Data</th>
+                                <th>Descrição</th>
+                                <th>Categoria</th>
+                                <th>Tipo</th>
+                                <th>Forma de pagamento</th>
+                                <th>Valor</th>
+                                <th>Ações</th>
+                            </tr>
 
-    <script src="script.js"></script>
+                        </thead>
+
+                        <tbody id="transactionTable">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <script src="script.js"></script>
 
 </body>
 
