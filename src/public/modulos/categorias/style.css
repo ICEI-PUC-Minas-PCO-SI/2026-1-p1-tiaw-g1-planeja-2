@@ -1,10 +1,16 @@
-/* CSS Menu Lateral */
-
+/* =====================================================
+   1. RESET / CONFIGURAÇÕES GLOBAIS
+===================================================== */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Inter', Arial, sans-serif;
+    max-width: 100%;
 }
 
 body {
@@ -13,23 +19,32 @@ body {
     overflow-x: hidden;
 }
 
+
+/* =====================================================
+   2. LAYOUT PRINCIPAL (DESKTOP)
+===================================================== */
 .layout {
     display: flex;
     width: 100%;
     min-height: 100vh;
 }
 
+
+/* =====================================================
+   3. MENU LATERAL (SIDEBAR DESKTOP)
+===================================================== */
 .navegacao {
     width: 260px;
     height: 100vh;
-    background-color: #06122b;
-    display: flex;
-    flex-direction: column;
-    padding: 10px 20px 20px 20px;
+    background-color: #111827;
     position: fixed;
     top: 0;
     left: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
 }
+
 
 .logo {
     width: 100%;
@@ -106,7 +121,24 @@ body {
     margin-top: 2px;
 }
 
-/* CSS Categorias */
+
+/* =====================================================
+   4. CONTEÚDO PRINCIPAL
+===================================================== */
+.conteudo {
+    margin-left: 260px;
+    width: auto;
+    max-width: calc(100% - 260px);
+    padding: 32px;
+}
+
+
+
+
+/* =====================================================
+   5. COMPONENTES DA PÁGINA (CATEGORIAS)
+===================================================== */
+
 .container {
     flex: 1;
     background: #f9fafb;
@@ -115,7 +147,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 260px;
 }
 
 .form-categoria {
@@ -125,7 +156,7 @@ body {
     border-radius: 20px;
     padding: 30px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     margin-bottom: 35px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -140,7 +171,7 @@ body {
 .campo label {
     font-size: 16px;
     font-weight: 600;
-    color: #06122b;
+    color: #111827;
 }
 
 .campo input {
@@ -154,7 +185,7 @@ body {
 }
 
 .campo input:focus {
-    border-color: #06122b;
+    border-color: #111827;
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
@@ -163,8 +194,8 @@ body {
     height: 48px;
     margin-top: 10px;
     border: none;
-    border-radius: 12px;
-    background: #06122b;
+    border-radius: 10px;
+    background: #2563EB;
     color: white;
     font-size: 15px;
     font-weight: 600;
@@ -173,7 +204,7 @@ body {
 }
 
 .btn:hover {
-    background: #3baef6;
+    background: #2563EB;
 }
 
 .lista-icones {
@@ -192,20 +223,20 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 20px;
-    color: #06122b;
+    color: #111827;
     cursor: pointer;
     transition: 0.2s;
 }
 
 .icone-item:hover {
-    border-color: #06122b;
-    color: #06122b;
+    border-color: #111827;
+    color: #111827;
     transform: scale(1.05);
 }
 
 .icone-item.ativo {
-    background: #06122b;
-    border-color: #3baef6;
+    background: #111827;
+    border-color: #2563EB;
     color: white;
 }
 
@@ -215,6 +246,11 @@ body {
     display: flex;
     flex-direction: column;
     gap: 18px;
+}
+
+.lista-categorias,
+.lista-icones {
+    overflow-x: hidden;
 }
 
 .card-categoria {
@@ -253,8 +289,8 @@ body {
     border: none;
     padding: 11px 18px;
     border-radius: 10px;
-    background: #f3f4f6;
-    color: #06122b;
+    background: #F5F7FB;
+    color: #111827;
     font-weight: 600;
     cursor: pointer;
     transition: 0.2s;
@@ -277,4 +313,59 @@ body {
 
 .btn-excluir:hover {
     background: #fecaca;
+}
+
+
+/* =====================================================
+   6. MENU MOBILE (NAVBAR + OFFCANVAS)
+===================================================== */
+.navbar {
+    height: 70px;
+    background-color: #111827 !important;
+}
+
+.offcanvas {
+    width: 270px;
+    background-color: #111827;
+    color: white;
+}
+
+.offcanvas .menu-item {
+    color: #d1d5db;
+}
+
+.offcanvas .menu-item:hover {
+    background-color: #1f2937;
+    color: white;
+}
+
+.offcanvas-header {
+    border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+
+/* =====================================================
+   7. RESPONSIVIDADE
+===================================================== */
+
+@media (max-width: 991px) {
+
+    html, body {
+        overflow-x: hidden;
+    }
+
+    .layout {
+        flex-direction: column;
+    }
+
+    .conteudo {
+        margin-left: 0;
+        width: 100%;
+        padding: 90px 16px 24px;
+    }
+
+    .form-categoria {
+        grid-template-columns: 1fr;
+    }
+
 }
