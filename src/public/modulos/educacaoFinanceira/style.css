@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Inter, sans-serif;
+    font-family: Inter, Arial, sans-serif;
 }
 
 body {
@@ -11,222 +11,13 @@ body {
     overflow-x: hidden;
 }
 
-.container {
-    flex: 1;
-    background: white;
-    padding: 40px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    margin-left: 295px;
-    margin-top: 30px;
-    border-radius: 20px;
-    width: 85%;
-}
-
-h1 {
-    color: #2563EB;
-    font-size: 48px;
-    margin-bottom: 10px;
-}
-
-.descricao {
-    color: #6B7280;
-    margin-bottom: 30px;
-}
-
-.filtros {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 25px;
-    align-items: stretch;
-}
-
-.campo {
-    flex: 1;
-}
-
-.card-dicas {
-    background: rgb(189, 215, 255);
-    border-radius: 18px;
-    padding: 22px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, .06);
-    width: 300px;
-    height: 82px;
-}
-
-.card-dicas h2 {
-    color: white;
-    font-size: 22px;
-    margin-bottom: 8px;
-}
-
-.card-dicas p {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 14px;
-    margin-bottom: 20px;
-    line-height: 1.5;
-}
-
-.botao-primario {
-    width: 100%;
-    height: 48px;
-    border: none;
-    border-radius: 12px;
-    background: white;
-    color: #2563EB;
-    font-weight: 600;
-    cursor: pointer;
-    transition: .3s;
-}
-
-.botao-primario:hover {
-    background: #EEF2FF;
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-}
-
-input,
-select {
-    width: 100%;
-    height: 55px;
-    border: 1px solid #E5E7EB;
-    border-radius: 14px;
-    padding: 12px;
-    font-size: 16px;
-}
-
-.resumo {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 30px;
-}
-
-.box {
-    flex: 0 0 320px;
-    background: #2563EB;
-    color: white;
-    border-radius: 10px;
-    padding: 20px;
-    height: 95px;
-}
-
-.box h3 {
-    font-size: 20px;
-}
-
-h2 {
-    margin-bottom: 20px;
-    color: #111827;
-}
-
-.card {
-    border: 1px solid #E5E7EB;
-    border-radius: 16px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.card h3 {
-    color: #111827;
-    margin-bottom: 10px;
-}
-
-.card p {
-    margin-bottom: 8px;
-}
-
-.botoes {
-    display: flex;
-    gap: 10px;
-    margin-top: 15px;
-}
-
-.btn-like,
-.btn-dislike,
-.btn-link {
-
-    border: none;
-    padding: 10px 15px;
-    border-radius: 10px;
-    cursor: pointer;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.btn-like {
-    background: #22C55E;
-    color: white;
-}
-
-.btn-dislike {
-    background: #EF4444;
-    color: white;
-}
-
-.btn-link {
-    background: #2563EB;
-    color: white;
-}
-
-.avaliado {
-    color: #22C55E;
-    font-weight: 600;
-    margin-top: 10px;
-}
-
-.nao-avaliado {
-    color: #EF4444;
-    font-weight: 600;
-    margin-top: 10px;
-}
-
-.sem-cursos {
-    text-align: center;
-    padding: 30px;
-    color: #6B7280;
-}
-
-.btn-limpar {
-
-    background: #EF4444;
-
-    color: white;
-
-    border: none;
-
-    padding: 12px 20px;
-
-    border-radius: 12px;
-
-    font-weight: 600;
-
-    cursor: pointer;
-
-    margin-bottom: 20px;
-
-}
-
-.btn-limpar:hover {
-
-    opacity: 0.9;
-
-}
-
-/* CSS Menu Lateral */
-
 .layout {
     display: flex;
     width: 100%;
     min-height: 100vh;
 }
+
+/* MENU LATERAL */
 
 .navegacao {
     width: 260px;
@@ -234,14 +25,13 @@ h2 {
     background-color: #06122b;
     display: flex;
     flex-direction: column;
-    padding: 10px 20px 20px 20px;
+    padding: 10px 20px 20px;
     position: fixed;
     top: 0;
     left: 0;
 }
 
 .logo {
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -269,13 +59,15 @@ h2 {
     gap: 12px;
     padding: 14px;
     border-radius: 10px;
-    transition: 0.2s;
+    transition: .2s;
     font-size: 15px;
     font-weight: 500;
 }
 
-.menu-item:hover {
-    background-color: #1f2937;
+.menu-item:hover,
+.menu-item.ativo {
+    background-color: #2563EB;
+    color: white;
 }
 
 .menu-item i {
@@ -288,7 +80,7 @@ h2 {
     align-items: center;
     gap: 12px;
     padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255,255,255,.2);
     cursor: pointer;
 }
 
@@ -299,11 +91,6 @@ h2 {
     object-fit: cover;
 }
 
-.info-usuario {
-    display: flex;
-    flex-direction: column;
-}
-
 .info-usuario h4 {
     font-size: 14px;
     color: white;
@@ -312,5 +99,299 @@ h2 {
 .info-usuario span {
     font-size: 12px;
     color: white;
-    margin-top: 2px;
+}
+
+/* CONTEÚDO */
+
+.conteudo {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    padding: 35px;
+}
+
+.container {
+    background: transparent;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #111827;
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+.descricao {
+    color: #6B7280;
+    margin-bottom: 28px;
+}
+
+/* FILTROS */
+
+.filtros {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr;
+    gap: 24px;
+    margin-bottom: 28px;
+    align-items: stretch;
+}
+
+.campo {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 4px 14px rgba(0,0,0,.04);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #111827;
+}
+
+input,
+select {
+    width: 100%;
+    height: 54px;
+    border: 1px solid #D1D5DB;
+    border-radius: 14px;
+    padding: 0 16px;
+    font-size: 16px;
+    outline: none;
+}
+
+/* CARD DICAS */
+
+.card-dicas {
+    background: linear-gradient(135deg, #2563EB, #60A5FA);
+    border-radius: 18px;
+    padding: 22px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 24px rgba(37,99,235,.25);
+    min-height: 142px;
+}
+
+.card-dicas h2 {
+    font-size: 22px;
+    margin-bottom: 6px;
+    color: white;
+}
+
+.card-dicas p {
+    font-size: 14px;
+    opacity: .95;
+}
+
+.botao-primario {
+    margin-top: 14px;
+    height: 42px;
+    border: none;
+    border-radius: 12px;
+    background: white;
+    color: #2563EB;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* RESUMO */
+
+.resumo {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    gap: 24px;
+    margin-bottom: 22px;
+}
+
+.box {
+    background: linear-gradient(135deg, #2563EB, #1D4ED8);
+    color: white;
+    border-radius: 18px;
+    padding: 24px;
+    min-height: 118px;
+    box-shadow: 0 10px 24px rgba(37,99,235,.25);
+}
+
+.box h3 {
+    font-size: 30px;
+    margin-bottom: 6px;
+}
+
+.box p {
+    font-size: 16px;
+}
+
+/* BOTÃO LIMPAR */
+
+.btn-limpar {
+    background: white;
+    color: #EF4444;
+    border: 1px solid #FCA5A5;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 28px;
+    width: auto;
+    align-self: flex-end;
+}
+
+.btn-limpar:hover {
+    background: #FEF2F2;
+}
+
+/* CURSOS */
+
+h2 {
+    margin-bottom: 18px;
+    color: #111827;
+}
+
+.card {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 14px rgba(0,0,0,.04);
+}
+
+.card h3 {
+    color: #111827;
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: #6B7280;
+    margin-bottom: 8px;
+}
+
+.botoes {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn-like,
+.btn-dislike,
+.btn-link {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.btn-like {
+    background: #22C55E;
+    color: white;
+}
+
+.btn-dislike {
+    background: #EF4444;
+    color: white;
+}
+
+.btn-link {
+    background: #2563EB;
+    color: white;
+}
+
+.avaliado {
+    color: #22C55E;
+    font-weight: 700;
+}
+
+.nao-avaliado {
+    color: #EF4444;
+    font-weight: 700;
+}
+
+.sem-cursos {
+    text-align: center;
+    padding: 30px;
+    color: #6B7280;
+}
+
+.modal-dicas{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+}
+
+.modal-conteudo{
+    width:700px;
+    max-width:90%;
+    max-height:80vh;
+    overflow:auto;
+    background:white;
+    border-radius:20px;
+    padding:25px;
+}
+
+.modal-topo{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.modal-topo button{
+    width:38px;
+    height:38px;
+    border:none;
+    border-radius:50%;
+    background:#EF4444;
+    color:white;
+    cursor:pointer;
+}
+
+.dica-item{
+    border:1px solid #E5E7EB;
+    border-radius:15px;
+    padding:18px;
+    margin-bottom:15px;
+}
+
+.dica-item h3{
+    color:#111827;
+    margin-bottom:8px;
+}
+
+.dica-item p{
+    color:#6B7280;
+    line-height:1.6;
+}
+
+.dica-tipo{
+    display:inline-block;
+    margin-top:10px;
+    background:#DBEAFE;
+    color:#2563EB;
+    padding:5px 12px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:700;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 1000px) {
+    .filtros {
+        grid-template-columns: 1fr;
+    }
+
+    .resumo {
+        grid-template-columns: 1fr;
+    }
 }

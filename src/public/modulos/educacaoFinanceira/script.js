@@ -297,9 +297,11 @@ document
         aplicarFiltros
     );
 
-window.onload = function () {
+window.onload = async function () {
 
+    await carregarDicas();
     mostrarCursos(cursos);
+    carregarUsuarioMenu();
 
 };
 
@@ -347,4 +349,52 @@ function carregarUsuarioMenu() {
     }
 }
 
-carregarUsuarioMenu();
+let dicas = [];
+
+async function carregarDicas() {
+    const resposta = await fetch("dados.json");
+
+    const dados = await resposta.json();
+
+    dicas = dados.dicas;
+}
+
+function abrirModal() {
+
+    const modal =
+        document.getElementById("modalDicas");
+
+    const lista =
+        document.getElementById("listaDicas");
+
+    lista.innerHTML = "";
+
+    dicas.forEach((dica) => {
+
+        lista.innerHTML += `
+
+        <div class="dica-item">
+
+            <h3>${dica.titulo}</h3>
+
+            <p>${dica.descricao}</p>
+
+            <span class="dica-tipo">
+                ${dica.tipo}
+            </span>
+
+        </div>
+
+        `;
+
+    });
+
+    modal.style.display = "flex";
+
+}
+
+function fecharModal() {
+
+    document.getElementById("modalDicas").style.display = "none";
+
+}
