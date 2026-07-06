@@ -173,7 +173,7 @@ function editarTransacao(id) {
         'editandoId',
         id
     );
-    window.location.href = 'nova-transacao.html';
+    window.location.href = 'novaTransacao.html';
 }
 
 function carregarUsuarioMenu() {
