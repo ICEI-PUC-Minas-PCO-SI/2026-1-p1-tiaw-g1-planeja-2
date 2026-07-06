@@ -277,3 +277,18 @@ form {
 .btn-excluir:hover {
     background-color: #f3caca;
 }
+
+.filtro-mes{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:20px;
+}
+
+.filtro-mes label{
+    font-weight:600;
+}
+
+.filtro-mes select{
+    width:220px;
+}

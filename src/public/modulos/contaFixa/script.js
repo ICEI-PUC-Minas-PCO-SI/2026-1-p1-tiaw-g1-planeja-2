@@ -1,5 +1,4 @@
-let contasFixas =
-    JSON.parse(localStorage.getItem("contasFixas")) || [];
+let contasFixas = JSON.parse(localStorage.getItem("contasFixas")) || [];
 
 let indiceEdicao = -1;
 
@@ -8,8 +7,7 @@ function carregarCategoriasNoSelect() {
 
     if (!select) return;
 
-    const categorias =
-        JSON.parse(localStorage.getItem("categorias")) || [];
+    const categorias = JSON.parse(localStorage.getItem("categorias")) || [];
 
     select.innerHTML = `<option value="">Selecione</option>`;
 
@@ -81,6 +79,8 @@ function limparFormulario() {
     document.getElementById("valorContaFixa").value = "";
     document.getElementById("pagamentoContaFixa").value = "";
     document.getElementById("transacaoContaFixa").value = "";
+
+    indiceEdicao = -1;
 }
 
 function editarContaFixa(indice) {
@@ -99,24 +99,32 @@ function editarContaFixa(indice) {
 
 function excluirContaFixa(indice) {
     contasFixas.splice(indice, 1);
+
     salvarNoLocalStorage();
+
     listarContasFixas();
 }
 
-function obterChaveMesAtual() {
-    const hoje = new Date();
+function obterChaveMesSelecionado() {
+    const ano = new Date().getFullYear();
 
-    return `${hoje.getFullYear()}-${String(hoje.getMonth() + 1).padStart(2, "0")}`;
+    const selectMes = document.getElementById("mesReferenciaPagamento");
+
+    const mes = selectMes
+        ? Number(selectMes.value)
+        : new Date().getMonth();
+
+    return `${ano}-${String(mes + 1).padStart(2, "0")}`;
 }
 
 function contaEstaPaga(conta) {
-    const chaveMes = obterChaveMesAtual();
+    const chaveMes = obterChaveMesSelecionado();
 
     return conta.pagamentos && conta.pagamentos[chaveMes] === true;
 }
 
 function alterarPago(indice) {
-    const chaveMes = obterChaveMesAtual();
+    const chaveMes = obterChaveMesSelecionado();
 
     if (!contasFixas[indice].pagamentos) {
         contasFixas[indice].pagamentos = {};
@@ -126,11 +134,14 @@ function alterarPago(indice) {
         !contasFixas[indice].pagamentos[chaveMes];
 
     salvarNoLocalStorage();
+
     listarContasFixas();
 }
 
 function listarContasFixas() {
     let lista = document.getElementById("listaContasFixas");
+
+    if (!lista) return;
 
     lista.innerHTML = "";
 
@@ -190,7 +201,6 @@ function nomeMes(numeroMes) {
 
 function cancelarContaFixa() {
     limparFormulario();
-    indiceEdicao = -1;
 }
 
 function carregarUsuarioMenu() {
@@ -212,6 +222,15 @@ function carregarUsuarioMenu() {
 
 window.onload = function () {
     carregarCategoriasNoSelect();
+
+    const selectMes = document.getElementById("mesReferenciaPagamento");
+
+    if (selectMes) {
+        selectMes.value = new Date().getMonth();
+        selectMes.addEventListener("change", listarContasFixas);
+    }
+
     listarContasFixas();
+
     carregarUsuarioMenu();
 };
