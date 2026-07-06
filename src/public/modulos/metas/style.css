@@ -20,7 +20,7 @@ body {
     font-family: 'Inter', Arial, Helvetica, sans-serif;
     color: #111827;
 }
-img {
+.conteudo img {
     max-width: 100%;
     height: auto;
     display: block;
@@ -118,8 +118,7 @@ label {
     flex-direction: column;
     padding: 10px 20px 20px 20px;
     position: fixed;
-    top: 0;
-    left: 0;
+    
 }
 
 .logo {

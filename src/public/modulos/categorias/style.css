@@ -10,7 +10,6 @@ html, body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', Arial, sans-serif;
-    max-width: 100%;
 }
 
 body {
@@ -36,13 +35,12 @@ body {
 .navegacao {
     width: 260px;
     height: 100vh;
-    background-color: #111827;
-    position: fixed;
-    top: 0;
-    left: 0;
+    z-index: 1000;
+    background-color: #06122b;
     display: flex;
     flex-direction: column;
-    padding: 10px 20px;
+    padding: 10px 20px 20px 20px;
+    position: fixed;
 }
 
 
