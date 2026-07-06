@@ -467,47 +467,6 @@ canvas {
     height: 320px !important;
 }
 
-/*FOOTER*/
-
-.footer{
-    width: 100%;
-    background: #fff;
-    border-top: 4px solid #2563EB;
-    margin-top: 50px;
-    padding: 30px 0;
-}
-
-.footer-conteudo,
-.footer-copy{
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 40px;
-}
-
-.footer-logo h3{
-    color: #2563EB;
-    font-size: 22px;
-    margin-bottom: 8px;
-}
-
-.footer-logo p{
-    color: #6B7280;
-    max-width: 420px;
-    line-height: 1.6;
-}
-
-.footer-versao{
-    text-align: right;
-}
-
-.footer-versao p{
-    color: #6B7280;
-    margin: 4px 0;
-    font-size: 14px;
-}
-
-
-
 /*RESPONSIVIDADE*/
 
 @media(max-width: 768px){
