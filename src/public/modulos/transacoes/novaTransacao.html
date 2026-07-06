@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nova Transação</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <aside class="navegacao">
+
+        <div class="logo">
+            <img src="../../assets/images/logo.png" alt="Logo PlanejaMais" class="logo-img">
+        </div>
+
+        <nav class="menu">
+
+            <a href="../dashboard/index.html" class="menu-item">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </a>
+
+            <a href="index.html" class="menu-item">
+                <i class="fa-solid fa-layer-group"></i>
+                Transações
+            </a>
+
+            <a href="../contaFixa/index.html" class="menu-item">
+                <i class="fa-solid fa-wallet"></i>
+                Contas
+            </a>
+
+            <a href="../metas/index.html" class="menu-item">
+                <i class="fa-solid fa-chart-pie"></i>
+                Planejamento
+            </a>
+
+            <a href="../categorias/index.html" class="menu-item">
+                <i class="fa-solid fa-tags"></i>
+                Categorias
+            </a>
+
+            <a href="../educacaoFinanceira/index.html" class="menu-item">
+                <i class="fa-solid fa-graduation-cap"></i>
+                Educação Financeira
+            </a>
+
+            <a href="#" class="menu-item">
+                <i class="fa-solid fa-gear"></i>
+                Configurações
+            </a>
+
+        </nav>
+
+        <div class="perfil-usuario" onclick="window.location.href='../configuracoes/index.html'">
+
+            <img src="../../assets/images/user.png" alt="Usuário" class="foto-usuario" id="fotoUsuarioMenu">
+
+            <div class="info-usuario">
+                <h4 id="nomeUsuarioMenu">Usuário</h4>
+                <span>Ver perfil</span>
+            </div>
+
+        </div>
+
+    </aside>
+
+    <main class="container">
+
+        <section class="card form-card-page">
+
+            <div class="card-header">
+
+                <h2>Adicionar Transação</h2>
+                <p>
+                    Preencha os dados da movimentação
+                </p>
+
+            </div>
+
+            <form id="transactionForm">
+
+                <div class="form-group">
+
+                    <label for="data">Data</label>
+                    <input type="date" id="data" required>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="descricao">Descrição</label>
+                    <input type="text" id="descricao" placeholder="Ex: Mercado, salário, cinema..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="categoria">Categoria</label>
+                    <select id="categoria" required>
+
+                        <option value="">
+                            Selecione
+                        </option>
+
+                        <option value="Salário">
+                            Salário
+                        </option>
+
+                        <option value="Lazer">
+                            Lazer
+                        </option>
+
+                        <option value="Alimentação">
+                            Alimentação
+                        </option>
+
+                        <option value="Transporte">
+                            Transporte
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="valor">Valor</label>
+                    <input type="number" id="valor" placeholder="0,00" step="0.01" min="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="formaPagamento">Forma de pagamento</label>
+                    <select id="formaPagamento" required>
+
+                        <option value="">Selecione</option>
+
+                        <option value="Pix">
+                            Pix
+                        </option>
+
+                        <option value="Cartão de crédito">
+                            Cartão de crédito
+                        </option>
+
+                        <option value="Conta bancária">
+                            Conta bancária
+                        </option>
+
+                        <option value="Dinheiro">
+                            Dinheiro
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="tipo">Tipo de transação</label>
+                    <select id="tipo" required>
+
+                        <option value="">Selecione</option>
+
+                        <option value="entrada">
+                            Entrada
+                        </option>
+
+                        <option value="saida">
+                            Saída
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-buttons">
+                    <button type="button" class="btn-secondary"
+                        onclick="window.location.href='index.html'">Cancelar</button>
+
+                    <button type="submit" class="btn-primary">Salvar</button>
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

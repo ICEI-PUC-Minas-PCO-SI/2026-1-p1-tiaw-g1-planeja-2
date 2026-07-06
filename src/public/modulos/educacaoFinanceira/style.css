@@ -1,0 +1,396 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, Arial, sans-serif;
+}
+
+body {
+    background: #F5F7FB;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.layout {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* MENU LATERAL */
+
+.navegacao {
+    width: 260px;
+    height: 100vh;
+    background-color: #06122b;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -70px;
+}
+
+.logo img {
+    width: 400px;
+    object-fit: contain;
+    margin-top: -60px;
+    margin-bottom: -15px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-item {
+    text-decoration: none;
+    color: #d1d5db;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    border-radius: 10px;
+    transition: .2s;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.menu-item:hover {
+    background-color: #1f2937;
+}
+
+.menu-item i {
+    font-size: 18px;
+}
+
+.perfil-usuario {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, .2);
+    cursor: pointer;
+}
+
+.foto-usuario {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.info-usuario h4 {
+    font-size: 14px;
+    color: white;
+}
+
+.info-usuario span {
+    font-size: 12px;
+    color: white;
+}
+
+/* CONTEÚDO */
+
+.conteudo {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    padding: 35px;
+}
+
+.container {
+    background: transparent;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #111827;
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.descricao {
+    color: #6B7280;
+    margin-bottom: 28px;
+    margin-top: 20px;
+}
+
+/* FILTROS */
+
+.filtros {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr;
+    gap: 24px;
+    margin-bottom: 28px;
+    align-items: stretch;
+}
+
+.campo {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .04);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #111827;
+}
+
+input,
+select {
+    width: 100%;
+    height: 54px;
+    border: 1px solid #D1D5DB;
+    border-radius: 14px;
+    padding: 0 16px;
+    font-size: 16px;
+    outline: none;
+}
+
+/* CARD DICAS */
+
+.card-dicas {
+    background: linear-gradient(135deg, #2563EB, #60A5FA);
+    border-radius: 18px;
+    padding: 22px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 24px rgba(37, 99, 235, .25);
+    min-height: 142px;
+}
+
+.card-dicas h2 {
+    font-size: 22px;
+    margin-bottom: 6px;
+    color: white;
+}
+
+.card-dicas p {
+    font-size: 14px;
+    opacity: .95;
+}
+
+.botao-primario {
+    margin-top: 14px;
+    height: 42px;
+    border: none;
+    border-radius: 12px;
+    background: white;
+    color: #2563EB;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* RESUMO */
+
+.resumo {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    gap: 24px;
+    margin-bottom: 22px;
+}
+
+.box {
+    background: #06122b;
+    color: white;
+    border-radius: 18px;
+    padding: 24px;
+    min-height: 118px;
+    box-shadow: 0 10px 24px rgba(37, 99, 235, .25);
+}
+
+.box h3 {
+    font-size: 30px;
+    margin-bottom: 6px;
+}
+
+.box p {
+    font-size: 16px;
+}
+
+/* BOTÃO LIMPAR */
+
+.btn-limpar {
+    background: white;
+    color: #EF4444;
+    border: 1px solid #FCA5A5;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 28px;
+    width: auto;
+    align-self: flex-end;
+}
+
+.btn-limpar:hover {
+    background: #FEF2F2;
+}
+
+/* CURSOS */
+
+h2 {
+    margin-bottom: 18px;
+    color: #111827;
+}
+
+.card {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .04);
+}
+
+.card h3 {
+    color: #111827;
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: #6B7280;
+    margin-bottom: 8px;
+}
+
+.botoes {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn-like,
+.btn-dislike,
+.btn-link {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.btn-like {
+    background: #158030;
+    color: white;
+}
+
+.btn-dislike {
+    background: #dc2828;
+    color: white;
+}
+
+.btn-link {
+    background: #06122b;
+    color: white;
+}
+
+.avaliado {
+    color: #22C55E;
+    font-weight: 700;
+}
+
+.nao-avaliado {
+    color: #dc2828;
+    font-weight: 700;
+}
+
+.sem-cursos {
+    text-align: center;
+    padding: 30px;
+    color: #6B7280;
+}
+
+.modal-dicas {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .55);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-conteudo {
+    width: 700px;
+    max-width: 90%;
+    max-height: 80vh;
+    overflow: auto;
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+}
+
+.modal-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal-topo button {
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: #dc2828;
+    color: white;
+    cursor: pointer;
+}
+
+.dica-item {
+    border: 1px solid #E5E7EB;
+    border-radius: 15px;
+    padding: 18px;
+    margin-bottom: 15px;
+}
+
+.dica-item h3 {
+    color: #111827;
+    margin-bottom: 8px;
+}
+
+.dica-item p {
+    color: #6B7280;
+    line-height: 1.6;
+}
+
+.dica-tipo {
+    display: inline-block;
+    margin-top: 10px;
+    background: #DBEAFE;
+    color: #2563EB;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 1000px) {
+    .filtros {
+        grid-template-columns: 1fr;
+    }
+
+    .resumo {
+        grid-template-columns: 1fr;
+    }
+}

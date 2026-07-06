@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planeja+</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+    <div class="layout">
+        <aside class="navegacao">
+
+            <div class="logo">
+                <img src="../../assets/images/logo.png" alt="Logo PlanejaMais" class="logo-img">
+            </div>
+
+            <nav class="menu">
+
+                <a href="../dashboard/index.html" class="menu-item">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </a>
+
+                <a href="../transacoes/index.html" class="menu-item">
+                    <i class="fa-solid fa-layer-group"></i>
+                    Transações
+                </a>
+
+                <a href="../contaFixa/index.html" class="menu-item">
+                    <i class="fa-solid fa-wallet"></i>
+                    Contas
+                </a>
+
+                <a href="../metas/index.html" class="menu-item">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    Planejamento
+                </a>
+
+                <a href="../categorias/index.html" class="menu-item">
+                    <i class="fa-solid fa-tags"></i>
+                    Categorias
+                </a>
+
+                <a href="../educacaoFinanceira/index.html" class="menu-item">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    Educação Financeira
+                </a>
+
+                <a href="../configuracoes/index.html" class="menu-item">
+                    <i class="fa-solid fa-gear"></i>
+                    Configurações
+                </a>
+
+            </nav>
+
+            <div class="perfil-usuario" onclick="window.location.href='../configuracoes/index.html'">
+
+                <img src="../../assets/images/user.png" alt="Usuário" class="foto-usuario" id="fotoUsuarioMenu">
+
+                <div class="info-usuario">
+                    <h4 id="nomeUsuarioMenu">Usuário</h4>
+                    <span>Ver perfil</span>
+                </div>
+
+            </div>
+
+        </aside>
+        <main class="conteudo">
+
+            <section class="dashboard-financeiro">
+
+
+                <div class="dashboard-topo">
+                    <h1>Dashboard Financeiro</h1>
+                </div>
+
+                <div class="calendario-meses">
+
+
+                    <button class="mes-btn ativo" data-mes="jan">
+                        JAN
+                    </button>
+
+                    <button class="mes-btn" data-mes="fev">
+                        FEV
+                    </button>
+
+                    <button class="mes-btn" data-mes="mar">
+                        MAR
+                    </button>
+
+                    <button class="mes-btn" data-mes="abr">
+                        ABR
+                    </button>
+
+                    <button class="mes-btn" data-mes="mai">
+                        MAI
+                    </button>
+
+                    <button class="mes-btn" data-mes="jun">
+                        JUN
+                    </button>
+
+                    <button class="mes-btn" data-mes="jul">
+                        JUL
+                    </button>
+
+                    <button class="mes-btn" data-mes="ago">
+                        AGO
+                    </button>
+
+                    <button class="mes-btn" data-mes="set">
+                        SET
+                    </button>
+
+                    <button class="mes-btn" data-mes="out">
+                        OUT
+                    </button>
+
+                    <button class="mes-btn" data-mes="nov">
+                        NOV
+                    </button>
+
+                    <button class="mes-btn" data-mes="dez">
+                        DEZ
+                    </button>
+                </div>
+
+                <div class="cards-financeiros">
+
+                    <div class="card-financeiro">
+                        <span class="card-titulo">
+                            Saldo Atual
+                        </span>
+
+
+                        <h2 id="saldoAtual">
+                            R$ 0,00
+                        </h2>
+                    </div>
+
+                    <div class="card-financeiro">
+                        <span class="card-titulo">
+                            Entrada
+                        </span>
+
+
+                        <h2 id="entradaValor">
+                            R$ 0,00
+                        </h2>
+                    </div>
+
+
+                    <div class="card-financeiro">
+                        <span class="card-titulo">
+                            Saída
+                        </span>
+
+
+                        <h2 id="saidaValor">
+                            R$ 0,00
+                        </h2>
+                    </div>
+
+                    <div class="card-financeiro">
+                        <div id="iconeAlerta" class="icone-alerta">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+
+                        <h3 id="tituloAlerta">Tudo certo</h3>
+
+                        <p id="mensagemAlerta">
+                            Suas finanças estão equilibradas.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- parte do gráfico -->
+                <section class="grafico-financeiro">
+
+                    <h3>Comparativo de Gastos Mensais</h3>
+
+                    <canvas id="myChart"></canvas>
+
+                </section>
+
+                <section class="contas-vencer">
+
+                    <div class="contas-vencer-topo">
+                        <div>
+                            <h3 id="tituloContasMes">Contas do mês</h3>
+                            <span>Controle suas contas fixas pelo mês selecionado</span>
+                        </div>
+                    </div>
+
+                    <div id="listaContasVencer"></div>
+
+                    <div class="resumo-contas">
+                        <p>Pagas: <strong id="totalPagas">0</strong></p>
+                        <p>Pendentes: <strong id="totalPendentes">0</strong></p>
+                        <p>Valor pago: <strong id="valorPago">R$ 0,00</strong></p>
+                        <p>Valor pendente: <strong id="valorPendente">R$ 0,00</strong></p>
+                    </div>
+
+                </section>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educação Financeira</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <aside class="navegacao">
+
+            <div class="logo">
+                <img src="../../assets/images/logo.png" alt="Logo PlanejaMais">
+            </div>
+
+            <nav class="menu">
+
+                <a href="../dashboard/index.html" class="menu-item">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </a>
+
+                <a href="../transacoes/index.html" class="menu-item">
+                    <i class="fa-solid fa-layer-group"></i>
+                    Transações
+                </a>
+
+                <a href="../contaFixa/index.html" class="menu-item">
+                    <i class="fa-solid fa-wallet"></i>
+                    Contas
+                </a>
+
+                <a href="../metas/index.html" class="menu-item">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    Planejamento
+                </a>
+
+                <a href="../categorias/index.html" class="menu-item">
+                    <i class="fa-solid fa-tags"></i>
+                    Categorias
+                </a>
+
+                <a href="../educacaoFinanceira/index.html" class="menu-item ativo">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    Educação Financeira
+                </a>
+
+                <a href="../configuracoes/index.html" class="menu-item">
+                    <i class="fa-solid fa-gear"></i>
+                    Configurações
+                </a>
+
+            </nav>
+
+            <div class="perfil-usuario" onclick="window.location.href='../configuracoes/index.html'">
+
+                <img src="../../assets/images/user.png" alt="Usuário" class="foto-usuario" id="fotoUsuarioMenu">
+
+                <div class="info-usuario">
+                    <h4 id="nomeUsuarioMenu">Usuário</h4>
+                    <span>Ver perfil</span>
+                </div>
+
+            </div>
+
+        </aside>
+
+        <main class="conteudo">
+
+            <div class="container">
+
+                <h1>Educação Financeira</h1>
+
+                <p class="descricao">
+                    Aprenda sobre finanças, investimentos e planejamento financeiro através de cursos recomendados.
+                </p>
+
+                <div class="filtros">
+
+                    <div class="campo">
+
+                        <label>Pesquisar Curso</label>
+
+                        <input type="text" id="pesquisa" placeholder="Digite o nome do curso">
+
+                    </div>
+
+                    <div class="campo">
+
+                        <label>Categoria</label>
+
+                        <select id="categoria">
+
+                            <option value="Todos">Todos</option>
+                            <option value="Finanças">Finanças</option>
+                            <option value="Investimentos">Investimentos</option>
+                            <option value="Planejamento">Planejamento</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="card-dicas">
+                        <h2>Dicas Financeiras</h2>
+                        <p>Orientações rápidas para o dia a dia</p>
+
+                        <button class="botao-primario" onclick="abrirModal()">
+                            Ver dicas
+                        </button>
+                    </div>
+
+                </div>
+
+                <div class="resumo">
+
+                    <div class="box">
+                        <h3 id="totalCursos">0</h3>
+                        <p>Cursos</p>
+                    </div>
+
+                    <div class="box">
+                        <h3 id="maisCurtido">-</h3>
+                        <p>Mais Curtido</p>
+                    </div>
+
+                </div>
+
+                <button class="btn-limpar" onclick="limparAvaliacoes()">
+                    Limpar Avaliações
+                </button>
+
+                <h2>Cursos Disponíveis</h2>
+
+                <div id="listaCursos"></div>
+
+            </div>
+
+        </main>
+
+        <!-- Modal das Dicas -->
+        <div id="modalDicas" class="modal-dicas">
+
+            <div class="modal-conteudo">
+
+                <div class="modal-topo">
+
+                    <h2>Dicas Financeiras</h2>
+
+                    <button onclick="fecharModal()">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+
+                </div>
+
+                <div id="listaDicas"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

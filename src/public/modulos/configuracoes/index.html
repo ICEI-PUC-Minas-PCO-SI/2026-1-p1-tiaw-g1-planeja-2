@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlanejaMais | Meu Perfil</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- Menu lateral -->
+        <aside class="navegacao">
+
+            <div class="logo">
+                <img src="../../assets/images/logo.png" alt="Logo PlanejaMais" class="logo-img">
+            </div>
+
+            <nav class="menu">
+
+                <a href="../dashboard/index.html" class="menu-item">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </a>
+
+                <a href="../transacoes/index.html" class="menu-item">
+                    <i class="fa-solid fa-layer-group"></i>
+                    Transações
+                </a>
+
+                <a href="../contaFixa/index.html" class="menu-item">
+                    <i class="fa-solid fa-wallet"></i>
+                    Contas
+                </a>
+
+                <a href="../metas/index.html" class="menu-item">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    Planejamento
+                </a>
+
+                <a href="../categorias/index.html" class="menu-item">
+                    <i class="fa-solid fa-tags"></i>
+                    Categorias
+                </a>
+
+                <a href="../educacaoFinanceira/index.html" class="menu-item">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    Educação Financeira
+                </a>
+
+                <a href="../configuracoes/index.html" class="menu-item">
+                    <i class="fa-solid fa-gear"></i>
+                    Configurações
+                </a>
+
+            </nav>
+
+            <div class="perfil-usuario" onclick="window.location.href='../configuracoes/index.html'">
+
+                <img src="../../assets/images/user.png" alt="Usuário" class="foto-usuario" id="fotoUsuarioMenu">
+
+                <div class="info-usuario">
+                    <h4 id="nomeUsuarioMenu">Usuário</h4>
+                    <span>Ver perfil</span>
+                </div>
+
+            </div>
+
+        </aside>
+
+        <!-- Conteúdo -->
+        <main class="conteudo">
+
+            <div class="card-perfil">
+
+                <h2>Meu Perfil</h2>
+
+                <div class="foto-centro">
+
+                    <img src="../../assets/images/user.png" class="foto-perfil" id="fotoPerfil" alt="Foto do Perfil">
+
+                    <input type="file" id="inputFoto" accept="image/*" style="display:none;">
+
+                    <button type="button" id="btnFoto">
+                        Alterar Foto
+                    </button>
+
+                </div>
+
+                <div class="linha">
+
+                    <div class="campo">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" placeholder="Digite seu nome">
+                    </div>
+
+                    <div class="campo">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" placeholder="Digite seu e-mail">
+                    </div>
+
+                </div>
+
+                <div class="linha">
+
+                    <div class="campo">
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" placeholder="********">
+                    </div>
+
+                    <div class="campo">
+                        <label for="telefone">Telefone</label>
+                        <input type="text" id="telefone" placeholder="(31) 99999-9999">
+                    </div>
+
+                </div>
+
+                <div class="linha">
+
+                    <div class="campo">
+                        <label for="data">Data de nascimento</label>
+                        <input type="date" id="data">
+                    </div>
+
+                    <div class="campo">
+                        <label for="genero">Gênero</label>
+
+                        <select id="genero">
+
+                            <option value="" selected disabled>Selecione</option>
+                            <option value="Feminino">Feminino</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Prefiro não informar">Prefiro não informar</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="botoes">
+
+                    <button type="button" class="salvar" id="btnSalvar">
+
+                        <i class="bi bi-check-circle"></i>
+                        Salvar
+
+                    </button>
+
+                    <button type="button" class="cancelar" id="btnCancelar">
+
+                        <i class="bi bi-x-circle"></i>
+                        Cancelar
+
+                    </button>
+
+                    <button type="button" class="sair" id="btnSair">
+
+                        <i class="bi bi-box-arrow-right"></i>
+                        Sair
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

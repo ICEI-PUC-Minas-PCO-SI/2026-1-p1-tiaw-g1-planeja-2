@@ -1,0 +1,24 @@
+{
+    "dicas": [
+        {
+            "titulo": "Controle seus gastos",
+            "descricao": "Anote tudo que entra e sai durante o mês para entender para onde seu dinheiro está indo.",
+            "tipo": "Planejamento"
+        },
+        {
+            "titulo": "Tenha uma reserva de emergência",
+            "descricao": "Guarde uma parte do dinheiro para lidar com imprevistos sem precisar recorrer a dívidas.",
+            "tipo": "Segurança"
+        },
+        {
+            "titulo": "Evite compras por impulso",
+            "descricao": "Antes de comprar, avalie se aquilo é uma necessidade real ou apenas uma vontade momentânea.",
+            "tipo": "Consumo"
+        },
+        {
+            "titulo": "Separe dinheiro para investir",
+            "descricao": "Mesmo começando com pouco, o importante é criar o hábito de guardar e investir mensalmente.",
+            "tipo": "Investimento"
+        }
+    ]
+}

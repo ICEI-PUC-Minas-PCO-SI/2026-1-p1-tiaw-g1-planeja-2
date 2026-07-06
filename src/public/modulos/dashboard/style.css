@@ -1,0 +1,441 @@
+/* CSS Menu Lateral */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f3f4f6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.layout {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.navegacao {
+    width: 260px;
+    height: 100vh;
+    background-color: #06122b;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px 20px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -70px;
+}
+
+.logo img {
+    width: 400px;
+    object-fit: contain;
+    margin-top: -60px;
+    margin-bottom: -15px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-item {
+    text-decoration: none;
+    color: #d1d5db;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    border-radius: 10px;
+    transition: 0.2s;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.menu-item:hover {
+    background-color: #1f2937;
+}
+
+.menu-item i {
+    font-size: 18px;
+}
+
+.perfil-usuario {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+.foto-usuario {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.info-usuario {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-usuario h4 {
+    font-size: 14px;
+    color: white;
+}
+
+.info-usuario span {
+    font-size: 12px;
+    color: white;
+    margin-top: 2px;
+}
+
+/* reste */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F5F7FB;
+    font-family: 'Inter', sans-serif;
+    color: #111827;
+}
+
+.layout {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+}
+
+.conteudo {
+    margin-left: 260px;
+    padding: 32px;
+}
+
+.dashboard-financeiro {
+    width: 100%;
+    margin-left: -10px;
+}
+
+.dashboard-topo {
+    margin-bottom: 24px;
+}
+
+.dashboard-topo h1 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 120%;
+    color: #111827;
+}
+
+.calendario-meses {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    background-color: #FFFFFF;
+    border: 1px solid #a6aeb8;
+    border-radius: 16px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.04);
+    margin-bottom: 24px;
+    overflow-x: auto;
+}
+
+.calendario-meses::-webkit-scrollbar {
+    height: 4px;
+}
+
+.calendario-meses::-webkit-scrollbar-thumb {
+    background-color: #CBD5E1;
+    border-radius: 999px;
+}
+
+/* botao p mes */
+
+.mes-btn {
+    min-width: 72px;
+    height: 44px;
+    border: none;
+    border-radius: 10px;
+    background-color: transparent;
+    color: #6B7280;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.mes-btn:hover {
+    background-color: #EFF6FF;
+    color: #111827;
+}
+
+.mes-btn:active {
+    background-color: #DBEAFE;
+}
+
+.mes-btn.ativo {
+    background-color: #111827;
+    color: #FFFFFF;
+}
+
+/* card*/
+.cards-financeiros {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1.5fr;
+    gap: 24px;
+}
+
+.card-financeiro {
+    background-color: #FFFFFF;
+    border: 1px solid #a6aeb8;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: 180px;
+}
+
+/* titulo card */
+
+.card-titulo {
+    font-size: 14px;
+    font-weight: 500;
+    color: #6B7280;
+}
+
+/* valor card*/
+
+.card-financeiro h2 {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 120%;
+}
+
+/* cor*/
+
+#saldoAtual {
+    color: #111827;
+}
+
+#entradaValor {
+    color: #158030;
+}
+
+#saidaValor {
+    color: #dc2828;
+}
+
+/* Grafico  */
+.grafico-financeiro {
+    margin-top: 24px;
+    background: #FFFFFF;
+    border: 1px solid #a6aeb8;
+    ;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.grafico-financeiro h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 20px;
+}
+
+.grafico-financeiro canvas {
+    width: 100% !important;
+    height: 420px !important;
+}
+
+.icone-alerta {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #DCFCE7;
+}
+
+.alerta-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+}
+
+.alerta-card h3 {
+    margin: 0;
+    font-size: 15px;
+}
+
+.alerta-card p {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+/* ===========================
+   CONTAS DO MÊS
+=========================== */
+
+.contas-vencer{
+    margin-top:30px;
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:16px;
+    padding:25px;
+    box-shadow:0 4px 12px rgba(0,0,0,.05);
+}
+
+.contas-vencer-topo{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.contas-vencer-topo h3{
+    font-size:22px;
+    color:#111827;
+    margin-bottom:5px;
+}
+
+.contas-vencer-topo span{
+    color:#6B7280;
+    font-size:14px;
+}
+
+/* ===========================
+   LISTA
+=========================== */
+
+#listaContasVencer{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.item-conta-vencer{
+    display:grid;
+    grid-template-columns:45px 1fr auto;
+    align-items:center;
+    gap:18px;
+
+    padding:18px;
+
+    border:1px solid #E5E7EB;
+    border-radius:14px;
+
+    transition:.2s;
+}
+
+.item-conta-vencer:hover{
+    background:#F9FAFB;
+}
+
+.conta-check{
+    display:flex;
+    justify-content:center;
+}
+
+.conta-check input{
+    width:22px;
+    height:22px;
+    cursor:pointer;
+    accent-color:#158030;
+}
+
+.conta-info h4{
+    margin:0;
+    font-size:17px;
+    color:#111827;
+}
+
+.conta-info p{
+    margin-top:5px;
+    font-size:14px;
+    color:#6B7280;
+}
+
+.item-conta-vencer strong{
+    font-size:18px;
+    color: #dc2828;
+}
+
+.conta-paga{
+    background:#ECFDF5;
+    border-color:#BBF7D0;
+}
+
+.conta-paga strong{
+    color:#158030;
+}
+
+.conta-paga h4{
+    text-decoration:line-through;
+    color:#6B7280;
+}
+
+.conta-paga p{
+    color:#9CA3AF;
+}
+
+.resumo-contas{
+    margin-top:25px;
+    padding-top:20px;
+    border-top:1px solid #E5E7EB;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.resumo-contas p{
+    background:#F9FAFB;
+    border-radius:12px;
+    padding:15px;
+    text-align:center;
+    font-size:14px;
+    color:#6B7280;
+}
+
+.resumo-contas strong{
+    display:block;
+    margin-top:8px;
+    font-size:22px;
+    color:#111827;
+}
+
+.sem-contas-vencer{
+    text-align:center;
+    padding:35px;
+    border:2px dashed #CBD5E1;
+    border-radius:14px;
+    color:#6B7280;
+    background:#F9FAFB;
+}
