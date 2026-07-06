@@ -9,6 +9,7 @@ A arquitetura da aplicação é baseada no modelo cliente, onde o navegador exec
 
 ## Funcionalidades
 
+
 Esta seção apresenta as funcionalidades da solução.
 
 ##### Funcionalidade 1 - Dashboard
