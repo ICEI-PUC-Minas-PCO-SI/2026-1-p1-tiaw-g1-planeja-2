@@ -1,0 +1,81 @@
+{
+    "livros": [
+        {
+            "titulo": "Pai Rico, Pai Pobre",
+            "autor": "Robert Kiyosaki",
+            "descricao": "Livro indicado para entender a diferença entre ativos, passivos e mentalidade financeira.",
+            "categoria": "Educação financeira"
+        },
+        {
+            "titulo": "O Homem Mais Rico da Babilônia",
+            "autor": "George S. Clason",
+            "descricao": "Apresenta princípios simples sobre economia, controle de gastos e construção de riqueza.",
+            "categoria": "Controle financeiro"
+        },
+        {
+            "titulo": "Me Poupe!",
+            "autor": "Nathalia Arcuri",
+            "descricao": "Livro com linguagem simples sobre organização financeira e mudança de hábitos.",
+            "categoria": "Finanças pessoais"
+        }
+    ],
+
+    "documentarios": [
+        {
+            "titulo": "Explicando o Dinheiro",
+            "plataforma": "Netflix",
+            "descricao": "Série documental sobre consumo, cartão de crédito, golpes financeiros e aposentadoria.",
+            "categoria": "Consumo consciente"
+        },
+        {
+            "titulo": "Como Ficar Rico",
+            "plataforma": "Netflix",
+            "descricao": "Mostra formas práticas de organizar o dinheiro e tomar melhores decisões financeiras.",
+            "categoria": "Organização financeira"
+        },
+        {
+            "titulo": "Trabalho Interno",
+            "plataforma": "Documentário",
+            "descricao": "Documentário sobre a crise financeira de 2008 e o funcionamento do sistema financeiro.",
+            "categoria": "Sistema financeiro"
+        }
+    ],
+
+    "dicas": [
+        {
+            "titulo": "Controle seus gastos",
+            "descricao": "Anote tudo que entra e sai durante o mês para entender para onde seu dinheiro está indo.",
+            "tipo": "Planejamento"
+        },
+        {
+            "titulo": "Tenha uma reserva de emergência",
+            "descricao": "Guarde uma parte do dinheiro para lidar com imprevistos sem precisar recorrer a dívidas.",
+            "tipo": "Segurança"
+        },
+        {
+            "titulo": "Evite compras por impulso",
+            "descricao": "Antes de comprar, avalie se aquilo é uma necessidade real ou apenas uma vontade momentânea.",
+            "tipo": "Consumo"
+        },
+        {
+            "titulo": "Separe dinheiro para investir",
+            "descricao": "Mesmo começando com pouco, o importante é criar o hábito de guardar e investir mensalmente.",
+            "tipo": "Investimento"
+        }
+    ],
+
+    "cursos": [
+        {
+            "titulo": "Curso gratuito de Educação Financeira",
+            "link": "https://www.ev.org.br/"
+        },
+        {
+            "titulo": "Banco Central - Cidadania Financeira",
+            "link": "https://www.bcb.gov.br/cidadaniafinanceira"
+        },
+        {
+            "titulo": "Curso de finanças pessoais",
+            "link": "https://www.escolavirtual.gov.br/"
+        }
+    ]
+}
