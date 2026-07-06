@@ -301,72 +301,142 @@ body {
     font-size: 14px;
 }
 
-.contas-vencer {
-    margin-top: 24px;
-    background: #ffffff;
-    border: 1px solid #a6aeb8;
-    border-radius: 16px;
-    padding: 22px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+/* ===========================
+   CONTAS DO MÊS
+=========================== */
+
+.contas-vencer{
+    margin-top:30px;
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:16px;
+    padding:25px;
+    box-shadow:0 4px 12px rgba(0,0,0,.05);
 }
 
-.contas-vencer-topo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 18px;
+.contas-vencer-topo{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
 }
 
-.contas-vencer-topo h3 {
-    font-size: 20px;
-    color: #111827;
-    margin: 0;
+.contas-vencer-topo h3{
+    font-size:22px;
+    color:#111827;
+    margin-bottom:5px;
 }
 
-.contas-vencer-topo span {
-    font-size: 14px;
-    color: #6B7280;
+.contas-vencer-topo span{
+    color:#6B7280;
+    font-size:14px;
 }
 
-#listaContasVencer {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+/* ===========================
+   LISTA
+=========================== */
+
+#listaContasVencer{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
 }
 
-.item-conta-vencer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #F9FAFB;
-    border: 1px solid #E5E7EB;
-    border-radius: 14px;
-    padding: 16px;
+.item-conta-vencer{
+    display:grid;
+    grid-template-columns:45px 1fr auto;
+    align-items:center;
+    gap:18px;
+
+    padding:18px;
+
+    border:1px solid #E5E7EB;
+    border-radius:14px;
+
+    transition:.2s;
 }
 
-.item-conta-vencer h4 {
-    font-size: 16px;
-    color: #111827;
-    margin: 0 0 5px;
+.item-conta-vencer:hover{
+    background:#F9FAFB;
 }
 
-.item-conta-vencer p {
-    font-size: 14px;
-    color: #6B7280;
-    margin: 0;
+.conta-check{
+    display:flex;
+    justify-content:center;
 }
 
-.item-conta-vencer strong {
-    color: #EF4444;
-    font-size: 16px;
-    white-space: nowrap;
+.conta-check input{
+    width:22px;
+    height:22px;
+    cursor:pointer;
+    accent-color:#22C55E;
 }
 
-.sem-contas-vencer {
-    text-align: center;
-    color: #6B7280;
-    background: #F9FAFB;
-    border: 1px dashed #CBD5E1;
-    border-radius: 14px;
-    padding: 20px;
+.conta-info h4{
+    margin:0;
+    font-size:17px;
+    color:#111827;
+}
+
+.conta-info p{
+    margin-top:5px;
+    font-size:14px;
+    color:#6B7280;
+}
+
+.item-conta-vencer strong{
+    font-size:18px;
+    color:#EF4444;
+}
+
+.conta-paga{
+    background:#ECFDF5;
+    border-color:#BBF7D0;
+}
+
+.conta-paga strong{
+    color:#16A34A;
+}
+
+.conta-paga h4{
+    text-decoration:line-through;
+    color:#6B7280;
+}
+
+.conta-paga p{
+    color:#9CA3AF;
+}
+
+.resumo-contas{
+    margin-top:25px;
+    padding-top:20px;
+    border-top:1px solid #E5E7EB;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.resumo-contas p{
+    background:#F9FAFB;
+    border-radius:12px;
+    padding:15px;
+    text-align:center;
+    font-size:14px;
+    color:#6B7280;
+}
+
+.resumo-contas strong{
+    display:block;
+    margin-top:8px;
+    font-size:22px;
+    color:#111827;
+}
+
+.sem-contas-vencer{
+    text-align:center;
+    padding:35px;
+    border:2px dashed #CBD5E1;
+    border-radius:14px;
+    color:#6B7280;
+    background:#F9FAFB;
 }

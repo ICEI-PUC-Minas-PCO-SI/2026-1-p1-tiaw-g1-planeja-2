@@ -98,7 +98,6 @@ function atualizarAlerta(totalEntradas, totalSaidas) {
     if (totalEntradas === 0 && totalSaidas === 0) {
         icone.innerHTML = `<i class="fa-solid fa-circle-info"></i>`;
         icone.style.background = "#E5E7EB";
-
         titulo.innerText = "Sem movimentação";
         mensagem.innerText = "Ainda não há entradas ou saídas neste mês.";
         return;
@@ -109,7 +108,6 @@ function atualizarAlerta(totalEntradas, totalSaidas) {
 
         icone.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i>`;
         icone.style.background = "#FEF3C7";
-
         titulo.innerText = "Atenção";
         mensagem.innerHTML = `
             Você está gastando
@@ -122,7 +120,6 @@ function atualizarAlerta(totalEntradas, totalSaidas) {
     if (totalEntradas > 0 && totalSaidas >= totalEntradas * 0.8) {
         icone.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i>`;
         icone.style.background = "#fedbdb";
-
         titulo.innerText = "Cuidado";
         mensagem.innerText = "Você já utilizou mais de 80% da sua renda este mês.";
         return;
@@ -130,9 +127,24 @@ function atualizarAlerta(totalEntradas, totalSaidas) {
 
     icone.innerHTML = `<i class="fa-solid fa-circle-check"></i>`;
     icone.style.background = "#DCFCE7";
-
     titulo.innerText = "Tudo certo";
     mensagem.innerText = "Suas despesas estão dentro do planejado.";
+}
+
+function alterarPagamentoDashboard(indice) {
+    const contasFixas = buscarContasFixas();
+    const chaveMes = obterChaveMesSelecionado();
+
+    if (!contasFixas[indice].pagamentos) {
+        contasFixas[indice].pagamentos = {};
+    }
+
+    contasFixas[indice].pagamentos[chaveMes] =
+        !contasFixas[indice].pagamentos[chaveMes];
+
+    localStorage.setItem("contasFixas", JSON.stringify(contasFixas));
+
+    listarContasVencer();
 }
 
 function listarContasVencer() {
@@ -143,41 +155,83 @@ function listarContasVencer() {
     const contasFixas = buscarContasFixas();
     const mesSelecionado = meses[mesAtual];
 
-    const contasPendentes = contasFixas
+    let totalPagas = 0;
+    let totalPendentes = 0;
+    let valorPago = 0;
+    let valorPendente = 0;
+
+    const contasDoMes = contasFixas
+        .map((conta, indice) => ({ ...conta, indiceOriginal: indice }))
         .filter((conta) => {
             const mesInicio = Number(conta.mesInicio || 0);
 
             return (
                 conta.transacao === "Despesa" &&
-                mesSelecionado >= mesInicio &&
-                !contaPagaNoMes(conta)
+                mesSelecionado >= mesInicio
             );
         })
         .sort((a, b) => Number(a.vencimento) - Number(b.vencimento));
 
-    if (contasPendentes.length === 0) {
+    if (contasDoMes.length === 0) {
         lista.innerHTML = `
             <div class="sem-contas-vencer">
-                Nenhuma conta pendente para este mês.
+                Nenhuma conta fixa para este mês.
             </div>
         `;
+
+        atualizarResumoContas(0, 0, 0, 0);
         return;
     }
 
     lista.innerHTML = "";
 
-    contasPendentes.forEach((conta) => {
+    contasDoMes.forEach((conta) => {
+        const paga = contaPagaNoMes(conta);
+        const valor = converterValor(conta.valor);
+
+        if (paga) {
+            totalPagas++;
+            valorPago += valor;
+        } else {
+            totalPendentes++;
+            valorPendente += valor;
+        }
+
         lista.innerHTML += `
-            <div class="item-conta-vencer">
-                <div>
+            <div class="item-conta-vencer ${paga ? "conta-paga" : ""}">
+
+                <div class="conta-check">
+                    <input
+                        type="checkbox"
+                        ${paga ? "checked" : ""}
+                        onchange="alterarPagamentoDashboard(${conta.indiceOriginal})"
+                    >
+                </div>
+
+                <div class="conta-info">
                     <h4>${conta.nome}</h4>
                     <p>Vence dia ${conta.vencimento} • ${conta.categoria}</p>
                 </div>
 
-                <strong>${formatarMoeda(converterValor(conta.valor))}</strong>
+                <strong>${formatarMoeda(valor)}</strong>
+
             </div>
         `;
     });
+
+    atualizarResumoContas(totalPagas, totalPendentes, valorPago, valorPendente);
+}
+
+function atualizarResumoContas(totalPagas, totalPendentes, valorPago, valorPendente) {
+    const campoPagas = document.getElementById("totalPagas");
+    const campoPendentes = document.getElementById("totalPendentes");
+    const campoValorPago = document.getElementById("valorPago");
+    const campoValorPendente = document.getElementById("valorPendente");
+
+    if (campoPagas) campoPagas.innerText = totalPagas;
+    if (campoPendentes) campoPendentes.innerText = totalPendentes;
+    if (campoValorPago) campoValorPago.innerText = formatarMoeda(valorPago);
+    if (campoValorPendente) campoValorPendente.innerText = formatarMoeda(valorPendente);
 }
 
 function criarGrafico() {
@@ -264,6 +318,7 @@ botoesMes.forEach((botao) => {
 
         atualizarDashboard();
         criarGrafico();
+        listarContasVencer();
     });
 });
 
@@ -287,3 +342,4 @@ function carregarUsuarioMenu() {
 carregarUsuarioMenu();
 atualizarDashboard();
 criarGrafico();
+listarContasVencer();

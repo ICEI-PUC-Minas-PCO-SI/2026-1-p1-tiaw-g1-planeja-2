@@ -99,42 +99,7 @@ function editarContaFixa(indice) {
 
 function excluirContaFixa(indice) {
     contasFixas.splice(indice, 1);
-
     salvarNoLocalStorage();
-
-    listarContasFixas();
-}
-
-function obterChaveMesSelecionado() {
-    const ano = new Date().getFullYear();
-
-    const selectMes = document.getElementById("mesReferenciaPagamento");
-
-    const mes = selectMes
-        ? Number(selectMes.value)
-        : new Date().getMonth();
-
-    return `${ano}-${String(mes + 1).padStart(2, "0")}`;
-}
-
-function contaEstaPaga(conta) {
-    const chaveMes = obterChaveMesSelecionado();
-
-    return conta.pagamentos && conta.pagamentos[chaveMes] === true;
-}
-
-function alterarPago(indice) {
-    const chaveMes = obterChaveMesSelecionado();
-
-    if (!contasFixas[indice].pagamentos) {
-        contasFixas[indice].pagamentos = {};
-    }
-
-    contasFixas[indice].pagamentos[chaveMes] =
-        !contasFixas[indice].pagamentos[chaveMes];
-
-    salvarNoLocalStorage();
-
     listarContasFixas();
 }
 
@@ -148,15 +113,13 @@ function listarContasFixas() {
     if (contasFixas.length === 0) {
         lista.innerHTML = `
             <tr>
-                <td colspan="9">Nenhuma conta fixa cadastrada.</td>
+                <td colspan="8">Nenhuma conta fixa cadastrada.</td>
             </tr>
         `;
         return;
     }
 
     contasFixas.forEach((conta, indice) => {
-        const paga = contaEstaPaga(conta);
-
         lista.innerHTML += `
             <tr>
                 <td>${conta.nome}</td>
@@ -166,14 +129,6 @@ function listarContasFixas() {
                 <td>${conta.valor}</td>
                 <td>${conta.pagamento}</td>
                 <td>${conta.transacao}</td>
-
-                <td>
-                    <input
-                        type="checkbox"
-                        ${paga ? "checked" : ""}
-                        onchange="alterarPago(${indice})"
-                    >
-                </td>
 
                 <td class="acoes">
                     <button class="btn-editar" onclick="editarContaFixa(${indice})">
@@ -222,15 +177,6 @@ function carregarUsuarioMenu() {
 
 window.onload = function () {
     carregarCategoriasNoSelect();
-
-    const selectMes = document.getElementById("mesReferenciaPagamento");
-
-    if (selectMes) {
-        selectMes.value = new Date().getMonth();
-        selectMes.addEventListener("change", listarContasFixas);
-    }
-
     listarContasFixas();
-
     carregarUsuarioMenu();
 };
