@@ -2,7 +2,8 @@
 
 <span style="color:red">Pré-requisitos: <a href="05-Projeto-interface.md"> Projeto de interface</a></span>
 
-Definição de como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação.
+O Planeja+ é uma aplicação web desenvolvida utilizando HTML, CSS e JavaScript, com Bootstrap para estilização, responsividade e Chart.js para a geração de gráficos. O sistema permite que o usuário realize o gerenciamento das suas finanças pessoais, cadastrando receitas e despesas, acompanhando o saldo, visualizando gráficos e controlando suas metas financeiras.
+A arquitetura da aplicação é baseada no modelo cliente, onde o navegador executa toda a lógica da aplicação em JavaScript. Os dados são armazenados em formato JSON utilizando LocalStorage.
 
 ![Arquitetura da solução](images/exemplo-arquitetura.png)
 
