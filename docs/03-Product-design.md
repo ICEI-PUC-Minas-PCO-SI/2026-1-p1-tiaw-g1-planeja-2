@@ -51,25 +51,25 @@ Ana Giulia | Um app simples de controle financeiro | Entender melhor meus gastos
 | RF-011 | O usuário deve conseguir cadastrar metas | ALTA
 | RF-012 | O usuário deve conseguir editar e excluir os dados das metas | ALTA
 | RF-013 | O usuário deve conseguir visualizar a barra de progresso e grafico da evolução das metas | ALTA
-| RF-013 | O usuário deve conseguir adicionar contas fixas | ALTA
-| RF-014 | O usuário deve conseguir editar e excluir as contas fixas | ALTA
-| RF-015 | O usuário deve conseguir visualizar suas contas fixas no dashboard | ALTA
-| RF-016 | O usuário deve conseguir cadastrar categorias | ALTA
-| RF-017 | O usuário deve conseguir editar e excluir as categorias criadas | ALTA
-| RF-018 | O usuário deve conseguir visualizar os cursos e dicas financeiras | ALTA
-| RF-019 | O usuário deve conseguir marcar como gostei ou não gostei e acessar os cursos disponíveis | ALTA
-| RF-020 | O usuário deve conseguir filtrar despesas por período | MÉDIA
-| RF-021 | O usuário deve conseguir visualizar despesas por categoria | MÉDIA
-| RF-022 | O usuário deve conseguir visualizar um resumo mensal dos gastos | MÉDIA
-| RF-023 | O usuário deve conseguir selecionar a forma de pagamento | MÉDIA
-| RF-024 | O usuário deve conseguir cadastrar múltiplas formas de pagamento | MÉDIA
-| RF-025 | O usuário deve conseguir ativar ou desativar notificações | MÉDIA
-| RF-026 | Enviar notificações de alertas ao usuário | MÉDIA
-| RF-027 | O usuário deve conseguir definir limites de gastos mensaiS | MÉDIA
-| RF-028 | O usuário deve conseguir configurar preferências do sistema | MÉDIA
-| RF-029 | O usuário deve conseguir adicionar ou alterar uma foto de perfil | MÉDIA
-| RF-030 | Planejamento de despesas e entradas futuras  | BAIXA
-| RF-031 | Alteração da moeda utilizada no sistema | BAIXA
+| RF-014 | O usuário deve conseguir adicionar contas fixas | ALTA
+| RF-015 | O usuário deve conseguir editar e excluir as contas fixas | ALTA
+| RF-016 | O usuário deve conseguir visualizar os dados das despesas e contas fixas no dashboard | ALTA
+| RF-017 | O usuário deve conseguir cadastrar categorias | ALTA
+| RF-019 | O usuário deve conseguir editar e excluir as categorias criadas | ALTA
+| RF-020 | O usuário deve conseguir visualizar os cursos e dicas financeiras | ALTA
+| RF-021 | O usuário deve conseguir marcar como gostei ou não gostei e acessar os cursos disponíveis | ALTA
+| RF-022 | O usuário deve conseguir filtrar despesas por período | MÉDIA
+| RF-023 | O usuário deve conseguir visualizar despesas por categoria | MÉDIA
+| RF-024 | O usuário deve conseguir visualizar um resumo mensal dos gastos | MÉDIA
+| RF-025 | O usuário deve conseguir selecionar a forma de pagamento | MÉDIA
+| RF-026 | O usuário deve conseguir cadastrar múltiplas formas de pagamento | MÉDIA
+| RF-027 | O usuário deve conseguir ativar ou desativar notificações | MÉDIA
+| RF-028 | Enviar notificações de alertas ao usuário | MÉDIA
+| RF-029 | O usuário deve conseguir definir limites de gastos mensaiS | MÉDIA
+| RF-030 | O usuário deve conseguir configurar preferências do sistema | MÉDIA
+| RF-031 | O usuário deve conseguir adicionar ou alterar uma foto de perfil | MÉDIA
+| RF-032 | Planejamento de despesas e entradas futuras  | BAIXA
+| RF-033 | Alteração da moeda utilizada no sistema | BAIXA
 
 ### Requisitos não funcionais
 
