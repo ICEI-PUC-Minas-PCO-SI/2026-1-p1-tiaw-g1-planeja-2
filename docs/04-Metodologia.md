@@ -1,8 +1,6 @@
 
 # Metodologia
 
-<span style="color:red">Pré-requisitos: <a href="03-Product-design.md"> Product design</a></span>
-
 Para o desenvolvimento do projeto, utilizamos a abordagem de Design Thinking, com foco em entender o problema e o usuário antes de propor soluções.
 Na fase de estratégia, realizamos brainstorming e utilizamos a Matriz CSD e o Mapa de Stakeholders para organizar ideias. Também fizemos pesquisas, criamos personas e definimos histórias de usuário para compreender melhor as necessidades do público.
 Atualmente, estamos na etapa de Product Design, estruturando a solução, criando wireframes e definindo as funcionalidades do MVP. Utilizamos ferramentas como Figma, GitHub, Google Docs e WhatsApp para desenvolvimento e organização.
@@ -64,7 +62,7 @@ Concluído (Done)
 | Documentos do projeto               | GitHub                             | https://github.com/ICEI-PUC-Minas-PCO-SI/2026-1-p1-tiaw-g1-planeja-2|
 | Gerenciamento do projeto            | GitHub Projects                    |                                                                     |
 | Projeto de interface                | Figma                              | https://www.figma.com/site/8a9xOcyFQPSZoIjSJSaHD1/Projeto-Gastos-Pessoais?t=iVh8UEXDAyQSvneR-1|
-| Hospedagem                          | Vercel                             |                                                                     |
+| Hospedagem                          | Netlify                          |        https://planejamais1.netlify.app/                                                              |
 
 
 
