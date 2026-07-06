@@ -332,3 +332,33 @@ button:hover {
     color: white;
     margin-top: 2px;
 }
+
+.progresso-meta {
+    margin: 22px 0 20px;
+}
+
+.progresso-topo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.progresso-topo strong {
+    color: #2563EB;
+}
+
+.barra-meta {
+    width: 100%;
+    height: 16px;
+    background: #E5E7EB;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.barra-preenchida {
+    height: 100%;
+    background: #2563EB;
+    border-radius: 999px;
+    transition: width .3s ease;
+}

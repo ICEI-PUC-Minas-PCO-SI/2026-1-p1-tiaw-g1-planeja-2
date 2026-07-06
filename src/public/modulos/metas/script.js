@@ -42,6 +42,16 @@ function mostrarMetas() {
 
     metas.forEach((meta, index) => {
 
+        let percentual = 0;
+
+        if (meta.valorObjetivo > 0) {
+            percentual = (meta.valorAtual / meta.valorObjetivo) * 100;
+        }
+
+        if (percentual > 100) {
+            percentual = 100;
+        }
+
         let falta = meta.valorObjetivo - meta.valorAtual;
 
         if (falta < 0) {
@@ -132,6 +142,19 @@ function mostrarMetas() {
                 >
                     + Adicionar
                 </button>
+
+            </div>
+
+            <div class="progresso-meta">
+
+                <div class="progresso-topo">
+                    <span>Progresso da meta</span>
+                    <strong>${percentual.toFixed(0)}%</strong>
+                </div>
+
+                <div class="barra-meta">
+                    <div class="barra-preenchida" style="width: ${percentual}%"></div>
+                </div>
 
             </div>
 
