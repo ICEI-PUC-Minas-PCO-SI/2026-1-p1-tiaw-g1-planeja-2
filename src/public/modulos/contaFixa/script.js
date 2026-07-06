@@ -4,17 +4,14 @@ let contasFixas =
 let indiceEdicao = -1;
 
 function carregarCategoriasNoSelect() {
-    const select =
-        document.getElementById("categoriaContaFixa");
+    const select = document.getElementById("categoriaContaFixa");
 
     if (!select) return;
 
     const categorias =
         JSON.parse(localStorage.getItem("categorias")) || [];
 
-    select.innerHTML = `
-        <option value="">Selecione</option>
-    `;
+    select.innerHTML = `<option value="">Selecione</option>`;
 
     categorias.forEach((categoria) => {
         select.innerHTML += `
@@ -26,10 +23,7 @@ function carregarCategoriasNoSelect() {
 }
 
 function salvarNoLocalStorage() {
-    localStorage.setItem(
-        "contasFixas",
-        JSON.stringify(contasFixas)
-    );
+    localStorage.setItem("contasFixas", JSON.stringify(contasFixas));
 }
 
 function salvarContaFixa() {
@@ -62,7 +56,9 @@ function salvarContaFixa() {
         valor,
         pagamento,
         transacao,
-        pago: false
+        pagamentos: indiceEdicao == -1
+            ? {}
+            : contasFixas[indiceEdicao].pagamentos || {}
     };
 
     if (indiceEdicao == -1) {
@@ -99,31 +95,56 @@ function editarContaFixa(indice) {
     document.getElementById("transacaoContaFixa").value = conta.transacao;
 
     indiceEdicao = indice;
-
-    if (indiceEdicao == -1) {
-        contasFixas.push(conta);
-    } else {
-        conta.pago = contasFixas[indiceEdicao].pago || false;
-        contasFixas[indiceEdicao] = conta;
-        indiceEdicao = -1;
-    }
 }
 
 function excluirContaFixa(indice) {
     contasFixas.splice(indice, 1);
+    salvarNoLocalStorage();
+    listarContasFixas();
+}
+
+function obterChaveMesAtual() {
+    const hoje = new Date();
+
+    return `${hoje.getFullYear()}-${String(hoje.getMonth() + 1).padStart(2, "0")}`;
+}
+
+function contaEstaPaga(conta) {
+    const chaveMes = obterChaveMesAtual();
+
+    return conta.pagamentos && conta.pagamentos[chaveMes] === true;
+}
+
+function alterarPago(indice) {
+    const chaveMes = obterChaveMesAtual();
+
+    if (!contasFixas[indice].pagamentos) {
+        contasFixas[indice].pagamentos = {};
+    }
+
+    contasFixas[indice].pagamentos[chaveMes] =
+        !contasFixas[indice].pagamentos[chaveMes];
 
     salvarNoLocalStorage();
-
     listarContasFixas();
 }
 
 function listarContasFixas() {
-
     let lista = document.getElementById("listaContasFixas");
 
     lista.innerHTML = "";
 
+    if (contasFixas.length === 0) {
+        lista.innerHTML = `
+            <tr>
+                <td colspan="9">Nenhuma conta fixa cadastrada.</td>
+            </tr>
+        `;
+        return;
+    }
+
     contasFixas.forEach((conta, indice) => {
+        const paga = contaEstaPaga(conta);
 
         lista.innerHTML += `
             <tr>
@@ -136,9 +157,9 @@ function listarContasFixas() {
                 <td>${conta.transacao}</td>
 
                 <td>
-                    <input 
-                        type="checkbox" 
-                        ${conta.pago ? "checked" : ""}
+                    <input
+                        type="checkbox"
+                        ${paga ? "checked" : ""}
                         onchange="alterarPago(${indice})"
                     >
                 </td>
@@ -154,9 +175,7 @@ function listarContasFixas() {
                 </td>
             </tr>
         `;
-
     });
-
 }
 
 function nomeMes(numeroMes) {
@@ -169,24 +188,10 @@ function nomeMes(numeroMes) {
     return meses[Number(numeroMes)] || "Não informado";
 }
 
-function alterarPago(indice) {
-    contasFixas[indice].pago = !contasFixas[indice].pago;
-
-    salvarNoLocalStorage();
-
-    listarContasFixas();
-}
-
 function cancelarContaFixa() {
     limparFormulario();
-
     indiceEdicao = -1;
 }
-
-window.onload = function () {
-    carregarCategoriasNoSelect();
-    listarContasFixas();
-};
 
 function carregarUsuarioMenu() {
     const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
@@ -205,4 +210,8 @@ function carregarUsuarioMenu() {
     }
 }
 
-carregarUsuarioMenu();
+window.onload = function () {
+    carregarCategoriasNoSelect();
+    listarContasFixas();
+    carregarUsuarioMenu();
+};

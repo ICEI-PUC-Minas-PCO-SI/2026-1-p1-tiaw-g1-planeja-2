@@ -300,3 +300,73 @@ body {
     margin-top: 5px;
     font-size: 14px;
 }
+
+.contas-vencer {
+    margin-top: 24px;
+    background: #ffffff;
+    border: 1px solid #a6aeb8;
+    border-radius: 16px;
+    padding: 22px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.contas-vencer-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.contas-vencer-topo h3 {
+    font-size: 20px;
+    color: #111827;
+    margin: 0;
+}
+
+.contas-vencer-topo span {
+    font-size: 14px;
+    color: #6B7280;
+}
+
+#listaContasVencer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.item-conta-vencer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #F9FAFB;
+    border: 1px solid #E5E7EB;
+    border-radius: 14px;
+    padding: 16px;
+}
+
+.item-conta-vencer h4 {
+    font-size: 16px;
+    color: #111827;
+    margin: 0 0 5px;
+}
+
+.item-conta-vencer p {
+    font-size: 14px;
+    color: #6B7280;
+    margin: 0;
+}
+
+.item-conta-vencer strong {
+    color: #EF4444;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.sem-contas-vencer {
+    text-align: center;
+    color: #6B7280;
+    background: #F9FAFB;
+    border: 1px dashed #CBD5E1;
+    border-radius: 14px;
+    padding: 20px;
+}

@@ -36,6 +36,19 @@ function buscarContasFixas() {
     return JSON.parse(localStorage.getItem("contasFixas")) || [];
 }
 
+function obterChaveMesSelecionado() {
+    const anoAtual = new Date().getFullYear();
+    const mesNumero = meses[mesAtual] + 1;
+
+    return `${anoAtual}-${String(mesNumero).padStart(2, "0")}`;
+}
+
+function contaPagaNoMes(conta) {
+    const chaveMes = obterChaveMesSelecionado();
+
+    return conta.pagamentos && conta.pagamentos[chaveMes] === true;
+}
+
 function atualizarDashboard() {
     const transacoes = buscarTransacoes();
     const contasFixas = buscarContasFixas();
@@ -71,59 +84,100 @@ function atualizarDashboard() {
     document.getElementById("saidaValor").innerText = formatarMoeda(totalSaidas);
     document.getElementById("saldoAtual").innerText = formatarMoeda(saldoAtual);
 
-    const icone =
-        document.getElementById("iconeAlerta");
+    atualizarAlerta(totalEntradas, totalSaidas);
+    listarContasVencer();
+}
 
-    const titulo =
-        document.getElementById("tituloAlerta");
+function atualizarAlerta(totalEntradas, totalSaidas) {
+    const icone = document.getElementById("iconeAlerta");
+    const titulo = document.getElementById("tituloAlerta");
+    const mensagem = document.getElementById("mensagemAlerta");
 
-    const mensagem =
-        document.getElementById("mensagemAlerta");
+    if (!icone || !titulo || !mensagem) return;
 
     if (totalEntradas === 0 && totalSaidas === 0) {
-
         icone.innerHTML = `<i class="fa-solid fa-circle-info"></i>`;
         icone.style.background = "#E5E7EB";
 
         titulo.innerText = "Sem movimentação";
+        mensagem.innerText = "Ainda não há entradas ou saídas neste mês.";
+        return;
+    }
 
-        mensagem.innerText =
-            "Ainda não há entradas ou saídas neste mês.";
-
-    } else if (totalSaidas > totalEntradas) {
-
+    if (totalSaidas > totalEntradas) {
         const diferenca = totalSaidas - totalEntradas;
 
         icone.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i>`;
         icone.style.background = "#FEF3C7";
 
         titulo.innerText = "Atenção";
-
         mensagem.innerHTML = `
-        Você está gastando
-        <strong>${formatarMoeda(diferenca)}</strong>
-        acima da sua renda.
-    `;
+            Você está gastando
+            <strong>${formatarMoeda(diferenca)}</strong>
+            acima da sua renda.
+        `;
+        return;
+    }
 
-    } else if (totalEntradas > 0 && totalSaidas >= totalEntradas * 0.8) {
-
+    if (totalEntradas > 0 && totalSaidas >= totalEntradas * 0.8) {
         icone.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i>`;
         icone.style.background = "#fedbdb";
 
         titulo.innerText = "Cuidado";
-
         mensagem.innerText = "Você já utilizou mais de 80% da sua renda este mês.";
-
-    } else {
-
-        icone.innerHTML = `<i class="fa-solid fa-circle-check"></i>`;
-        icone.style.background = "#DCFCE7";
-
-        titulo.innerText = "Tudo certo";
-
-        mensagem.innerText = "Suas despesas estão dentro do planejado.";
-
+        return;
     }
+
+    icone.innerHTML = `<i class="fa-solid fa-circle-check"></i>`;
+    icone.style.background = "#DCFCE7";
+
+    titulo.innerText = "Tudo certo";
+    mensagem.innerText = "Suas despesas estão dentro do planejado.";
+}
+
+function listarContasVencer() {
+    const lista = document.getElementById("listaContasVencer");
+
+    if (!lista) return;
+
+    const contasFixas = buscarContasFixas();
+    const mesSelecionado = meses[mesAtual];
+
+    const contasPendentes = contasFixas
+        .filter((conta) => {
+            const mesInicio = Number(conta.mesInicio || 0);
+
+            return (
+                conta.transacao === "Despesa" &&
+                mesSelecionado >= mesInicio &&
+                !contaPagaNoMes(conta)
+            );
+        })
+        .sort((a, b) => Number(a.vencimento) - Number(b.vencimento));
+
+    if (contasPendentes.length === 0) {
+        lista.innerHTML = `
+            <div class="sem-contas-vencer">
+                Nenhuma conta pendente para este mês.
+            </div>
+        `;
+        return;
+    }
+
+    lista.innerHTML = "";
+
+    contasPendentes.forEach((conta) => {
+        lista.innerHTML += `
+            <div class="item-conta-vencer">
+                <div>
+                    <h4>${conta.nome}</h4>
+                    <p>Vence dia ${conta.vencimento} • ${conta.categoria}</p>
+                </div>
+
+                <strong>${formatarMoeda(converterValor(conta.valor))}</strong>
+            </div>
+        `;
+    });
 }
 
 function criarGrafico() {
@@ -231,6 +285,5 @@ function carregarUsuarioMenu() {
 }
 
 carregarUsuarioMenu();
-
 atualizarDashboard();
 criarGrafico();
