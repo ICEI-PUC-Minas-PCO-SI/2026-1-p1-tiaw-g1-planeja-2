@@ -187,3 +187,22 @@ window.onload = function () {
     carregarCategoriasNoSelect();
     listarContasFixas();
 };
+
+function carregarUsuarioMenu() {
+    const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+
+    if (!usuarioLogado) return;
+
+    const nomeUsuarioMenu = document.getElementById("nomeUsuarioMenu");
+    const fotoUsuarioMenu = document.getElementById("fotoUsuarioMenu");
+
+    if (nomeUsuarioMenu) {
+        nomeUsuarioMenu.innerText = usuarioLogado.nome || "Usuário";
+    }
+
+    if (fotoUsuarioMenu && usuarioLogado.foto) {
+        fotoUsuarioMenu.src = usuarioLogado.foto;
+    }
+}
+
+carregarUsuarioMenu();

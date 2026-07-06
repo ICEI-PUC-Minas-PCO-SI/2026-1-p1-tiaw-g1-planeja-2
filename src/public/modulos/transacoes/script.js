@@ -176,5 +176,24 @@ function editarTransacao(id) {
     window.location.href = 'nova-transacao.html';
 }
 
+function carregarUsuarioMenu() {
+    const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+
+    if (!usuarioLogado) return;
+
+    const nomeUsuarioMenu = document.getElementById("nomeUsuarioMenu");
+    const fotoUsuarioMenu = document.getElementById("fotoUsuarioMenu");
+
+    if (nomeUsuarioMenu) {
+        nomeUsuarioMenu.innerText = usuarioLogado.nome || "Usuário";
+    }
+
+    if (fotoUsuarioMenu && usuarioLogado.foto) {
+        fotoUsuarioMenu.src = usuarioLogado.foto;
+    }
+}
+
+carregarUsuarioMenu();
+
 carregarCategoriasNoSelect();
 renderizarTabela();

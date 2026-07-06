@@ -1,150 +1,109 @@
-// Captura dos elementos da página
+document.addEventListener("DOMContentLoaded", function () {
+    const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
 
-const nome = document.getElementById("nome");
-const email = document.getElementById("email");
-const senha = document.getElementById("senha");
-const telefone = document.getElementById("telefone");
-const data = document.getElementById("data");
-const genero = document.getElementById("genero");
-
-const fotoPerfil = document.getElementById("fotoPerfil");
-const inputFoto = document.getElementById("inputFoto");
-
-const btnFoto = document.getElementById("btnFoto");
-const btnSalvar = document.getElementById("btnSalvar");
-const btnCancelar = document.getElementById("btnCancelar");
-const btnSair = document.getElementById("btnSair");
-
-// Carregar dados salvos
-
-window.onload = function () {
-
-    nome.value = localStorage.getItem("nome") || "";
-    email.value = localStorage.getItem("email") || "";
-    senha.value = localStorage.getItem("senha") || "";
-    telefone.value = localStorage.getItem("telefone") || "";
-    data.value = localStorage.getItem("data") || "";
-    genero.value = localStorage.getItem("genero") || "";
-
-    const foto = localStorage.getItem("fotoPerfil");
-
-    if (foto) {
-        fotoPerfil.src = foto;
-    }
-
-};
-
-// Alterar Foto
-
-btnFoto.addEventListener("click", function () {
-
-    inputFoto.click();
-
-});
-
-inputFoto.addEventListener("change", function () {
-
-    const arquivo = this.files[0];
-
-    if (!arquivo) return;
-
-    const leitor = new FileReader();
-
-    leitor.onload = function (e) {
-
-        fotoPerfil.src = e.target.result;
-        localStorage.setItem("fotoPerfil", e.target.result);
-
-    };
-
-    leitor.readAsDataURL(arquivo);
-
-});
-
-// Salvar Perfil
-
-btnSalvar.addEventListener("click", function () {
-
-    // Nome obrigatório
-    if (nome.value.trim() === "") {
-        alert("Preencha o nome.");
+    if (!usuarioLogado) {
+        window.location.href = "../login/index.html";
         return;
     }
 
-    // E-mail obrigatório
-    if (email.value.trim() === "") {
-        alert("Preencha o e-mail.");
-        return;
+    const nome = document.getElementById("nome");
+    const email = document.getElementById("email");
+    const senha = document.getElementById("senha");
+    const telefone = document.getElementById("telefone");
+    const data = document.getElementById("data");
+    const genero = document.getElementById("genero");
+
+    const fotoPerfil = document.getElementById("fotoPerfil");
+    const inputFoto = document.getElementById("inputFoto");
+
+    const btnFoto = document.getElementById("btnFoto");
+    const btnSalvar = document.getElementById("btnSalvar");
+    const btnCancelar = document.getElementById("btnCancelar");
+    const btnSair = document.getElementById("btnSair");
+
+    function carregarDados() {
+        nome.value = usuarioLogado.nome || "";
+        email.value = usuarioLogado.email || "";
+        senha.value = usuarioLogado.senha || "";
+        telefone.value = usuarioLogado.telefone || "";
+        data.value = usuarioLogado.dataNascimento || "";
+        genero.value = usuarioLogado.genero || "";
+
+        if (usuarioLogado.foto) {
+            fotoPerfil.src = usuarioLogado.foto;
+        }
     }
 
-    // Verifica se o e-mail possui "@"
-    if (!email.value.includes("@")) {
-        alert("Digite um e-mail válido.");
-        return;
-    }
+    btnFoto.addEventListener("click", function () {
+        inputFoto.click();
+    });
 
-    // Telefone obrigatório
-    if (telefone.value.trim() === "") {
-        alert("Preencha o telefone.");
-        return;
-    }
+    inputFoto.addEventListener("change", function () {
+        const arquivo = inputFoto.files[0];
 
-    // Remove tudo que não for número
-    const telefoneNumeros = telefone.value.replace(/\D/g, "");
+        if (!arquivo) return;
 
-    // Aceita somente 10 ou 11 dígitos
-    if (telefoneNumeros.length !== 10 && telefoneNumeros.length !== 11) {
-        alert("Digite um telefone válido com 10 ou 11 dígitos.");
-        return;
-    }
+        const leitor = new FileReader();
 
-    // Salva no Local Storage
-    localStorage.setItem("nome", nome.value);
-    localStorage.setItem("email", email.value);
-    localStorage.setItem("senha", senha.value);
-    localStorage.setItem("telefone", telefone.value);
-    localStorage.setItem("data", data.value);
-    localStorage.setItem("genero", genero.value);
+        leitor.onload = function (e) {
+            fotoPerfil.src = e.target.result;
+        };
 
-    alert("Perfil salvo com sucesso!");
+        leitor.readAsDataURL(arquivo);
+    });
 
-});
+    btnSalvar.addEventListener("click", function () {
+        const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-// Cancelar Alterações
+        const usuarioAtualizado = {
+            ...usuarioLogado,
+            nome: nome.value.trim(),
+            email: email.value.trim().toLowerCase(),
+            senha: senha.value,
+            telefone: telefone.value.trim(),
+            dataNascimento: data.value,
+            genero: genero.value,
+            foto: fotoPerfil.src
+        };
 
-btnCancelar.addEventListener("click", function () {
+        const usuariosAtualizados = usuarios.map((usuario) =>
+            usuario.id === usuarioLogado.id ? usuarioAtualizado : usuario
+        );
 
-    if (confirm("Cancelar as alterações?")) {
+        localStorage.setItem("usuarios", JSON.stringify(usuariosAtualizados));
+        localStorage.setItem("usuarioLogado", JSON.stringify(usuarioAtualizado));
 
-        nome.value = localStorage.getItem("nome") || "";
-        email.value = localStorage.getItem("email") || "";
-        senha.value = localStorage.getItem("senha") || "";
-        telefone.value = localStorage.getItem("telefone") || "";
-        data.value = localStorage.getItem("data") || "";
-        genero.value = localStorage.getItem("genero") || "";
+        alert("Perfil salvo com sucesso!");
+        location.reload();
+    });
 
-        const foto = localStorage.getItem("fotoPerfil");
+    btnCancelar.addEventListener("click", function () {
+        carregarDados();
+    });
 
-        if (foto) {
-            fotoPerfil.src = foto;
+    btnSair.addEventListener("click", function () {
+        localStorage.removeItem("usuarioLogado");
+        window.location.href = "../login/index.html";
+    });
+
+    carregarDados();
+
+    function carregarUsuarioMenu() {
+        const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+
+        if (!usuarioLogado) return;
+
+        const nomeUsuarioMenu = document.getElementById("nomeUsuarioMenu");
+        const fotoUsuarioMenu = document.getElementById("fotoUsuarioMenu");
+
+        if (nomeUsuarioMenu) {
+            nomeUsuarioMenu.innerText = usuarioLogado.nome || "Usuário";
         }
 
+        if (fotoUsuarioMenu && usuarioLogado.foto) {
+            fotoUsuarioMenu.src = usuarioLogado.foto;
+        }
     }
 
-});
-
-// Sair da Conta
-
-btnSair.addEventListener("click", function () {
-
-    if (confirm("Deseja realmente sair da conta?")) {
-
-        // Remove apenas a sessão do usuário
-        localStorage.removeItem("usuarioLogado");
-
-        // Redireciona para a tela de login
-        window.location.href = "login.html";
-
-    }
-
+    carregarUsuarioMenu();
 });

@@ -79,32 +79,32 @@ function mostrarCursos(lista) {
         "totalCursos"
     ).innerText = lista.length;
 
-   let maisCurtido = cursos[0];
+    let maisCurtido = cursos[0];
 
-cursos.forEach(curso => {
+    cursos.forEach(curso => {
 
-    if (curso.likes > maisCurtido.likes) {
+        if (curso.likes > maisCurtido.likes) {
 
-        maisCurtido = curso;
+            maisCurtido = curso;
+
+        }
+
+    });
+
+    if (maisCurtido.likes === 0) {
+
+        document.getElementById(
+            "maisCurtido"
+        ).innerText = "Nenhum";
+
+    } else {
+
+        document.getElementById(
+            "maisCurtido"
+        ).innerText =
+            `${maisCurtido.titulo} (${maisCurtido.likes} 👍)`;
 
     }
-
-});
-
-if (maisCurtido.likes === 0) {
-
-    document.getElementById(
-        "maisCurtido"
-    ).innerText = "Nenhum";
-
-} else {
-
-    document.getElementById(
-        "maisCurtido"
-    ).innerText =
-        `${maisCurtido.titulo} (${maisCurtido.likes} 👍)`;
-
-}
 
     if (lista.length === 0) {
 
@@ -164,20 +164,20 @@ if (maisCurtido.likes === 0) {
             </div>
 
             ${curso.voto === "like"
-            ? `
+                ? `
             <p class="avaliado">
                 ✓ Você curtiu este curso
             </p>
             `
-            : ""}
+                : ""}
 
             ${curso.voto === "dislike"
-            ? `
+                ? `
             <p class="nao-avaliado">
                 ✗ Você não curtiu este curso
             </p>
             `
-            : ""}
+                : ""}
 
         </div>
 
@@ -251,22 +251,22 @@ function aplicarFiltros() {
 
     const texto =
         document
-        .getElementById("pesquisa")
-        .value
-        .toLowerCase();
+            .getElementById("pesquisa")
+            .value
+            .toLowerCase();
 
     const categoria =
         document
-        .getElementById("categoria")
-        .value;
+            .getElementById("categoria")
+            .value;
 
     const filtrados =
         cursos.filter(curso => {
 
             const nomeValido =
                 curso.titulo
-                .toLowerCase()
-                .includes(texto);
+                    .toLowerCase()
+                    .includes(texto);
 
             const categoriaValida =
                 categoria === "Todos" ||
@@ -328,5 +328,23 @@ function limparAvaliacoes() {
     salvarLocalStorage();
 
     aplicarFiltros();
-
 }
+
+function carregarUsuarioMenu() {
+    const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+
+    if (!usuarioLogado) return;
+
+    const nomeUsuarioMenu = document.getElementById("nomeUsuarioMenu");
+    const fotoUsuarioMenu = document.getElementById("fotoUsuarioMenu");
+
+    if (nomeUsuarioMenu) {
+        nomeUsuarioMenu.innerText = usuarioLogado.nome || "Usuário";
+    }
+
+    if (fotoUsuarioMenu && usuarioLogado.foto) {
+        fotoUsuarioMenu.src = usuarioLogado.foto;
+    }
+}
+
+carregarUsuarioMenu();
