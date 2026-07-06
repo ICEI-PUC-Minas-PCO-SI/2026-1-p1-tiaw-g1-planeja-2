@@ -29,12 +29,11 @@ body {
 
 .logo-area {
     text-align: center;
-    margin-bottom: 28px;
 }
 
 .logo-area img {
-    width: 120px;
-    margin-bottom: 10px;
+    width: 320px;
+    margin-top: -60px;
 }
 
 .logo-area h1 {
@@ -43,8 +42,8 @@ body {
 }
 
 .logo-area p {
-    color: #6B7280;
-    margin-top: 6px;
+    color: black;
+    margin-top: -50px;
 }
 
 .tabs {
@@ -53,6 +52,8 @@ body {
     border-radius: 14px;
     padding: 5px;
     margin-bottom: 25px;
+    margin-top: 20px;
+
 }
 
 .tab {
@@ -63,7 +64,7 @@ body {
     background: transparent;
     cursor: pointer;
     font-weight: 600;
-    color: #6B7280;
+    color: black;
 }
 
 .tab.ativo {
@@ -101,7 +102,7 @@ body {
     border-radius: 12px;
     background: #2563EB;
     color: white;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700;
     cursor: pointer;
     margin-top: 10px;

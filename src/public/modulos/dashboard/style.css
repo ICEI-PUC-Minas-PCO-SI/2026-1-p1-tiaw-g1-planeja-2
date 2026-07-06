@@ -155,7 +155,6 @@ body {
     padding: 8px;
     background-color: #FFFFFF;
     border: 1px solid #a6aeb8;
-    ;
     border-radius: 16px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.04);
     margin-bottom: 24px;
@@ -230,7 +229,7 @@ body {
 /* valor card*/
 
 .card-financeiro h2 {
-    font-size: 28px;
+    font-size: 25px;
     font-weight: 700;
     line-height: 120%;
 }
@@ -242,11 +241,11 @@ body {
 }
 
 #entradaValor {
-    color: #22C55E;
+    color: #158030;
 }
 
 #saidaValor {
-    color: #EF4444;
+    color: #dc2828;
 }
 
 /* Grafico  */
@@ -369,7 +368,7 @@ body {
     width:22px;
     height:22px;
     cursor:pointer;
-    accent-color:#22C55E;
+    accent-color:#158030;
 }
 
 .conta-info h4{
@@ -386,7 +385,7 @@ body {
 
 .item-conta-vencer strong{
     font-size:18px;
-    color:#EF4444;
+    color: #dc2828;
 }
 
 .conta-paga{
@@ -395,7 +394,7 @@ body {
 }
 
 .conta-paga strong{
-    color:#16A34A;
+    color:#158030;
 }
 
 .conta-paga h4{

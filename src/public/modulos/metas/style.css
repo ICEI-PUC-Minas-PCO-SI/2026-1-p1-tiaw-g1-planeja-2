@@ -6,24 +6,23 @@
 }
 
 body {
-    background: linear-gradient(135deg,
-            #EEF4FF,
-            #F5F7FB);
+    background: #F5F7FB; 
 
     padding: 40px;
     color: #111827;
 }
 
 .container {
-    max-width: 1100px;
-    margin: auto;
-    background-color: #FFFFFF;
-    border-radius: 24px;
-    padding: 40px;
-    border: 1px solid #E5E7EB;
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.05);
+    width: calc(100% - 260px);
+    max-width: none;
     margin-left: 260px;
+    padding: 40px;
+    min-height: 100vh;
+    background: transparent;
+    border-radius: 20px;
+    box-shadow: none;
+    background-color: #FFFFFF;
+    border: 1px solid #a6aeb8; 
 }
 
 .header {
@@ -31,9 +30,9 @@ body {
 }
 
 h1 {
-    font-size: 42px;
+    font-size: 30px;
     font-weight: 700;
-    color: #2563EB;
+    color: black;
 }
 
 h2 {
@@ -46,6 +45,7 @@ form {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 100%;
 }
 
 .linha {
@@ -168,8 +168,8 @@ button:hover {
 }
 
 .info-box h4 {
-    font-size: 28px;
-    color: #2563EB;
+    font-size: 20px;
+    color: #06122b;
 }
 
 .adicionar-valor {
@@ -183,9 +183,7 @@ button:hover {
 }
 
 .btn-add {
-    background: linear-gradient(135deg,
-            #22C55E,
-            #16A34A);
+    background: #158030; 
 
     color: white;
 
@@ -211,7 +209,7 @@ button:hover {
 }
 
 .btn-excluir {
-    background-color: #EF4444;
+    background-color: #dc2828;
     color: white;
     padding: 12px 22px;
     border-radius: 12px;
@@ -411,13 +409,13 @@ button:hover {
 /*GRÁFICO META*/
 
 canvas {
-  
+
     max-width: 900px;
 
     height: 500px;
 
     border-radius: 16px;
-    
+
 }
 
 .titulo-grafico {
@@ -433,21 +431,21 @@ canvas {
 
 /*RESPONSIVIDADE*/
 
-@media(max-width: 768px){
+@media(max-width: 768px) {
 
-    body{
+    body {
         padding: 20px;
     }
 
-    .linha{
+    .linha {
         flex-direction: column;
     }
 
-    .infos{
+    .infos {
         flex-direction: column;
     }
 
-    .adicionar-valor{
+    .adicionar-valor {
         flex-direction: column;
     }
 

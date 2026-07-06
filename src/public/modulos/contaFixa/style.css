@@ -164,7 +164,7 @@ form {
     width: 100%;
     height: 45px;
     padding: 0 20px;
-    border: 1.5px solid #06122b;
+    border: 1px solid #a6aeb8;
     border-radius: 10px;
     font-size: 15px;
     outline: none;
@@ -271,7 +271,7 @@ form {
 
 .btn-excluir {
     background-color: #f8dede;
-    color: #e52424;
+    color: #cd2828
 }
 
 .btn-excluir:hover {
