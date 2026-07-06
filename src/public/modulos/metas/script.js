@@ -8,8 +8,14 @@ let metas = JSON.parse(localStorage.getItem("metas")) || [];
 
 metas = metas.map(meta => ({
     ...meta,
-    valorObjetivo: Number(meta.valorObjetivo),
-    valorAtual: Number(meta.valorAtual)
+    valorObjetivo: Number(meta.valorObjetivo) || 0,
+    valorAtual: Number(meta.valorAtual) || 0,
+    historico: meta.historico || [
+        {
+            data: new Date().toLocaleDateString(),
+            valor: Number(meta.valorAtual) || 0
+        }
+    ]
 }));
 
 let editando = null;
@@ -23,9 +29,15 @@ function salvarLocalStorage() {
 
 }
 
+let detalheAberto = null;
+let graficos = [];
+
 function mostrarMetas() {
 
     listaMetas.innerHTML = "";
+
+    graficos.forEach(grafico => grafico.destroy());
+    graficos = [];
 
     if (metas.length === 0) {
 
@@ -42,144 +54,256 @@ function mostrarMetas() {
 
     metas.forEach((meta, index) => {
 
-        let percentual = 0;
-
-        if (meta.valorObjetivo > 0) {
-            percentual = (meta.valorAtual / meta.valorObjetivo) * 100;
-        }
-
-        if (percentual > 100) {
-            percentual = 100;
-        }
-
         let falta = meta.valorObjetivo - meta.valorAtual;
 
         if (falta < 0) {
             falta = 0;
         }
 
+        const percentual =
+            meta.valorObjetivo > 0
+                ? (meta.valorAtual / meta.valorObjetivo) * 100
+                : 0;
+
         listaMetas.innerHTML += `
 
-        <div class="card">
+            <div class="card">
 
-            <div class="card-topo">
+                <div class="card-topo">
 
-                <h3>${meta.nome}</h3>
+                    <h3>${meta.nome}</h3>
 
-                <div class="status">
+                    <div class="status">
 
-                ${meta.valorAtual >= meta.valorObjetivo
+                        ${meta.valorAtual >= meta.valorObjetivo
                 && meta.valorObjetivo > 0
 
                 ? "Meta concluída"
 
                 : "Meta ativa"}
 
+                    </div>
+
                 </div>
 
-            </div>
+                <div class="infos">
 
-            <div class="infos">
+                    <div class="info-box">
+                        <p>Valor Atual</p>
 
-                <div class="info-box">
-                    <p>Valor Atual</p>
+                        <h4>
+                        R$ ${meta.valorAtual.toFixed(2)}
+                        </h4>
+                    </div>
 
-                    <h4>
-                    R$ ${meta.valorAtual.toFixed(2)}
-                    </h4>
-                </div>
+                    <div class="info-box">
+                        <p>Valor Objetivo</p>
 
-                <div class="info-box">
-                    <p>Valor Objetivo</p>
+                        <h4>
 
-                    <h4>
-
-                    ${meta.valorObjetivo > 0
+                        ${meta.valorObjetivo > 0
 
                 ? `R$ ${meta.valorObjetivo.toFixed(2)}`
 
                 : "Não definido"}
 
-                    </h4>
+                        </h4>
 
-                </div>
+                    </div>
 
-                <div class="info-box">
-                    <p>Falta</p>
+                    <div class="info-box">
+                        <p>Falta</p>
 
-                    <h4>
+                        <h4>
 
-                    ${meta.valorObjetivo > 0
+                        ${meta.valorObjetivo > 0
 
                 ? `R$ ${falta.toFixed(2)}`
 
                 : "Não definido"}
 
-                    </h4>
+                        </h4>
+                    </div>
+
+                    <div class="info-box">
+                        <p>Prazo</p>
+
+                        <h4>
+                            ${meta.prazo || "Não definido"}
+                        </h4>
+                    </div>
+
                 </div>
 
-                <div class="info-box">
-                    <p>Prazo</p>
-
-                    <h4>
-                    ${meta.prazo || "Não definido"}
-                    </h4>
+                <div class="barra">
+                    <div class="progresso" style="width: ${percentual}%"></div>
                 </div>
 
-            </div>
+                <p class="percentual">
+                    ${percentual.toFixed(0)}% concluído
+                </p>
 
-            <div class="adicionar-valor">
 
-                <input
-                    type="number"
-                    id="valor-${index}"
-                    placeholder="Digite o valor guardado"
-                >
 
-                <button
-                    class="btn-add"
-                    onclick="adicionarValor(${index})"
-                >
-                    + Adicionar
+                <button class="btn-detalhes" onclick="abrirDetalhes(${index})">
+                    ${detalheAberto === index
+                ? "Ocultar detalhes"
+                : "Ver detalhes"
+            }
                 </button>
 
+                ${detalheAberto === index
+                ? `
+                        <div class="detalhes-meta">
+                            
+                            <h3 class="titulo-grafico">Evolução da Meta</h3>
+
+                            <canvas id="grafico-${index}" class="grafico-meta"></canvas>
+
+                            <div class="adicionar-valor">
+
+                                <input
+                                type="number"
+                                id="valor-${index}"
+                                placeholder="Digite o valor guardado"
+                                >
+
+                                <button
+                                    class="btn-add"
+                                    onclick="adicionarValor(${index})"
+                                >
+                                    + Adicionar
+                                </button>
+
+                            </div>
+
+                            <div class="acoes">
+
+                                <button
+                                class="btn-editar"
+                                onclick="editarMeta(${index})"
+                                >
+                                    Editar
+                                </button>
+
+                                <button
+                                    class="btn-excluir"
+                                    onclick="excluirMeta(${index})"
+                                >
+                                    Excluir
+                                </button>
+
+                            </div>
+
+                        </div>
+                    `
+                : ""
+            }
             </div>
-
-            <div class="progresso-meta">
-
-                <div class="progresso-topo">
-                    <span>Progresso da meta</span>
-                    <strong>${percentual.toFixed(0)}%</strong>
-                </div>
-
-                <div class="barra-meta">
-                    <div class="barra-preenchida" style="width: ${percentual}%"></div>
-                </div>
-
-            </div>
-
-            <div class="acoes">
-
-                <button
-                    class="btn-editar"
-                    onclick="editarMeta(${index})"
-                >
-                    Editar
-                </button>
-
-                <button
-                    class="btn-excluir"
-                    onclick="excluirMeta(${index})"
-                >
-                    Excluir
-                </button>
-
-            </div>
-
-        </div>
-
         `;
     });
+
+    if (detalheAberto !== null) {
+        setTimeout(() => {
+            criarGrafico(detalheAberto);
+        }, 0);
+    }
+}
+
+function abrirDetalhes(index) {
+    if (detalheAberto === index) {
+        detalheAberto = null;
+    } else {
+        detalheAberto = index;
+    }
+
+    mostrarMetas();
+}
+
+function criarGrafico(index) {
+
+    const meta = metas[index];
+
+    const canvas = document.getElementById(`grafico-${index}`);
+
+    if (!canvas) return;
+
+    if (!meta.historico) {
+        meta.historico = [
+            {
+                data: new Date().toLocaleDateString(),
+                valor: meta.valorAtual
+            }
+        ];
+    }
+
+    const grafico = new Chart(canvas, {
+
+        type: "line",
+
+        data: {
+
+            labels: meta.historico.map(item => item.data),
+
+            datasets: [
+
+                {
+
+                    label: "Valor Guardado",
+
+                    data: meta.historico.map(item => item.valor),
+
+                    borderColor: "#2563EB",
+
+                    backgroundColor: "rgba(37,99,235,0.15)",
+
+                    fill: true,
+
+                    borderWidth: 3,
+
+                    tension: 0.35,
+
+                    pointRadius: 5,
+
+                    pointBackgroundColor: "#2563EB"
+
+                }
+
+            ]
+
+        },
+
+        options: {
+
+            responsive: true,
+
+            maintainAspectRatio: false,
+
+            plugins: {
+
+                legend: {
+
+                    display: false
+
+                }
+
+            },
+
+            scales: {
+
+                y: {
+
+                    beginAtZero: true
+
+                }
+
+            }
+
+        }
+
+    });
+
+    graficos.push(grafico);
 
 }
 
@@ -216,14 +340,20 @@ form.addEventListener("submit", function (e) {
 
         prazo: prazo,
 
-        valorAtual: 0
+        valorAtual: 0,
+
+        historico: [
+            {
+                data: new Date().toLocaleDateString(),
+                valor: 0
+            }
+        ]
     };
 
     if (editando !== null) {
 
-        meta.valorAtual =
-            metas[editando].valorAtual;
-
+        meta.valorAtual = metas[editando].valorAtual;
+        meta.historico = metas[editando].historico;
         metas[editando] = meta;
 
         editando = null;
@@ -249,9 +379,11 @@ function adicionarValor(index) {
 
     const valor = Number(inputValor.value);
 
-    if (valor === 0 || isNaN(valor)) {
+    if (valor === 0) {
 
-        alert("Digite um valor diferente de zero.");
+        alert(
+            "Digite um valor diferente de zero."
+        );
 
         return;
     }
@@ -265,9 +397,6 @@ function adicionarValor(index) {
 
     metas[index].valorAtual += valor;
 
-    salvarLocalStorage();
-
-    // cria uma transação automática no Dashboard
     let transacoes =
         JSON.parse(localStorage.getItem("transacoes")) || [];
 
@@ -283,10 +412,14 @@ function adicionarValor(index) {
 
     transacoes.push(transacaoMeta);
 
-    localStorage.setItem(
-        "transacoes",
-        JSON.stringify(transacoes)
-    );
+    localStorage.setItem("transacoes", JSON.stringify(transacoes));
+
+    metas[index].historico.push({
+        data: new Date().toLocaleDateString(),
+        valor: metas[index].valorAtual
+    });
+
+    salvarLocalStorage();
 
     mostrarMetas();
 
@@ -335,6 +468,14 @@ function editarMeta(index) {
 
 }
 
+/*BARRA DE PROGRESSO*/
+
+function mostrarPercentual(percentual) {
+
+    alert(`Você já concluiu ${percentual}% da sua meta.`);
+
+}
+
 function limparFormulario() {
 
     form.reset();
@@ -342,24 +483,5 @@ function limparFormulario() {
     editando = null;
 
 }
-
-function carregarUsuarioMenu() {
-    const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
-
-    if (!usuarioLogado) return;
-
-    const nomeUsuarioMenu = document.getElementById("nomeUsuarioMenu");
-    const fotoUsuarioMenu = document.getElementById("fotoUsuarioMenu");
-
-    if (nomeUsuarioMenu) {
-        nomeUsuarioMenu.innerText = usuarioLogado.nome || "Usuário";
-    }
-
-    if (fotoUsuarioMenu && usuarioLogado.foto) {
-        fotoUsuarioMenu.src = usuarioLogado.foto;
-    }
-}
-
-carregarUsuarioMenu();
 
 mostrarMetas();
