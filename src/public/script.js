@@ -102,5 +102,5 @@ formLogin.addEventListener("submit", function (e) {
 
     localStorage.setItem("usuarioLogado", JSON.stringify(usuarioEncontrado));
 
-    window.location.href = "../dashboard/index.html";
+    window.location.href = "modulos/dashboard/index.html";
 });

@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
 
     if (!usuarioLogado) {
-        window.location.href = "../login/index.html";
+        window.location.href = "index.html";
         return;
     }
 
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     btnSair.addEventListener("click", function () {
         localStorage.removeItem("usuarioLogado");
-        window.location.href = "../login/index.html";
+        window.location.href = "index.html";
     });
 
     carregarDados();
