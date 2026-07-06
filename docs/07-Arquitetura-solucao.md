@@ -102,7 +102,7 @@ Disponibiliza conteúdos educativos sobre finanças pessoais, planejamento finan
 
 Permite alterar informações do perfil do usuário e preferências da aplicação.
 
-* **Estrutura de dados:** [Perfil](#estrutura-de-dados---usuários)
+* **Estrutura de dados:** [Usuários](#estrutura-de-dados---usuários)
 * **Instruções de acesso:**
   * Abra o site e efetue o login;
   * Acesse o menu principal e escolha a opção "Configurações";
@@ -112,6 +112,20 @@ Permite alterar informações do perfil do usuário e preferências da aplicaç�
 ![Tela de funcionalidade](images/perfil.jpeg)
 ![Tela de funcionalidade](images/perfil2.jpeg)
 
+##### Funcionalidade 8 - Login
+
+Permite que usuários cadastrados acessem o sistema por meio do e-mail e da senha, garantindo acesso às funcionalidades da aplicação.
+
+* **Estrutura de dados:** [Usuários](#estrutura-de-dados---usuários)
+* **Instruções de acesso:**
+  * Abra o site;
+  * Informe o e-mail e a senha nos campos de login;
+  * Clique no botão "Entrar";
+  * Caso as credenciais sejam válidas, o usuário será direcionado para a página inicial do sistema.
+* **Tela da funcionalidade**:
+
+![Tela de funcionalidade](images/login.jpeg)
+![Tela de funcionalidade](images/cadastro.jpeg)
 
 ### Estruturas de dados
 
