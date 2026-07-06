@@ -38,8 +38,8 @@ Permite cadastrar, editar, excluir e consultar receitas e despesas da aplicaçã
   * Salvar.
 * **Tela da funcionalidade**:
 
-![Tela de funcionalidade](images/transacao.jpeg)
 ![Tela de funcionalidade](images/transacao1.jpeg)
+![Tela de funcionalidade](images/transacao.jpeg)
 
 ##### Funcionalidade 3 - Cadastro de Contas
 
@@ -111,58 +111,105 @@ Permite alterar informações do perfil do usuário e preferências da aplicaç�
 ![Tela de funcionalidade](images/perfil.jpeg)
 ![Tela de funcionalidade](images/perfil2.jpeg)
 
-> ⚠️ **APAGUE ESTA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Apresente cada uma das funcionalidades que a aplicação fornece tanto para os usuários, quanto aos administradores da solução.
->
-> Inclua, para cada funcionalidade, itens como: (1) títulos e descrição da funcionalidade; (2) estrutura de dados associada; (3) o detalhe sobre as instruções de acesso e uso.
 
 ### Estruturas de dados
 
 Descrição das estruturas de dados utilizadas na solução com exemplos no formato JSON.Info.
 
-##### Estrutura de dados - Contatos
-
-Contatos da aplicação
-
-```json
-  {
-    "id": 1,
-    "nome": "Leanne Graham",
-    "cidade": "Belo Horizonte",
-    "categoria": "amigos",
-    "email": "Sincere@april.biz",
-    "telefone": "1-770-736-8031",
-    "website": "hildegard.org"
-  }
-  
-```
-
-##### Estrutura de dados - Usuários  ⚠️ EXEMPLO ⚠️
+##### Estrutura de dados - Usuários
 
 Registro dos usuários do sistema utilizados para login e para o perfil do sistema.
 
 ```json
   {
-    id: "eed55b91-45be-4f2c-81bc-7686135503f9",
-    email: "admin@abc.com",
-    id: "eed55b91-45be-4f2c-81bc-7686135503f9",
-    login: "admin",
-    nome: "Administrador do Sistema",
-    senha: "123"
+    "id": 1,
+    "nome": "Maria Silva",
+    "email": "maria@email.com",
+    "senha": "123456",
+    "fotoPerfil": "perfil.png"
   }
 ```
 
-> ⚠️ **APAGUE ESTA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Apresente as estruturas de dados utilizadas na solução tanto para dados utilizados na essência da aplicação, quanto outras estruturas que foram criadas para algum tipo de configuração.
->
-> Nomeie a estrutura, coloque uma descrição sucinta e apresente um exemplo em formato JSON.
->
-> **Orientações:**
->
-> * [JSON Introduction](https://www.w3schools.com/js/js_json_intro.asp)
-> * [Trabalhando com JSON - Aprendendo desenvolvimento web | MDN](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Objects/JSON)
+##### Estrutura de dados - Transações
+
+Armazena as receitas e despesas cadastradas pelo usuário.
+
+```json
+  {
+    "id": 1,
+    "tipo": "Receita",
+    "descricao": "Salário",
+    "categoria": "Salário",
+    "valor": 3500.00,
+    "data": "2026-07-01"
+  }
+```
+
+##### Estrutura de dados - Contas
+
+Armazena as contas fixas cadastradas.
+
+```json
+{
+  "id": 1,
+  "nome": "Conta de Luz",
+  "categoria": "Moradia",
+  "valor": 180.50,
+  "vencimento": "2026-07-15",
+  "status": "Pendente"
+}
+```
+
+##### Estrutura de dados - Metas
+
+Armazena as metas financeiras do usuário.
+
+```json
+{
+  "id": 1,
+  "titulo": "Comprar Notebook",
+  "valorObjetivo": 5000,
+  "valorAtual": 1800,
+  "prazo": "2026-12-31"
+}
+```
+
+##### Estrutura de dados - Categorias
+
+Armazena as categorias utilizadas nas transações.
+
+```json
+{
+  "id": 1,
+  "nome": "Alimentação",
+  "tipo": "Despesa"
+}
+```
+
+##### Estrutura de dados - Educação Financeira
+
+Armazena os cursos ou conteúdos educativos exibidos na aplicação.
+
+```json
+{
+  "id": 1,
+  "titulo": "Como criar uma reserva de emergência",
+  "categoria": "Finanças Pessoais",
+  "descricao": "Aprenda a organizar sua reserva financeira."
+}
+```
+
+##### Estrutura de dados - Configurações
+
+Armazena as preferências do usuário.
+
+```json
+{
+  "tema": "claro",
+  "notificacoes": true,
+  "moeda": "BRL"
+}
+```
 
 ### Módulos e APIs
 
@@ -195,7 +242,9 @@ Esta seção apresenta os módulos e APIs utilizados na solução.
 
 ## Hospedagem
 
-Explique como a hospedagem e o lançamento da plataforma foram realizados.
+O projeto Planeja+ foi armazenado em um repositório no GitHub, permitindo o trabalho colaborativo entre os integrantes da equipe por meio do Git.
+
+O repositório foi utilizado para o controle de versões, gerenciamento das alterações realizadas no projeto e compartilhamento do código entre os membros da equipe. Além disso, o arquivo README.md foi utilizado para documentar informações importantes sobre o projeto, como sua descrição, estrutura e instruções de execução.
 
 > **Links úteis**:
 > - [Website com GitHub Pages](https://pages.github.com/)
