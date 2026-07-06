@@ -1,12 +1,15 @@
-# Template padrão da aplicação
+# **Template padrão da aplicação**
 
-<span style="color:red">Pré-requisitos: <a href="03-Product-design.md"> Especificação do projeto</a></span>, <a href="04-Metodologia.md"> Metodologia</a>, <a href="05-Projeto-interface.md"> Projeto de interface</a>
+### A nossa Logo - o infinito voltado pro alto
 
-Layout padrão da aplicação que será utilizado em todas as páginas, definindo a identidade visual, aspectos de responsividade e iconografia. Inclui também o manual da marca, com orientações sobre paleta de cores, tipografia, elementos gráficos e uso correto do logotipo, além da explicação do processo de criação e do significado do logo, evidenciando sua relação com a proposta visual e os valores da aplicação. Deve ser apresentada apenas uma tela de exemplo para demonstrar a aplicação do template e das diretrizes visuais.
+Determinar a logo do Planeja +, a marca final que resume as funcionalidades e valores de nossa aplicação foi um processo coletivo, contando com as opiniões de todos os membros da equipe. Tendo concordado como principais características da nossa aplicação a prosperidade financeira do usuário sendo realizada juntamente com web + o seu diferencial de educação, utilizamos o ChatGPT para gerar diversos modelos que se encaixasse nesse contexto. Entre mais de 10 modelos definidos, optamos pelo o símbolo do infinito com uma seta apontada para o alto, que representa a busca continua por conhecimento, junto como sinal de mais (+), que referencia ao crescimento de capital.
 
-> **Links úteis**:
->
-> - [CSS website layout (W3Schools)](https://www.w3schools.com/css/css_website_layout.asp)
-> - [Website page layouts](http://www.cellbiol.com/bioinformatics_web_development/chapter-3-your-first-web-page-learning-html-and-css/website-page-layouts/)
-> - [Perfect liquid layout](https://matthewjamestaylor.com/perfect-liquid-layouts)
-> - [How and why icons improve your web design](https://usabilla.com/blog/how-and-why-icons-improve-you-web-design/)
+### Nossa Identidade Visual
+
+**A cor azul**
+
+Acreditamos que a diferença mais significativa do Planeja + em meio a outras aplicações de gerenciar finanças é o estimulo pela busca contínua de conhecimento, cuja ausência praticamente impossibilita o desenvolvimento financeiro. Tendo isso em mente, optamos ter como nossa cor representante o azul, ligado diretamente a conceitos como o conhecimento, intelecto e tecnologia.
+
+**O nosso design**
+
+Pensando em nosso cliente final, que valoriza primordialmente a praticidade e simplicidade ao usar o nosso produto, optamos por uma interface minimalista com informações objetivas e diretas. A tipografia escolhida é mais arredondada, pois complementa esses valores, deixando o site com uma imagem mais suave e elegante.
