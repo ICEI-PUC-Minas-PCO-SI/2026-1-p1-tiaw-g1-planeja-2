@@ -255,6 +255,10 @@ body {
     gap: 25px;
     overflow-x: hidden;
 }
+.pagina-transacao .conteudo {
+    /* mantém padrão global, mas garante espaço correto do navbar */
+    padding-top: calc(var(--navbar-height) + 20px);
+}
 .card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -421,6 +425,24 @@ td {
     .btn-secondary {
         width: 100%;
     }
+    .navegacao {
+        display: none !important;
+    }
+    .navbar {
+        height: 70px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 2000;
+    }
+    .offcanvas {
+        z-index: 3000;
+        width: 270px;
+        background-color: #06122b;
+        color: white;
+    }
+
 }
 @media (max-width: 768px) {
 
