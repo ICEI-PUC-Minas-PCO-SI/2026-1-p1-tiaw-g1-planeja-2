@@ -117,20 +117,3 @@ Essas adaptações garantem uma boa experiência tanto em computadores quanto em
 O design do **PlanejaMais** foi planejado para transmitir profissionalismo, simplicidade e confiança, características fundamentais para uma aplicação de controle financeiro.
 
 A padronização das cores, tipografia, componentes e layout proporciona uma interface consistente, intuitiva e de fácil utilização, fortalecendo a identidade visual da aplicação e melhorando a experiência do usuário.
-
-
-
-
-
-
-
-
-
-
-
-> **Links úteis**:
->
-> - [CSS website layout (W3Schools)](https://www.w3schools.com/css/css_website_layout.asp)
-> - [Website page layouts](http://www.cellbiol.com/bioinformatics_web_development/chapter-3-your-first-web-page-learning-html-and-css/website-page-layouts/)
-> - [Perfect liquid layout](https://matthewjamestaylor.com/perfect-liquid-layouts)
-> - [How and why icons improve your web design](https://usabilla.com/blog/how-and-why-icons-improve-you-web-design/)
