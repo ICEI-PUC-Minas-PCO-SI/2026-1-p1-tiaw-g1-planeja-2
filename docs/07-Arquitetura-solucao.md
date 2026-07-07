@@ -1,7 +1,5 @@
 # Arquitetura da solução
 
-<span style="color:red">Pré-requisitos: <a href="05-Projeto-interface.md"> Projeto de interface</a></span>
-
 O Planeja+ é uma aplicação web desenvolvida utilizando HTML, CSS e JavaScript, com Bootstrap para estilização, responsividade e Chart.js para a geração de gráficos. O sistema permite que o usuário realize o gerenciamento das suas finanças pessoais, cadastrando receitas e despesas, acompanhando o saldo, visualizando gráficos e controlando suas metas financeiras.
 A arquitetura da aplicação é baseada no modelo cliente, onde o navegador executa toda a lógica da aplicação em JavaScript. Os dados são armazenados em formato JSON utilizando LocalStorage.
 
@@ -261,8 +259,5 @@ O projeto Planeja+ foi armazenado em um repositório no GitHub, permitindo o tra
 
 O repositório foi utilizado para o controle de versões, gerenciamento das alterações realizadas no projeto e compartilhamento do código entre os membros da equipe. Além disso, o arquivo README.md foi utilizado para documentar informações importantes sobre o projeto, como sua descrição, estrutura e instruções de execução.
 
-> **Links úteis**:
-> - [Website com GitHub Pages](https://pages.github.com/)
-> - [Programação colaborativa com Repl.it](https://repl.it/)
-> - [Getting started with Heroku](https://devcenter.heroku.com/start)
-> - [Publicando seu site no Heroku](http://pythonclub.com.br/publicando-seu-hello-world-no-heroku.html)
+> **Links da Hospedagem**:
+> - [Aplicação hospedada](https://planejamais1.netlify.app/)
